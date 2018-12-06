@@ -1,0 +1,1039 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ProgramskoInzenjerstvoDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Djelovi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="proizodac" Type="int" Nullable="false" />
+          <Property Name="modelVozila" Type="int" Nullable="false" />
+          <Property Name="kategorija" Type="int" Nullable="false" />
+          <Property Name="maloprodajnaCijena" Type="int" Nullable="false" />
+          <Property Name="veleprodajnaCijena" Type="int" Nullable="false" />
+          <Property Name="kolicina" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kategorija">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="opis" Type="varchar" MaxLength="50" />
+          <Property Name="hangar" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Model_vozila">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="marka" Type="nchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Narudzba">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="datumKreiranja" Type="date" Nullable="false" />
+          <Property Name="datumPotvrde" Type="date" />
+          <Property Name="iznos" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="kreirao" Type="int" />
+          <Property Name="odobreno" Type="bit" Nullable="false" />
+          <Property Name="odobrio" Type="int" />
+        </EntityType>
+        <EntityType Name="Narudzba_has_Djelovi">
+          <Key>
+            <PropertyRef Name="id_narudzbe" />
+            <PropertyRef Name="id_djelovi" />
+          </Key>
+          <Property Name="id_narudzbe" Type="int" Nullable="false" />
+          <Property Name="id_djelovi" Type="int" Nullable="false" />
+          <Property Name="kolicina" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Proizvodac">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Racun">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="datum" Type="date" Nullable="false" />
+          <Property Name="zaposlenik" Type="int" />
+          <Property Name="iznos" Type="varchar" MaxLength="15" />
+          <Property Name="Maloprodaja/veleprodaja" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="trgovina" Type="int" />
+        </EntityType>
+        <EntityType Name="Racun_Has_Djelovi">
+          <Key>
+            <PropertyRef Name="id_racun" />
+            <PropertyRef Name="id_djelovi" />
+          </Key>
+          <Property Name="id_racun" Type="int" Nullable="false" />
+          <Property Name="id_djelovi" Type="int" Nullable="false" />
+          <Property Name="kolicina" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rezervacija">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kupacIme" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="kupacPrezime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="kupacEmail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="izvrseno" Type="bit" Nullable="false" />
+          <Property Name="napravioNarudzbu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rezervacija_has_Djelovi">
+          <Key>
+            <PropertyRef Name="id_rezervacija" />
+            <PropertyRef Name="int_djelovi" />
+          </Key>
+          <Property Name="id_rezervacija" Type="int" Nullable="false" />
+          <Property Name="int_djelovi" Type="int" Nullable="false" />
+          <Property Name="kolicina" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tip">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="opis" Type="nchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Trgovina">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="adresa" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="oib" Type="nchar" MaxLength="11" />
+        </EntityType>
+        <EntityType Name="Zaposlenik">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ime" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="prezime" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="adresa" Type="nchar" MaxLength="70" Nullable="false" />
+          <Property Name="oib" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="email" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="korisnickoIme" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="lozinka" Type="nchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zaposlenik_has_Tip">
+          <Key>
+            <PropertyRef Name="id_zaposlenik" />
+            <PropertyRef Name="id_tip" />
+          </Key>
+          <Property Name="id_zaposlenik" Type="int" Nullable="false" />
+          <Property Name="id_tip" Type="int" Nullable="false" />
+          <Property Name="datum" Type="date" />
+        </EntityType>
+        <Association Name="FK_Djelovi_Kategorija">
+          <End Role="Kategorija" Type="Self.Kategorija" Multiplicity="1" />
+          <End Role="Djelovi" Type="Self.Djelovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategorija">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Djelovi">
+              <PropertyRef Name="kategorija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Djelovi_Model_vozila">
+          <End Role="Model_vozila" Type="Self.Model_vozila" Multiplicity="1" />
+          <End Role="Djelovi" Type="Self.Djelovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Model_vozila">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Djelovi">
+              <PropertyRef Name="modelVozila" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Djelovi_Proizvodac">
+          <End Role="Proizvodac" Type="Self.Proizvodac" Multiplicity="1" />
+          <End Role="Djelovi" Type="Self.Djelovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proizvodac">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Djelovi">
+              <PropertyRef Name="proizodac" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudzba_has_Djelovi_Djelovi">
+          <End Role="Djelovi" Type="Self.Djelovi" Multiplicity="1" />
+          <End Role="Narudzba_has_Djelovi" Type="Self.Narudzba_has_Djelovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Djelovi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Narudzba_has_Djelovi">
+              <PropertyRef Name="id_djelovi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudzba_has_Djelovi_Narudzba">
+          <End Role="Narudzba" Type="Self.Narudzba" Multiplicity="1" />
+          <End Role="Narudzba_has_Djelovi" Type="Self.Narudzba_has_Djelovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Narudzba">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Narudzba_has_Djelovi">
+              <PropertyRef Name="id_narudzbe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudzba_Zaposlenik">
+          <End Role="Zaposlenik" Type="Self.Zaposlenik" Multiplicity="0..1" />
+          <End Role="Narudzba" Type="Self.Narudzba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zaposlenik">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Narudzba">
+              <PropertyRef Name="kreirao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudzba_Zaposlenik1">
+          <End Role="Zaposlenik" Type="Self.Zaposlenik" Multiplicity="0..1" />
+          <End Role="Narudzba" Type="Self.Narudzba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zaposlenik">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Narudzba">
+              <PropertyRef Name="odobrio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Racun_Has_Djelovi_Djelovi">
+          <End Role="Djelovi" Type="Self.Djelovi" Multiplicity="1" />
+          <End Role="Racun_Has_Djelovi" Type="Self.Racun_Has_Djelovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Djelovi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Racun_Has_Djelovi">
+              <PropertyRef Name="id_djelovi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Racun_Has_Djelovi_Racun">
+          <End Role="Racun" Type="Self.Racun" Multiplicity="1" />
+          <End Role="Racun_Has_Djelovi" Type="Self.Racun_Has_Djelovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Racun">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Racun_Has_Djelovi">
+              <PropertyRef Name="id_racun" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Racun_Trgovina">
+          <End Role="Trgovina" Type="Self.Trgovina" Multiplicity="0..1" />
+          <End Role="Racun" Type="Self.Racun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trgovina">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Racun">
+              <PropertyRef Name="trgovina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Racun_Zaposlenik">
+          <End Role="Zaposlenik" Type="Self.Zaposlenik" Multiplicity="0..1" />
+          <End Role="Racun" Type="Self.Racun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zaposlenik">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Racun">
+              <PropertyRef Name="zaposlenik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rezervacija_has_Djelovi_Djelovi">
+          <End Role="Djelovi" Type="Self.Djelovi" Multiplicity="1" />
+          <End Role="Rezervacija_has_Djelovi" Type="Self.Rezervacija_has_Djelovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Djelovi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Rezervacija_has_Djelovi">
+              <PropertyRef Name="int_djelovi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rezervacija_has_Djelovi_Rezervacija">
+          <End Role="Rezervacija" Type="Self.Rezervacija" Multiplicity="1" />
+          <End Role="Rezervacija_has_Djelovi" Type="Self.Rezervacija_has_Djelovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rezervacija">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Rezervacija_has_Djelovi">
+              <PropertyRef Name="id_rezervacija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rezervacija_Zaposlenik">
+          <End Role="Zaposlenik" Type="Self.Zaposlenik" Multiplicity="1" />
+          <End Role="Rezervacija" Type="Self.Rezervacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zaposlenik">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Rezervacija">
+              <PropertyRef Name="napravioNarudzbu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zaposlenik_has_Tip_Tip">
+          <End Role="Tip" Type="Self.Tip" Multiplicity="1" />
+          <End Role="Zaposlenik_has_Tip" Type="Self.Zaposlenik_has_Tip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tip">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Zaposlenik_has_Tip">
+              <PropertyRef Name="id_tip" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zaposlenik_has_Tip_Zaposlenik">
+          <End Role="Zaposlenik" Type="Self.Zaposlenik" Multiplicity="1" />
+          <End Role="Zaposlenik_has_Tip" Type="Self.Zaposlenik_has_Tip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zaposlenik">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Zaposlenik_has_Tip">
+              <PropertyRef Name="id_zaposlenik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProgramskoInzenjerstvoDBModelStoreContainer">
+          <EntitySet Name="Djelovi" EntityType="Self.Djelovi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kategorija" EntityType="Self.Kategorija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Model_vozila" EntityType="Self.Model_vozila" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Narudzba" EntityType="Self.Narudzba" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Narudzba_has_Djelovi" EntityType="Self.Narudzba_has_Djelovi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proizvodac" EntityType="Self.Proizvodac" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Racun" EntityType="Self.Racun" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Racun_Has_Djelovi" EntityType="Self.Racun_Has_Djelovi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rezervacija" EntityType="Self.Rezervacija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rezervacija_has_Djelovi" EntityType="Self.Rezervacija_has_Djelovi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tip" EntityType="Self.Tip" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Trgovina" EntityType="Self.Trgovina" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zaposlenik" EntityType="Self.Zaposlenik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zaposlenik_has_Tip" EntityType="Self.Zaposlenik_has_Tip" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Djelovi_Kategorija" Association="Self.FK_Djelovi_Kategorija">
+            <End Role="Kategorija" EntitySet="Kategorija" />
+            <End Role="Djelovi" EntitySet="Djelovi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Djelovi_Model_vozila" Association="Self.FK_Djelovi_Model_vozila">
+            <End Role="Model_vozila" EntitySet="Model_vozila" />
+            <End Role="Djelovi" EntitySet="Djelovi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Djelovi_Proizvodac" Association="Self.FK_Djelovi_Proizvodac">
+            <End Role="Proizvodac" EntitySet="Proizvodac" />
+            <End Role="Djelovi" EntitySet="Djelovi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudzba_has_Djelovi_Djelovi" Association="Self.FK_Narudzba_has_Djelovi_Djelovi">
+            <End Role="Djelovi" EntitySet="Djelovi" />
+            <End Role="Narudzba_has_Djelovi" EntitySet="Narudzba_has_Djelovi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudzba_has_Djelovi_Narudzba" Association="Self.FK_Narudzba_has_Djelovi_Narudzba">
+            <End Role="Narudzba" EntitySet="Narudzba" />
+            <End Role="Narudzba_has_Djelovi" EntitySet="Narudzba_has_Djelovi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudzba_Zaposlenik" Association="Self.FK_Narudzba_Zaposlenik">
+            <End Role="Zaposlenik" EntitySet="Zaposlenik" />
+            <End Role="Narudzba" EntitySet="Narudzba" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudzba_Zaposlenik1" Association="Self.FK_Narudzba_Zaposlenik1">
+            <End Role="Zaposlenik" EntitySet="Zaposlenik" />
+            <End Role="Narudzba" EntitySet="Narudzba" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Racun_Has_Djelovi_Djelovi" Association="Self.FK_Racun_Has_Djelovi_Djelovi">
+            <End Role="Djelovi" EntitySet="Djelovi" />
+            <End Role="Racun_Has_Djelovi" EntitySet="Racun_Has_Djelovi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Racun_Has_Djelovi_Racun" Association="Self.FK_Racun_Has_Djelovi_Racun">
+            <End Role="Racun" EntitySet="Racun" />
+            <End Role="Racun_Has_Djelovi" EntitySet="Racun_Has_Djelovi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Racun_Trgovina" Association="Self.FK_Racun_Trgovina">
+            <End Role="Trgovina" EntitySet="Trgovina" />
+            <End Role="Racun" EntitySet="Racun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Racun_Zaposlenik" Association="Self.FK_Racun_Zaposlenik">
+            <End Role="Zaposlenik" EntitySet="Zaposlenik" />
+            <End Role="Racun" EntitySet="Racun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rezervacija_has_Djelovi_Djelovi" Association="Self.FK_Rezervacija_has_Djelovi_Djelovi">
+            <End Role="Djelovi" EntitySet="Djelovi" />
+            <End Role="Rezervacija_has_Djelovi" EntitySet="Rezervacija_has_Djelovi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rezervacija_has_Djelovi_Rezervacija" Association="Self.FK_Rezervacija_has_Djelovi_Rezervacija">
+            <End Role="Rezervacija" EntitySet="Rezervacija" />
+            <End Role="Rezervacija_has_Djelovi" EntitySet="Rezervacija_has_Djelovi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rezervacija_Zaposlenik" Association="Self.FK_Rezervacija_Zaposlenik">
+            <End Role="Zaposlenik" EntitySet="Zaposlenik" />
+            <End Role="Rezervacija" EntitySet="Rezervacija" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zaposlenik_has_Tip_Tip" Association="Self.FK_Zaposlenik_has_Tip_Tip">
+            <End Role="Tip" EntitySet="Tip" />
+            <End Role="Zaposlenik_has_Tip" EntitySet="Zaposlenik_has_Tip" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zaposlenik_has_Tip_Zaposlenik" Association="Self.FK_Zaposlenik_has_Tip_Zaposlenik">
+            <End Role="Zaposlenik" EntitySet="Zaposlenik" />
+            <End Role="Zaposlenik_has_Tip" EntitySet="Zaposlenik_has_Tip" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProgramskoInzenjerstvoDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Djelovi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="proizodac" Type="Int32" Nullable="false" />
+          <Property Name="modelVozila" Type="Int32" Nullable="false" />
+          <Property Name="kategorija" Type="Int32" Nullable="false" />
+          <Property Name="maloprodajnaCijena" Type="Int32" Nullable="false" />
+          <Property Name="veleprodajnaCijena" Type="Int32" Nullable="false" />
+          <Property Name="kolicina" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Kategorija1" Relationship="Self.FK_Djelovi_Kategorija" FromRole="Djelovi" ToRole="Kategorija" />
+          <NavigationProperty Name="Model_vozila" Relationship="Self.FK_Djelovi_Model_vozila" FromRole="Djelovi" ToRole="Model_vozila" />
+          <NavigationProperty Name="Proizvodac" Relationship="Self.FK_Djelovi_Proizvodac" FromRole="Djelovi" ToRole="Proizvodac" />
+          <NavigationProperty Name="Narudzba_has_Djelovi" Relationship="Self.FK_Narudzba_has_Djelovi_Djelovi" FromRole="Djelovi" ToRole="Narudzba_has_Djelovi" />
+          <NavigationProperty Name="Racun_Has_Djelovi" Relationship="Self.FK_Racun_Has_Djelovi_Djelovi" FromRole="Djelovi" ToRole="Racun_Has_Djelovi" />
+          <NavigationProperty Name="Rezervacija_has_Djelovi" Relationship="Self.FK_Rezervacija_has_Djelovi_Djelovi" FromRole="Djelovi" ToRole="Rezervacija_has_Djelovi" />
+        </EntityType>
+        <EntityType Name="Kategorija">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="opis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hangar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Djelovis" Relationship="Self.FK_Djelovi_Kategorija" FromRole="Kategorija" ToRole="Djelovi" />
+        </EntityType>
+        <EntityType Name="Model_vozila">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="marka" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Djelovis" Relationship="Self.FK_Djelovi_Model_vozila" FromRole="Model_vozila" ToRole="Djelovi" />
+        </EntityType>
+        <EntityType Name="Narudzba">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="datumKreiranja" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="datumPotvrde" Type="DateTime" Precision="0" />
+          <Property Name="iznos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="kreirao" Type="Int32" />
+          <Property Name="odobreno" Type="Boolean" Nullable="false" />
+          <Property Name="odobrio" Type="Int32" />
+          <NavigationProperty Name="Narudzba_has_Djelovi" Relationship="Self.FK_Narudzba_has_Djelovi_Narudzba" FromRole="Narudzba" ToRole="Narudzba_has_Djelovi" />
+          <NavigationProperty Name="Zaposlenik" Relationship="Self.FK_Narudzba_Zaposlenik" FromRole="Narudzba" ToRole="Zaposlenik" />
+          <NavigationProperty Name="Zaposlenik1" Relationship="Self.FK_Narudzba_Zaposlenik1" FromRole="Narudzba" ToRole="Zaposlenik" />
+        </EntityType>
+        <EntityType Name="Narudzba_has_Djelovi">
+          <Key>
+            <PropertyRef Name="id_narudzbe" />
+            <PropertyRef Name="id_djelovi" />
+          </Key>
+          <Property Name="id_narudzbe" Type="Int32" Nullable="false" />
+          <Property Name="id_djelovi" Type="Int32" Nullable="false" />
+          <Property Name="kolicina" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Djelovi" Relationship="Self.FK_Narudzba_has_Djelovi_Djelovi" FromRole="Narudzba_has_Djelovi" ToRole="Djelovi" />
+          <NavigationProperty Name="Narudzba" Relationship="Self.FK_Narudzba_has_Djelovi_Narudzba" FromRole="Narudzba_has_Djelovi" ToRole="Narudzba" />
+        </EntityType>
+        <EntityType Name="Proizvodac">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Djelovis" Relationship="Self.FK_Djelovi_Proizvodac" FromRole="Proizvodac" ToRole="Djelovi" />
+        </EntityType>
+        <EntityType Name="Racun">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="zaposlenik" Type="Int32" />
+          <Property Name="iznos" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Maloprodaja_veleprodaja" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="trgovina" Type="Int32" />
+          <NavigationProperty Name="Racun_Has_Djelovi" Relationship="Self.FK_Racun_Has_Djelovi_Racun" FromRole="Racun" ToRole="Racun_Has_Djelovi" />
+          <NavigationProperty Name="Trgovina1" Relationship="Self.FK_Racun_Trgovina" FromRole="Racun" ToRole="Trgovina" />
+          <NavigationProperty Name="Zaposlenik1" Relationship="Self.FK_Racun_Zaposlenik" FromRole="Racun" ToRole="Zaposlenik" />
+        </EntityType>
+        <EntityType Name="Racun_Has_Djelovi">
+          <Key>
+            <PropertyRef Name="id_racun" />
+            <PropertyRef Name="id_djelovi" />
+          </Key>
+          <Property Name="id_racun" Type="Int32" Nullable="false" />
+          <Property Name="id_djelovi" Type="Int32" Nullable="false" />
+          <Property Name="kolicina" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Djelovi" Relationship="Self.FK_Racun_Has_Djelovi_Djelovi" FromRole="Racun_Has_Djelovi" ToRole="Djelovi" />
+          <NavigationProperty Name="Racun" Relationship="Self.FK_Racun_Has_Djelovi_Racun" FromRole="Racun_Has_Djelovi" ToRole="Racun" />
+        </EntityType>
+        <EntityType Name="Rezervacija">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kupacIme" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="kupacPrezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="kupacEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="izvrseno" Type="Boolean" Nullable="false" />
+          <Property Name="napravioNarudzbu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Rezervacija_has_Djelovi" Relationship="Self.FK_Rezervacija_has_Djelovi_Rezervacija" FromRole="Rezervacija" ToRole="Rezervacija_has_Djelovi" />
+          <NavigationProperty Name="Zaposlenik" Relationship="Self.FK_Rezervacija_Zaposlenik" FromRole="Rezervacija" ToRole="Zaposlenik" />
+        </EntityType>
+        <EntityType Name="Rezervacija_has_Djelovi">
+          <Key>
+            <PropertyRef Name="id_rezervacija" />
+            <PropertyRef Name="int_djelovi" />
+          </Key>
+          <Property Name="id_rezervacija" Type="Int32" Nullable="false" />
+          <Property Name="int_djelovi" Type="Int32" Nullable="false" />
+          <Property Name="kolicina" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Djelovi" Relationship="Self.FK_Rezervacija_has_Djelovi_Djelovi" FromRole="Rezervacija_has_Djelovi" ToRole="Djelovi" />
+          <NavigationProperty Name="Rezervacija" Relationship="Self.FK_Rezervacija_has_Djelovi_Rezervacija" FromRole="Rezervacija_has_Djelovi" ToRole="Rezervacija" />
+        </EntityType>
+        <EntityType Name="Tip">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="opis" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Zaposlenik_has_Tip" Relationship="Self.FK_Zaposlenik_has_Tip_Tip" FromRole="Tip" ToRole="Zaposlenik_has_Tip" />
+        </EntityType>
+        <EntityType Name="Trgovina">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="oib" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Racuns" Relationship="Self.FK_Racun_Trgovina" FromRole="Trgovina" ToRole="Racun" />
+        </EntityType>
+        <EntityType Name="Zaposlenik">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ime" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="prezime" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="adresa" Type="String" MaxLength="70" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="oib" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="korisnickoIme" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="lozinka" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Narudzbas" Relationship="Self.FK_Narudzba_Zaposlenik" FromRole="Zaposlenik" ToRole="Narudzba" />
+          <NavigationProperty Name="Narudzbas1" Relationship="Self.FK_Narudzba_Zaposlenik1" FromRole="Zaposlenik" ToRole="Narudzba" />
+          <NavigationProperty Name="Racuns" Relationship="Self.FK_Racun_Zaposlenik" FromRole="Zaposlenik" ToRole="Racun" />
+          <NavigationProperty Name="Rezervacijas" Relationship="Self.FK_Rezervacija_Zaposlenik" FromRole="Zaposlenik" ToRole="Rezervacija" />
+          <NavigationProperty Name="Zaposlenik_has_Tip" Relationship="Self.FK_Zaposlenik_has_Tip_Zaposlenik" FromRole="Zaposlenik" ToRole="Zaposlenik_has_Tip" />
+        </EntityType>
+        <EntityType Name="Zaposlenik_has_Tip">
+          <Key>
+            <PropertyRef Name="id_zaposlenik" />
+            <PropertyRef Name="id_tip" />
+          </Key>
+          <Property Name="id_zaposlenik" Type="Int32" Nullable="false" />
+          <Property Name="id_tip" Type="Int32" Nullable="false" />
+          <Property Name="datum" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Tip" Relationship="Self.FK_Zaposlenik_has_Tip_Tip" FromRole="Zaposlenik_has_Tip" ToRole="Tip" />
+          <NavigationProperty Name="Zaposlenik" Relationship="Self.FK_Zaposlenik_has_Tip_Zaposlenik" FromRole="Zaposlenik_has_Tip" ToRole="Zaposlenik" />
+        </EntityType>
+        <Association Name="FK_Djelovi_Kategorija">
+          <End Role="Kategorija" Type="Self.Kategorija" Multiplicity="1" />
+          <End Role="Djelovi" Type="Self.Djelovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kategorija">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Djelovi">
+              <PropertyRef Name="kategorija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Djelovi_Model_vozila">
+          <End Role="Model_vozila" Type="Self.Model_vozila" Multiplicity="1" />
+          <End Role="Djelovi" Type="Self.Djelovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Model_vozila">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Djelovi">
+              <PropertyRef Name="modelVozila" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Djelovi_Proizvodac">
+          <End Role="Proizvodac" Type="Self.Proizvodac" Multiplicity="1" />
+          <End Role="Djelovi" Type="Self.Djelovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proizvodac">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Djelovi">
+              <PropertyRef Name="proizodac" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudzba_has_Djelovi_Djelovi">
+          <End Role="Djelovi" Type="Self.Djelovi" Multiplicity="1" />
+          <End Role="Narudzba_has_Djelovi" Type="Self.Narudzba_has_Djelovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Djelovi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Narudzba_has_Djelovi">
+              <PropertyRef Name="id_djelovi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Racun_Has_Djelovi_Djelovi">
+          <End Role="Djelovi" Type="Self.Djelovi" Multiplicity="1" />
+          <End Role="Racun_Has_Djelovi" Type="Self.Racun_Has_Djelovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Djelovi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Racun_Has_Djelovi">
+              <PropertyRef Name="id_djelovi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rezervacija_has_Djelovi_Djelovi">
+          <End Role="Djelovi" Type="Self.Djelovi" Multiplicity="1" />
+          <End Role="Rezervacija_has_Djelovi" Type="Self.Rezervacija_has_Djelovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Djelovi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Rezervacija_has_Djelovi">
+              <PropertyRef Name="int_djelovi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudzba_has_Djelovi_Narudzba">
+          <End Role="Narudzba" Type="Self.Narudzba" Multiplicity="1" />
+          <End Role="Narudzba_has_Djelovi" Type="Self.Narudzba_has_Djelovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Narudzba">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Narudzba_has_Djelovi">
+              <PropertyRef Name="id_narudzbe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudzba_Zaposlenik">
+          <End Role="Zaposlenik" Type="Self.Zaposlenik" Multiplicity="0..1" />
+          <End Role="Narudzba" Type="Self.Narudzba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zaposlenik">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Narudzba">
+              <PropertyRef Name="kreirao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudzba_Zaposlenik1">
+          <End Role="Zaposlenik" Type="Self.Zaposlenik" Multiplicity="0..1" />
+          <End Role="Narudzba" Type="Self.Narudzba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zaposlenik">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Narudzba">
+              <PropertyRef Name="odobrio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Racun_Has_Djelovi_Racun">
+          <End Role="Racun" Type="Self.Racun" Multiplicity="1" />
+          <End Role="Racun_Has_Djelovi" Type="Self.Racun_Has_Djelovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Racun">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Racun_Has_Djelovi">
+              <PropertyRef Name="id_racun" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Racun_Trgovina">
+          <End Role="Trgovina" Type="Self.Trgovina" Multiplicity="0..1" />
+          <End Role="Racun" Type="Self.Racun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trgovina">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Racun">
+              <PropertyRef Name="trgovina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Racun_Zaposlenik">
+          <End Role="Zaposlenik" Type="Self.Zaposlenik" Multiplicity="0..1" />
+          <End Role="Racun" Type="Self.Racun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zaposlenik">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Racun">
+              <PropertyRef Name="zaposlenik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rezervacija_has_Djelovi_Rezervacija">
+          <End Role="Rezervacija" Type="Self.Rezervacija" Multiplicity="1" />
+          <End Role="Rezervacija_has_Djelovi" Type="Self.Rezervacija_has_Djelovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rezervacija">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Rezervacija_has_Djelovi">
+              <PropertyRef Name="id_rezervacija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rezervacija_Zaposlenik">
+          <End Role="Zaposlenik" Type="Self.Zaposlenik" Multiplicity="1" />
+          <End Role="Rezervacija" Type="Self.Rezervacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zaposlenik">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Rezervacija">
+              <PropertyRef Name="napravioNarudzbu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zaposlenik_has_Tip_Tip">
+          <End Role="Tip" Type="Self.Tip" Multiplicity="1" />
+          <End Role="Zaposlenik_has_Tip" Type="Self.Zaposlenik_has_Tip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tip">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Zaposlenik_has_Tip">
+              <PropertyRef Name="id_tip" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zaposlenik_has_Tip_Zaposlenik">
+          <End Role="Zaposlenik" Type="Self.Zaposlenik" Multiplicity="1" />
+          <End Role="Zaposlenik_has_Tip" Type="Self.Zaposlenik_has_Tip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zaposlenik">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Zaposlenik_has_Tip">
+              <PropertyRef Name="id_zaposlenik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProgramskoInzenjerstvoDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Djelovis" EntityType="Self.Djelovi" />
+          <EntitySet Name="Kategorijas" EntityType="Self.Kategorija" />
+          <EntitySet Name="Model_vozila" EntityType="Self.Model_vozila" />
+          <EntitySet Name="Narudzbas" EntityType="Self.Narudzba" />
+          <EntitySet Name="Narudzba_has_Djelovi" EntityType="Self.Narudzba_has_Djelovi" />
+          <EntitySet Name="Proizvodacs" EntityType="Self.Proizvodac" />
+          <EntitySet Name="Racuns" EntityType="Self.Racun" />
+          <EntitySet Name="Racun_Has_Djelovi" EntityType="Self.Racun_Has_Djelovi" />
+          <EntitySet Name="Rezervacijas" EntityType="Self.Rezervacija" />
+          <EntitySet Name="Rezervacija_has_Djelovi" EntityType="Self.Rezervacija_has_Djelovi" />
+          <EntitySet Name="Tips" EntityType="Self.Tip" />
+          <EntitySet Name="Trgovinas" EntityType="Self.Trgovina" />
+          <EntitySet Name="Zaposleniks" EntityType="Self.Zaposlenik" />
+          <EntitySet Name="Zaposlenik_has_Tip" EntityType="Self.Zaposlenik_has_Tip" />
+          <AssociationSet Name="FK_Djelovi_Kategorija" Association="Self.FK_Djelovi_Kategorija">
+            <End Role="Kategorija" EntitySet="Kategorijas" />
+            <End Role="Djelovi" EntitySet="Djelovis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Djelovi_Model_vozila" Association="Self.FK_Djelovi_Model_vozila">
+            <End Role="Model_vozila" EntitySet="Model_vozila" />
+            <End Role="Djelovi" EntitySet="Djelovis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Djelovi_Proizvodac" Association="Self.FK_Djelovi_Proizvodac">
+            <End Role="Proizvodac" EntitySet="Proizvodacs" />
+            <End Role="Djelovi" EntitySet="Djelovis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudzba_has_Djelovi_Djelovi" Association="Self.FK_Narudzba_has_Djelovi_Djelovi">
+            <End Role="Djelovi" EntitySet="Djelovis" />
+            <End Role="Narudzba_has_Djelovi" EntitySet="Narudzba_has_Djelovi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Racun_Has_Djelovi_Djelovi" Association="Self.FK_Racun_Has_Djelovi_Djelovi">
+            <End Role="Djelovi" EntitySet="Djelovis" />
+            <End Role="Racun_Has_Djelovi" EntitySet="Racun_Has_Djelovi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rezervacija_has_Djelovi_Djelovi" Association="Self.FK_Rezervacija_has_Djelovi_Djelovi">
+            <End Role="Djelovi" EntitySet="Djelovis" />
+            <End Role="Rezervacija_has_Djelovi" EntitySet="Rezervacija_has_Djelovi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudzba_has_Djelovi_Narudzba" Association="Self.FK_Narudzba_has_Djelovi_Narudzba">
+            <End Role="Narudzba" EntitySet="Narudzbas" />
+            <End Role="Narudzba_has_Djelovi" EntitySet="Narudzba_has_Djelovi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudzba_Zaposlenik" Association="Self.FK_Narudzba_Zaposlenik">
+            <End Role="Zaposlenik" EntitySet="Zaposleniks" />
+            <End Role="Narudzba" EntitySet="Narudzbas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudzba_Zaposlenik1" Association="Self.FK_Narudzba_Zaposlenik1">
+            <End Role="Zaposlenik" EntitySet="Zaposleniks" />
+            <End Role="Narudzba" EntitySet="Narudzbas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Racun_Has_Djelovi_Racun" Association="Self.FK_Racun_Has_Djelovi_Racun">
+            <End Role="Racun" EntitySet="Racuns" />
+            <End Role="Racun_Has_Djelovi" EntitySet="Racun_Has_Djelovi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Racun_Trgovina" Association="Self.FK_Racun_Trgovina">
+            <End Role="Trgovina" EntitySet="Trgovinas" />
+            <End Role="Racun" EntitySet="Racuns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Racun_Zaposlenik" Association="Self.FK_Racun_Zaposlenik">
+            <End Role="Zaposlenik" EntitySet="Zaposleniks" />
+            <End Role="Racun" EntitySet="Racuns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rezervacija_has_Djelovi_Rezervacija" Association="Self.FK_Rezervacija_has_Djelovi_Rezervacija">
+            <End Role="Rezervacija" EntitySet="Rezervacijas" />
+            <End Role="Rezervacija_has_Djelovi" EntitySet="Rezervacija_has_Djelovi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rezervacija_Zaposlenik" Association="Self.FK_Rezervacija_Zaposlenik">
+            <End Role="Zaposlenik" EntitySet="Zaposleniks" />
+            <End Role="Rezervacija" EntitySet="Rezervacijas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zaposlenik_has_Tip_Tip" Association="Self.FK_Zaposlenik_has_Tip_Tip">
+            <End Role="Tip" EntitySet="Tips" />
+            <End Role="Zaposlenik_has_Tip" EntitySet="Zaposlenik_has_Tip" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zaposlenik_has_Tip_Zaposlenik" Association="Self.FK_Zaposlenik_has_Tip_Zaposlenik">
+            <End Role="Zaposlenik" EntitySet="Zaposleniks" />
+            <End Role="Zaposlenik_has_Tip" EntitySet="Zaposlenik_has_Tip" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProgramskoInzenjerstvoDBModelStoreContainer" CdmEntityContainer="ProgramskoInzenjerstvoDBEntities">
+          <EntitySetMapping Name="Djelovis">
+            <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.Djelovi">
+              <MappingFragment StoreEntitySet="Djelovi">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="proizodac" ColumnName="proizodac" />
+                <ScalarProperty Name="modelVozila" ColumnName="modelVozila" />
+                <ScalarProperty Name="kategorija" ColumnName="kategorija" />
+                <ScalarProperty Name="maloprodajnaCijena" ColumnName="maloprodajnaCijena" />
+                <ScalarProperty Name="veleprodajnaCijena" ColumnName="veleprodajnaCijena" />
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kategorijas">
+            <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.Kategorija">
+              <MappingFragment StoreEntitySet="Kategorija">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+                <ScalarProperty Name="hangar" ColumnName="hangar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Model_vozila">
+            <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.Model_vozila">
+              <MappingFragment StoreEntitySet="Model_vozila">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="marka" ColumnName="marka" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Narudzbas">
+            <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.Narudzba">
+              <MappingFragment StoreEntitySet="Narudzba">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="datumKreiranja" ColumnName="datumKreiranja" />
+                <ScalarProperty Name="datumPotvrde" ColumnName="datumPotvrde" />
+                <ScalarProperty Name="iznos" ColumnName="iznos" />
+                <ScalarProperty Name="kreirao" ColumnName="kreirao" />
+                <ScalarProperty Name="odobreno" ColumnName="odobreno" />
+                <ScalarProperty Name="odobrio" ColumnName="odobrio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Narudzba_has_Djelovi">
+            <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.Narudzba_has_Djelovi">
+              <MappingFragment StoreEntitySet="Narudzba_has_Djelovi">
+                <ScalarProperty Name="id_narudzbe" ColumnName="id_narudzbe" />
+                <ScalarProperty Name="id_djelovi" ColumnName="id_djelovi" />
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proizvodacs">
+            <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.Proizvodac">
+              <MappingFragment StoreEntitySet="Proizvodac">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Racuns">
+            <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.Racun">
+              <MappingFragment StoreEntitySet="Racun">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="datum" ColumnName="datum" />
+                <ScalarProperty Name="zaposlenik" ColumnName="zaposlenik" />
+                <ScalarProperty Name="iznos" ColumnName="iznos" />
+                <ScalarProperty Name="Maloprodaja_veleprodaja" ColumnName="Maloprodaja/veleprodaja" />
+                <ScalarProperty Name="trgovina" ColumnName="trgovina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Racun_Has_Djelovi">
+            <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.Racun_Has_Djelovi">
+              <MappingFragment StoreEntitySet="Racun_Has_Djelovi">
+                <ScalarProperty Name="id_racun" ColumnName="id_racun" />
+                <ScalarProperty Name="id_djelovi" ColumnName="id_djelovi" />
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rezervacijas">
+            <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.Rezervacija">
+              <MappingFragment StoreEntitySet="Rezervacija">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="kupacIme" ColumnName="kupacIme" />
+                <ScalarProperty Name="kupacPrezime" ColumnName="kupacPrezime" />
+                <ScalarProperty Name="kupacEmail" ColumnName="kupacEmail" />
+                <ScalarProperty Name="izvrseno" ColumnName="izvrseno" />
+                <ScalarProperty Name="napravioNarudzbu" ColumnName="napravioNarudzbu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rezervacija_has_Djelovi">
+            <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.Rezervacija_has_Djelovi">
+              <MappingFragment StoreEntitySet="Rezervacija_has_Djelovi">
+                <ScalarProperty Name="id_rezervacija" ColumnName="id_rezervacija" />
+                <ScalarProperty Name="int_djelovi" ColumnName="int_djelovi" />
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tips">
+            <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.Tip">
+              <MappingFragment StoreEntitySet="Tip">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trgovinas">
+            <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.Trgovina">
+              <MappingFragment StoreEntitySet="Trgovina">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="adresa" ColumnName="adresa" />
+                <ScalarProperty Name="oib" ColumnName="oib" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zaposleniks">
+            <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.Zaposlenik">
+              <MappingFragment StoreEntitySet="Zaposlenik">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="adresa" ColumnName="adresa" />
+                <ScalarProperty Name="oib" ColumnName="oib" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="korisnickoIme" ColumnName="korisnickoIme" />
+                <ScalarProperty Name="lozinka" ColumnName="lozinka" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zaposlenik_has_Tip">
+            <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.Zaposlenik_has_Tip">
+              <MappingFragment StoreEntitySet="Zaposlenik_has_Tip">
+                <ScalarProperty Name="id_zaposlenik" ColumnName="id_zaposlenik" />
+                <ScalarProperty Name="id_tip" ColumnName="id_tip" />
+                <ScalarProperty Name="datum" ColumnName="datum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
