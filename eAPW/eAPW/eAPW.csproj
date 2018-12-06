@@ -33,8 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,16 +57,82 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Djelovi.cs">
+      <DependentUpon>eAPWModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="eAPWModelData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eAPWModelData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="eAPWModelData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eAPWModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="eAPWModelData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eAPWModelData.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGlavna.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmGlavna.Designer.cs">
+      <DependentUpon>FrmGlavna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrijava.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrijava.Designer.cs">
+      <DependentUpon>FrmPrijava.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kategorija.cs">
+      <DependentUpon>eAPWModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model_vozila.cs">
+      <DependentUpon>eAPWModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Narudzba.cs">
+      <DependentUpon>eAPWModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Narudzba_has_Djelovi.cs">
+      <DependentUpon>eAPWModelData.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Proizvodac.cs">
+      <DependentUpon>eAPWModelData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Racun.cs">
+      <DependentUpon>eAPWModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Racun_Has_Djelovi.cs">
+      <DependentUpon>eAPWModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rezervacija.cs">
+      <DependentUpon>eAPWModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rezervacija_has_Djelovi.cs">
+      <DependentUpon>eAPWModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tip.cs">
+      <DependentUpon>eAPWModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Trgovina.cs">
+      <DependentUpon>eAPWModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Zaposlenik.cs">
+      <DependentUpon>eAPWModelData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Zaposlenik_has_Tip.cs">
+      <DependentUpon>eAPWModelData.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmGlavna.resx">
+      <DependentUpon>FrmGlavna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrijava.resx">
+      <DependentUpon>FrmPrijava.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +143,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="eAPWModelData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>eAPWModelData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="eAPWModelData.edmx.diagram">
+      <DependentUpon>eAPWModelData.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -78,6 +163,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="eAPWModelData.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>eAPWModelData.edmx</DependentUpon>
+      <LastGenOutput>eAPWModelData.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="eAPWModelData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>eAPWModelData.edmx</DependentUpon>
+      <LastGenOutput>eAPWModelData.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

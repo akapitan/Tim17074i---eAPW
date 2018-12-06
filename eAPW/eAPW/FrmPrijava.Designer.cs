@@ -1,6 +1,6 @@
 ﻿namespace eAPW
 {
-    partial class Form1
+    partial class FrmPrijava
     {
         /// <summary>
         /// Required designer variable.
@@ -42,6 +42,7 @@
             this.txtLozinka.Name = "txtLozinka";
             this.txtLozinka.Size = new System.Drawing.Size(100, 22);
             this.txtLozinka.TabIndex = 15;
+            this.txtLozinka.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLozinka_KeyDown);
             // 
             // txtKorisnicko
             // 
@@ -49,6 +50,7 @@
             this.txtKorisnicko.Name = "txtKorisnicko";
             this.txtKorisnicko.Size = new System.Drawing.Size(100, 22);
             this.txtKorisnicko.TabIndex = 14;
+            this.txtKorisnicko.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKorisnicko_KeyDown);
             // 
             // buttonPrijavaOdustani
             // 
@@ -76,6 +78,7 @@
             this.buttonPrijava.TabIndex = 16;
             this.buttonPrijava.Text = "Prijava";
             this.buttonPrijava.UseVisualStyleBackColor = true;
+            this.buttonPrijava.Click += new System.EventHandler(this.buttonPrijava_Click);
             // 
             // label1
             // 
@@ -86,7 +89,7 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Korisničko ime";
             // 
-            // Form1
+            // FrmPrijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -97,7 +100,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonPrijava);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "FrmPrijava";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

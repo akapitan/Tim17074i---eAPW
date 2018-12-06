@@ -10,11 +10,68 @@ using System.Windows.Forms;
 
 namespace eAPW
 {
-    public partial class Form1 : Form
+    public partial class FrmPrijava : Form
     {
-        public Form1()
+        public FrmPrijava()
         {
             InitializeComponent();
+        }
+        private void ProvjeriZaposlenika()
+        {
+            using (var db = new ProgramskoInzenjerstvoDBEntities())
+            {
+                var korIme = (from z in db.Zaposleniks where z.korisnickoIme == txtKorisnicko.Text select z).SingleOrDefault();
+
+
+                if (korIme == null)
+                {
+                    MessageBox.Show("Krivo korisničko ime");
+                }
+                else
+                {
+                    if (korIme.lozinka.Trim() == txtLozinka.Text)
+                    {
+                        MessageBox.Show("Uspješna prijava");
+                        FrmGlavna MDI = new FrmGlavna(korIme);
+                        MDI.Show();
+                        this.Hide();
+                    }
+                    else MessageBox.Show("Pokušaj ponovo");
+                }
+            }
+        }
+
+        private void buttonPrijava_Click(object sender, EventArgs e)
+        {
+            ProvjeriZaposlenika();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ProvjeriZaposlenika();
+
+            this.Close();
+        }
+        
+
+        private void buttonPrijavaOdustani_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void txtKorisnicko_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ProvjeriZaposlenika();
+            }
+        }
+
+        private void txtLozinka_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ProvjeriZaposlenika();
+            }
         }
     }
 }
