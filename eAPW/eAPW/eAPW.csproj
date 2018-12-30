@@ -75,6 +75,12 @@
     <Compile Include="Djelovi.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FrmDodajStavkeNaRacun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDodajStavkeNaRacun.Designer.cs">
+      <DependentUpon>FrmDodajStavkeNaRacun.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGlavna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,12 @@
     </Compile>
     <Compile Include="FrmSkladiste.Designer.cs">
       <DependentUpon>FrmSkladiste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTvrtkePregled.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTvrtkePregled.Designer.cs">
+      <DependentUpon>FrmTvrtkePregled.cs</DependentUpon>
     </Compile>
     <Compile Include="Kategorija.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
@@ -176,8 +188,17 @@
     <EmbeddedResource Include="FrmRacuni.resx">
       <DependentUpon>FrmRacuni.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRacunNoviMaloprodaja.resx">
+      <DependentUpon>FrmRacunNoviMaloprodaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRacunNoviVeleprodaja.resx">
+      <DependentUpon>FrmRacunNoviVeleprodaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSkladiste.resx">
       <DependentUpon>FrmSkladiste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTvrtkePregled.resx">
+      <DependentUpon>FrmTvrtkePregled.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
