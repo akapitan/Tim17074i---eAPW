@@ -124,9 +124,10 @@ namespace eAPW
                 db.SaveChanges();
             }
             ispisDatagridNaSkladistu();
+            provjeriRezervacije();
         }
 
-        public void pripremiMail(string primateljEmail, List<Djelovi> listaDjelova)
+        public bool posaljiMail(string primateljEmail, string mailBody)
         {
             MailMessage mail = new MailMessage("akapitan@foi.hr", primateljEmail);
             SmtpClient client = new SmtpClient();
@@ -136,14 +137,35 @@ namespace eAPW
             client.Host = "mail.foi.hr";
             client.Credentials = new System.Net.NetworkCredential("akapitan", "foi-OranGisi13");
             mail.Subject = "Stigli su Vaši naručeni proizvodi";
-            string mailBody = "Sljedeći proizvodi su ponovo u našoj ponudi : \n";
+
+            mail.Body = mailBody;
+            try
+            {
+                client.Send(mail);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                
+            }
+            
+        }
+
+        public void pripremiMail(string primateljEmail, List<Djelovi> listaDjelova)
+        {
+
+            string mailBody = "Sljedeći proizvodi su ponovo u našoj ponudi : \n\n";
             foreach (Djelovi dio in listaDjelova)
             {
-                mailBody += "   -" + dio.naziv + "\n";
+                mailBody += "  - " + dio.naziv + "\n";
             }
-            mailBody += " \n Bokili";
-            mail.Body = mailBody;
-            client.Send(mail);
+            mailBody += " \n\n Vaš eAPW - Auto Parts Werehouse\n Varaždinska \n 42000 Varaždin";
+
+            if (posaljiMail(primateljEmail, mailBody) == true) MessageBox.Show("Uspješno se poslali mail na adresu " + primateljEmail);
+            else MessageBox.Show("Došlo je do pogreške kod slanja emaila");
+
+                       
         }
 
         public void provjeriRezervacije()
@@ -154,10 +176,15 @@ namespace eAPW
                 {
                     List<Djelovi> listaDjelovaRezervacija = new List<Djelovi>();
 
-                    foreach (Rezervacija_has_Djelovi rhd in rez.Rezervacija_has_Djelovi)
+                    foreach (Rezervacija_has_Djelovi rhd in rez.Rezervacija_has_Djelovi.Where(x => x.Lokacija.naziv == FrmGlavna.prijavljenaLokacija.naziv))
                     {
                         Djelovi dio = db.Djelovis.Where(x => x.id == rhd.int_djelovi).Single();
-                        
+                        Lokacija_has_djelovi lhd = db.Lokacija_has_djelovi.Where(y => y.id_djelovi == dio.id).SingleOrDefault();
+
+                        if(rhd.kolicina <= lhd.kolicina)
+                        {
+                            listaDjelovaRezervacija.Add(dio);
+                        }                       
                     }
                     if (listaDjelovaRezervacija.Count > 0 && listaDjelovaRezervacija.Count == rez.Rezervacija_has_Djelovi.Count)
                     {
