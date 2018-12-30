@@ -36,5 +36,13 @@ namespace eAPW
         {
             Application.Exit();
         }
+
+        private void prodajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRacuni Fskladiste = new FrmRacuni();
+            Fskladiste.MdiParent = this;
+            Fskladiste.WindowState = FormWindowState.Maximized;
+            Fskladiste.Show();
+        }
     }
 }

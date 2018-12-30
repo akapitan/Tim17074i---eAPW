@@ -102,6 +102,7 @@
             this.prodajaToolStripMenuItem.Name = "prodajaToolStripMenuItem";
             this.prodajaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.prodajaToolStripMenuItem.Text = "Prodaja";
+            this.prodajaToolStripMenuItem.Click += new System.EventHandler(this.prodajaToolStripMenuItem_Click);
             // 
             // narudžbaToolStripMenuItem
             // 

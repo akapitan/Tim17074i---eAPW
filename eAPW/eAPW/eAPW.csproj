@@ -87,6 +87,30 @@
     <Compile Include="FrmPrijava.Designer.cs">
       <DependentUpon>FrmPrijava.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRacuni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRacuni.Designer.cs">
+      <DependentUpon>FrmRacuni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRacunNoviMaloprodaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRacunNoviMaloprodaja.Designer.cs">
+      <DependentUpon>FrmRacunNoviMaloprodaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRacunNoviVeleprodaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRacunNoviVeleprodaja.Designer.cs">
+      <DependentUpon>FrmRacunNoviVeleprodaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRacunPrikazi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRacunPrikazi.Designer.cs">
+      <DependentUpon>FrmRacunPrikazi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSkladiste.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrijava.resx">
       <DependentUpon>FrmPrijava.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRacuni.resx">
+      <DependentUpon>FrmRacuni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSkladiste.resx">
       <DependentUpon>FrmSkladiste.cs</DependentUpon>
