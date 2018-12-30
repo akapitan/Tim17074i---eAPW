@@ -15,6 +15,12 @@ namespace eAPW
         public FrmPrijava()
         {
             InitializeComponent();
+            using (var db = new ProgramskoInzenjerstvoDBEntities())
+            {
+                var lokacije = (from z in db.Lokacijas select z).ToList();
+                cBoxLokacija.DataSource = lokacije;
+            }
+
         }
         private void ProvjeriZaposlenika()
         {
@@ -29,14 +35,23 @@ namespace eAPW
                 }
                 else
                 {
-                    if (korIme.lozinka.Trim() == txtLozinka.Text)
+                    Lokacija l = cBoxLokacija.SelectedItem as Lokacija;
+                    if(korIme.radnoMjesto == l.id)
                     {
-                        MessageBox.Show("Uspješna prijava");
-                        FrmGlavna MDI = new FrmGlavna(korIme);
-                        MDI.Show();
-                        this.Hide();
+                        if (korIme.lozinka.Trim() == txtLozinka.Text)
+                        {
+                            MessageBox.Show("Uspješna prijava");
+                            FrmGlavna MDI = new FrmGlavna(korIme);
+                            MDI.Show();
+                            this.Hide();
+                        }
+                        else MessageBox.Show("Pokušaj ponovo");
                     }
-                    else MessageBox.Show("Pokušaj ponovo");
+                    else
+                    {
+                        MessageBox.Show("Niste prijavljeni na odabrano radno mjesto");
+                    }
+                    
                 }
             }
         }

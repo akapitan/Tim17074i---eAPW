@@ -32,7 +32,9 @@ namespace eAPW
         public string email { get; set; }
         public string korisnickoIme { get; set; }
         public string lozinka { get; set; }
+        public Nullable<int> radnoMjesto { get; set; }
     
+        public virtual Lokacija Lokacija { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Narudzba> Narudzbas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

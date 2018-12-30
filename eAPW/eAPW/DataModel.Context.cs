@@ -27,6 +27,8 @@ namespace eAPW
     
         public virtual DbSet<Djelovi> Djelovis { get; set; }
         public virtual DbSet<Kategorija> Kategorijas { get; set; }
+        public virtual DbSet<Lokacija> Lokacijas { get; set; }
+        public virtual DbSet<Lokacija_has_djelovi> Lokacija_has_djelovi { get; set; }
         public virtual DbSet<Model_vozila> Model_vozila { get; set; }
         public virtual DbSet<Narudzba> Narudzbas { get; set; }
         public virtual DbSet<Narudzba_has_Djelovi> Narudzba_has_Djelovi { get; set; }
