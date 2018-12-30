@@ -12,13 +12,15 @@ namespace eAPW
 {
     public partial class FrmGlavna : Form
     {
-        private static Zaposlenik prijavljeniKorisnik;
+        public static Zaposlenik prijavljeniKorisnik;
+        public static Lokacija prijavljenaLokacija;
 
-        public FrmGlavna(Zaposlenik k)
+        public FrmGlavna(Zaposlenik k, Lokacija l)
         {
             InitializeComponent();
             prijavljeniKorisnik = k;
             lblKorisnickoIme.Text = prijavljeniKorisnik.korisnickoIme;
+            prijavljenaLokacija = l;
         }
 
         private void skladišteToolStripMenuItem_Click(object sender, EventArgs e)

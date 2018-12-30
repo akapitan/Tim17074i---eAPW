@@ -62,6 +62,7 @@
             this.buttonPrijavaOdustani.TabIndex = 17;
             this.buttonPrijavaOdustani.Text = "Odustani";
             this.buttonPrijavaOdustani.UseVisualStyleBackColor = true;
+            this.buttonPrijavaOdustani.Click += new System.EventHandler(this.buttonPrijavaOdustani_Click_1);
             // 
             // label2
             // 

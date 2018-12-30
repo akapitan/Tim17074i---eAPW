@@ -7,7 +7,7 @@
       <Diagram DiagramId="fa1a52ebe1714d1d95e5360d41b06789" Name="Diagram1">
         <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Djelovi" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Kategorija" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Lokacija" Width="1.5" PointX="1.5" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Lokacija" Width="1.5" PointX="0.5" PointY="16.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Lokacija_has_djelovi" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Model_vozila" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Narudzba" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
@@ -40,6 +40,9 @@
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Rezervacija_Zaposlenik" ManuallyRouted="false" />
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Zaposlenik_has_Tip_Tip" ManuallyRouted="false" />
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Zaposlenik_has_Tip_Zaposlenik" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.sysdiagram" Width="1.5" PointX="7.375" PointY="0.75" />
+        <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Racun_Has_Djelovi_Lokacija" />
+        <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Rezervacija_has_Djelovi_Lokacija" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

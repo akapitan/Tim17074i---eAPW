@@ -41,7 +41,7 @@ namespace eAPW
                         if (korIme.lozinka.Trim() == txtLozinka.Text)
                         {
                             MessageBox.Show("Uspješna prijava");
-                            FrmGlavna MDI = new FrmGlavna(korIme);
+                            FrmGlavna MDI = new FrmGlavna(korIme, l);
                             MDI.Show();
                             this.Hide();
                         }
@@ -87,6 +87,11 @@ namespace eAPW
             {
                 ProvjeriZaposlenika();
             }
+        }
+
+        private void buttonPrijavaOdustani_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

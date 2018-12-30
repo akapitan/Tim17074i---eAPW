@@ -19,6 +19,8 @@ namespace eAPW
         {
             this.Lokacija_has_djelovi = new HashSet<Lokacija_has_djelovi>();
             this.Zaposleniks = new HashSet<Zaposlenik>();
+            this.Racun_Has_Djelovi = new HashSet<Racun_Has_Djelovi>();
+            this.Rezervacija_has_Djelovi = new HashSet<Rezervacija_has_Djelovi>();
         }
     
         public int id { get; set; }
@@ -29,6 +31,10 @@ namespace eAPW
         public virtual ICollection<Lokacija_has_djelovi> Lokacija_has_djelovi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Zaposlenik> Zaposleniks { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Racun_Has_Djelovi> Racun_Has_Djelovi { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Rezervacija_has_Djelovi> Rezervacija_has_Djelovi { get; set; }
 
         public override string ToString()
         {

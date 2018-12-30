@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace eAPW
 {
@@ -123,6 +124,52 @@ namespace eAPW
                 db.SaveChanges();
             }
             ispisDatagridNaSkladistu();
+        }
+
+        public void pripremiMail(string primateljEmail, List<Djelovi> listaDjelova)
+        {
+            MailMessage mail = new MailMessage("akapitan@foi.hr", primateljEmail);
+            SmtpClient client = new SmtpClient();
+            client.Port = 25;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.UseDefaultCredentials = false;
+            client.Host = "mail.foi.hr";
+            client.Credentials = new System.Net.NetworkCredential("akapitan", "foi-OranGisi13");
+            mail.Subject = "Stigli su Vaši naručeni proizvodi";
+            string mailBody = "Sljedeći proizvodi su ponovo u našoj ponudi : \n";
+            foreach (Djelovi dio in listaDjelova)
+            {
+                mailBody += "   -" + dio.naziv + "\n";
+            }
+            mailBody += " \n Bokili";
+            mail.Body = mailBody;
+            client.Send(mail);
+        }
+
+        public void provjeriRezervacije()
+        {
+            using (var db = new ProgramskoInzenjerstvoDBEntities())
+            {
+                foreach (Rezervacija rez in db.Rezervacijas.Where(x => x.izvrseno == false))
+                {
+                    List<Djelovi> listaDjelovaRezervacija = new List<Djelovi>();
+
+                    foreach (Rezervacija_has_Djelovi rhd in rez.Rezervacija_has_Djelovi)
+                    {
+                        Djelovi dio = db.Djelovis.Where(x => x.id == rhd.int_djelovi).Single();
+                        
+                    }
+                    if (listaDjelovaRezervacija.Count > 0 && listaDjelovaRezervacija.Count == rez.Rezervacija_has_Djelovi.Count)
+                    {
+                        pripremiMail(rez.kupacEmail, listaDjelovaRezervacija);
+                        Rezervacija rezervacija = db.Rezervacijas.Single(x => x.id == rez.id);
+                        rezervacija.izvrseno = true;
+
+
+                    }
+                }
+                db.SaveChanges();
+            }
         }
     }
 
