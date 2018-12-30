@@ -23,6 +23,10 @@ namespace eAPW
 
         private void skladišteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FrmSkladiste Fskladiste = new FrmSkladiste();
+            Fskladiste.MdiParent = this;
+            Fskladiste.WindowState = FormWindowState.Maximized;
+            Fskladiste.Show();
 
         }
 
