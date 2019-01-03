@@ -15,6 +15,66 @@ namespace eAPW
         public FrmDodajStavkeNaRacunVeleprodaja()
         {
             InitializeComponent();
+            ispisSvihProizvoda();
+        }
+        private void ispisSvihProizvoda()
+        {
+
+            using (var db = new ProgramskoInzenjerstvoDBEntities())
+            {
+                List<Djelovi> listDjelovi = new List<Djelovi>();
+                dgvPopisStavki.DataSource = null;
+
+                foreach (Djelovi z in db.Djelovis)
+                {
+                    //z.kate = z.Kategorija1.naziv;
+                    listDjelovi.Add(z);
+                }
+
+                dgvPopisStavki.DataSource = null;
+                dgvPopisStavki.DataSource = new BindingSource(listDjelovi, null);
+
+                dgvPopisStavki.Columns["Kategorija1"].Visible = false;
+                dgvPopisStavki.Columns["Model_vozila"].Visible = false;
+                dgvPopisStavki.Columns["Proizvodac"].Visible = false;
+                dgvPopisStavki.Columns["Narudzba_has_Djelovi"].Visible = false;
+                dgvPopisStavki.Columns["Racun_Has_Djelovi"].Visible = false;
+                dgvPopisStavki.Columns["Rezervacija_has_Djelovi"].Visible = false;
+            }
+
+        }
+
+        private void btnOdustani_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ispisSvihProizvoda(string textPretraga)
+        {
+            using (var db = new ProgramskoInzenjerstvoDBEntities())
+            {
+                List<Djelovi> listDjelovi = new List<Djelovi>();
+
+                foreach (Djelovi z in db.Djelovis)
+                {
+
+                    if (z.naziv.ToLower().Contains(textPretraga) && z != null)
+                    {
+                        //z.kate = z.Kategorija1.naziv;
+                        listDjelovi.Add(z);
+                    }
+
+                }
+                dgvPopisStavki.DataSource = null;
+                dgvPopisStavki.DataSource = new BindingSource(listDjelovi, null);
+
+                dgvPopisStavki.Columns["Kategorija1"].Visible = false;
+                dgvPopisStavki.Columns["Model_vozila"].Visible = false;
+                dgvPopisStavki.Columns["Proizvodac"].Visible = false;
+                dgvPopisStavki.Columns["Narudzba_has_Djelovi"].Visible = false;
+                dgvPopisStavki.Columns["Racun_Has_Djelovi"].Visible = false;
+                dgvPopisStavki.Columns["Rezervacija_has_Djelovi"].Visible = false;
+            }
         }
     }
 }
