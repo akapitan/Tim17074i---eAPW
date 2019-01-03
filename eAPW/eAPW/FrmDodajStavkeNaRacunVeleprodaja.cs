@@ -76,5 +76,54 @@ namespace eAPW
                 dgvPopisStavki.Columns["Rezervacija_has_Djelovi"].Visible = false;
             }
         }
+
+        private void txtPretraga_TextChanged(object sender, EventArgs e)
+        {
+            ispisSvihProizvoda(txtPretraga.Text);
+        }
+
+        Djelovi selektirani;
+
+        private void dgvPopisStavki_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                selektirani = dgvPopisStavki.CurrentRow.DataBoundItem as Djelovi;
+                if (selektirani != null)
+                {
+                    txtSelektiraniNaziv.Text = selektirani.naziv;
+                    numericUpDown1.Maximum = selektirani.kolicina;
+                    numericUpDown1.Value = selektirani.kolicina;
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            if (selektirani != null)
+            {
+                if (selektirani.kolicina > 0)
+                {
+                    if (FrmRacunNoviVeleprodaja.bl.Any(x => x.id == selektirani.id && x.naziv == selektirani.naziv))
+                    {
+                        MessageBox.Show("Proizvod je već dodan na račun");
+                    }
+                    else
+                    {
+                        FrmRacunNoviVeleprodaja.bl.Add(selektirani);
+                    }
+                }
+
+                else
+                {
+                    MessageBox.Show("Tog proizvoda nema na skladištu");
+                }
+
+            }
+        }
     }
 }

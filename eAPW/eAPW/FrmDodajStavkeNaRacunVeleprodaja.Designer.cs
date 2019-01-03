@@ -99,6 +99,7 @@
             this.btnDodaj.TabIndex = 3;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // btnOdustani
             // 
@@ -116,6 +117,7 @@
             this.txtPretraga.Name = "txtPretraga";
             this.txtPretraga.Size = new System.Drawing.Size(162, 22);
             this.txtPretraga.TabIndex = 12;
+            this.txtPretraga.TextChanged += new System.EventHandler(this.txtPretraga_TextChanged);
             // 
             // label1
             // 
@@ -136,6 +138,7 @@
             this.dgvPopisStavki.RowTemplate.Height = 24;
             this.dgvPopisStavki.Size = new System.Drawing.Size(596, 347);
             this.dgvPopisStavki.TabIndex = 10;
+            this.dgvPopisStavki.SelectionChanged += new System.EventHandler(this.dgvPopisStavki_SelectionChanged);
             // 
             // FrmDodajStavkeNaRacunVeleprodaja
             // 
