@@ -12,7 +12,7 @@ namespace eAPW
 {
     public partial class UserConPrikazRacuna : UserControl
     {
-        public PrikazRacuna(string naziv, string adresa, string oib)
+        public UserConPrikazRacuna(string naziv, string adresa, string oib)
         {
             InitializeComponent();
             txtTvrtkaNaziv.Text = naziv;

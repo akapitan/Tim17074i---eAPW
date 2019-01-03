@@ -81,6 +81,12 @@
     <Compile Include="FrmDodajStavkeNaRacun.Designer.cs">
       <DependentUpon>FrmDodajStavkeNaRacun.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDodajStavkeNaRacunVeleprodaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDodajStavkeNaRacunVeleprodaja.Designer.cs">
+      <DependentUpon>FrmDodajStavkeNaRacunVeleprodaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGlavna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,12 +179,21 @@
     <Compile Include="Trgovina.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserConPrikazRacuna.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserConPrikazRacuna.Designer.cs">
+      <DependentUpon>UserConPrikazRacuna.cs</DependentUpon>
+    </Compile>
     <Compile Include="Zaposlenik.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Zaposlenik_has_Tip.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmDodajStavkeNaRacunVeleprodaja.resx">
+      <DependentUpon>FrmDodajStavkeNaRacunVeleprodaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGlavna.resx">
       <DependentUpon>FrmGlavna.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +224,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserConPrikazRacuna.resx">
+      <DependentUpon>UserConPrikazRacuna.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="DataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
