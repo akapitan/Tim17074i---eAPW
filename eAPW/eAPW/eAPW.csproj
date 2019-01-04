@@ -191,6 +191,9 @@
     <Compile Include="Zaposlenik_has_Tip.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmDodajStavkeNaRacun.resx">
+      <DependentUpon>FrmDodajStavkeNaRacun.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDodajStavkeNaRacunVeleprodaja.resx">
       <DependentUpon>FrmDodajStavkeNaRacunVeleprodaja.cs</DependentUpon>
     </EmbeddedResource>
