@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+
 
 namespace eAPW
 {
@@ -15,33 +17,33 @@ namespace eAPW
         public FrmPrijava()
         {
             InitializeComponent();
-            using (var db = new ProgramskoInzenjerstvoDBEntities())
-            {
-                var lokacije = (from z in db.Lokacijas select z).ToList();
-                cBoxLokacija.DataSource = lokacije;
-            }
-
+            
+            txtLokacija.Text = ConfigurationManager.AppSettings["LokacijaNaziv"];
+            
         }
         private void ProvjeriZaposlenika()
         {
             using (var db = new ProgramskoInzenjerstvoDBEntities())
             {
-                var korIme = (from z in db.Zaposleniks where z.korisnickoIme == txtKorisnicko.Text select z).SingleOrDefault();
+                var korisnik = (from z in db.Zaposleniks where z.korisnickoIme == txtKorisnicko.Text select z).SingleOrDefault();
 
 
-                if (korIme == null)
+                if (korisnik == null)
                 {
                     MessageBox.Show("Krivo korisničko ime");
                 }
                 else
                 {
-                    Lokacija l = cBoxLokacija.SelectedItem as Lokacija;
-                    if(korIme.radnoMjesto == l.id)
+
+                    bool jeAdmin = korisnik.Zaposlenik_has_Tip.Select(x => x.id_tip == 1).SingleOrDefault();
+                    
+
+                    if (korisnik.Lokacija.id == int.Parse(ConfigurationManager.AppSettings["LokacijaID"]) || jeAdmin)
                     {
-                        if (korIme.lozinka.Trim() == txtLozinka.Text)
+                        if (korisnik.lozinka.Trim() == txtLozinka.Text)
                         {
                             MessageBox.Show("Uspješna prijava");
-                            FrmGlavna MDI = new FrmGlavna(korIme, l);
+                            FrmGlavna MDI = new FrmGlavna(korisnik);
                             MDI.Show();
                             this.Hide();
                         }
@@ -49,7 +51,7 @@ namespace eAPW
                     }
                     else
                     {
-                        MessageBox.Show("Niste prijavljeni na odabrano radno mjesto");
+                        MessageBox.Show("Niste prijavljeni na odabrano radno mjesto ili nemate administarsu ulogu");
                     }
                     
                 }

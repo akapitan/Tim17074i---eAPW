@@ -35,14 +35,14 @@
             this.buttonPrijava = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cBoxLokacija = new System.Windows.Forms.ComboBox();
+            this.txtLokacija = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtLozinka
             // 
             this.txtLozinka.Location = new System.Drawing.Point(132, 84);
             this.txtLozinka.Name = "txtLozinka";
-            this.txtLozinka.Size = new System.Drawing.Size(121, 22);
+            this.txtLozinka.Size = new System.Drawing.Size(118, 22);
             this.txtLozinka.TabIndex = 15;
             this.txtLozinka.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLozinka_KeyDown);
             // 
@@ -50,7 +50,7 @@
             // 
             this.txtKorisnicko.Location = new System.Drawing.Point(132, 56);
             this.txtKorisnicko.Name = "txtKorisnicko";
-            this.txtKorisnicko.Size = new System.Drawing.Size(121, 22);
+            this.txtKorisnicko.Size = new System.Drawing.Size(118, 22);
             this.txtKorisnicko.TabIndex = 14;
             this.txtKorisnicko.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKorisnicko_KeyDown);
             // 
@@ -101,21 +101,22 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Poslovnica";
             // 
-            // cBoxLokacija
+            // txtLokacija
             // 
-            this.cBoxLokacija.FormattingEnabled = true;
-            this.cBoxLokacija.Location = new System.Drawing.Point(132, 26);
-            this.cBoxLokacija.Name = "cBoxLokacija";
-            this.cBoxLokacija.Size = new System.Drawing.Size(121, 24);
-            this.cBoxLokacija.TabIndex = 18;
+            this.txtLokacija.Location = new System.Drawing.Point(132, 30);
+            this.txtLokacija.Name = "txtLokacija";
+            this.txtLokacija.ReadOnly = true;
+            this.txtLokacija.Size = new System.Drawing.Size(212, 22);
+            this.txtLokacija.TabIndex = 14;
+            this.txtLokacija.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKorisnicko_KeyDown);
             // 
             // FrmPrijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(274, 182);
-            this.Controls.Add(this.cBoxLokacija);
+            this.ClientSize = new System.Drawing.Size(356, 193);
             this.Controls.Add(this.txtLozinka);
+            this.Controls.Add(this.txtLokacija);
             this.Controls.Add(this.txtKorisnicko);
             this.Controls.Add(this.buttonPrijavaOdustani);
             this.Controls.Add(this.label2);
@@ -138,7 +139,7 @@
         private System.Windows.Forms.Button buttonPrijava;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cBoxLokacija;
+        private System.Windows.Forms.TextBox txtLokacija;
     }
 }
 

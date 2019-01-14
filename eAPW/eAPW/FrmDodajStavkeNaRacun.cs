@@ -25,7 +25,7 @@ namespace eAPW
                 List<Djelovi> listDjelovi = new List<Djelovi>();
                 dgvPopisStavki.DataSource = null;
 
-                foreach (Djelovi z in db.Djelovis)
+                foreach (Djelovi z in db.Djelovis.Where(x => x.Lokacija_has_djelovi == db.Lokacija_has_djelovi.Where(y => y.id_lokacija == 1)))
                 {
                     //z.kate = z.Kategorija1.naziv;
                     listDjelovi.Add(z);

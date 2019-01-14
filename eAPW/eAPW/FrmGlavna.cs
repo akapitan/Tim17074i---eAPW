@@ -14,13 +14,15 @@ namespace eAPW
     {
         public static Zaposlenik prijavljeniKorisnik;
         public static Lokacija prijavljenaLokacija;
+        
 
-        public FrmGlavna(Zaposlenik k, Lokacija l)
+        public FrmGlavna(Zaposlenik k)
         {
             InitializeComponent();
             prijavljeniKorisnik = k;
             lblKorisnickoIme.Text = prijavljeniKorisnik.korisnickoIme;
-            prijavljenaLokacija = l;
+            
+            
         }
 
         private void skladišteToolStripMenuItem_Click(object sender, EventArgs e)
