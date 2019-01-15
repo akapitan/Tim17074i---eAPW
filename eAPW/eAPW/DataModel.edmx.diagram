@@ -4,23 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fa1a52ebe1714d1d95e5360d41b06789" Name="Diagram1">
+      <Diagram DiagramId="e21763a8abf5490db054ab2bc84fdcfc" Name="Diagram1">
         <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Djelovi" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Kategorija" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Lokacija" Width="1.5" PointX="0.5" PointY="16.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Lokacija_has_djelovi" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Lokacija" Width="1.5" PointX="1.5" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Lokacija_has_djelovi" Width="1.75" PointX="5.875" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Model_vozila" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Narudzba" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
         <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Narudzba_has_Djelovi" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Proizvodac" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Racun" Width="1.5" PointX="3" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Racun" Width="1.5" PointX="3" PointY="19.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Racun_Has_Djelovi" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Rezervacija" Width="1.5" PointX="6" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Rezervacija" Width="1.5" PointX="6" PointY="13" IsExpanded="true" />
         <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Rezervacija_has_Djelovi" Width="1.5" PointX="8.25" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Tip" Width="1.5" PointX="1.75" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Tip" Width="1.5" PointX="3.75" PointY="16.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Trgovina" Width="1.5" PointX="0.75" PointY="20.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Zaposlenik" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Zaposlenik_has_Tip" Width="1.5" PointX="4" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Zaposlenik_has_Tip" Width="1.5" PointX="6" PointY="17.375" IsExpanded="true" />
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Djelovi_Kategorija" ManuallyRouted="false" />
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Djelovi_Model_vozila" ManuallyRouted="false" />
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Djelovi_Proizvodac" ManuallyRouted="false" />
@@ -29,6 +29,8 @@
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Racun_Has_Djelovi_Djelovi" ManuallyRouted="false" />
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Rezervacija_has_Djelovi_Djelovi" ManuallyRouted="false" />
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Lokacija_has_djelovi_Lokacija" ManuallyRouted="false" />
+        <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Racun_Lokacija" ManuallyRouted="false" />
+        <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Rezervacija_Lokacija" ManuallyRouted="false" />
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Zaposlenik_Lokacija" ManuallyRouted="false" />
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Narudzba_has_Djelovi_Narudzba" ManuallyRouted="false" />
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Narudzba_Zaposlenik" ManuallyRouted="false" />
@@ -40,9 +42,6 @@
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Rezervacija_Zaposlenik" ManuallyRouted="false" />
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Zaposlenik_has_Tip_Tip" ManuallyRouted="false" />
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Zaposlenik_has_Tip_Zaposlenik" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.sysdiagram" Width="1.5" PointX="7.375" PointY="0.75" />
-        <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Racun_Has_Djelovi_Lokacija" />
-        <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Rezervacija_has_Djelovi_Lokacija" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

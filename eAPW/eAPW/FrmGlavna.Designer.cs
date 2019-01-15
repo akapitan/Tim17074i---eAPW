@@ -60,7 +60,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1016, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1084, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -75,7 +75,7 @@
             // izlazToolStripMenuItem
             // 
             this.izlazToolStripMenuItem.Name = "izlazToolStripMenuItem";
-            this.izlazToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.izlazToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.izlazToolStripMenuItem.Text = "Izlaz";
             this.izlazToolStripMenuItem.Click += new System.EventHandler(this.izlazToolStripMenuItem_Click);
             // 
@@ -129,19 +129,19 @@
             // zaposleniciToolStripMenuItem
             // 
             this.zaposleniciToolStripMenuItem.Name = "zaposleniciToolStripMenuItem";
-            this.zaposleniciToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
+            this.zaposleniciToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.zaposleniciToolStripMenuItem.Text = "Zaposlenici";
             // 
             // dobavljačiToolStripMenuItem
             // 
             this.dobavljačiToolStripMenuItem.Name = "dobavljačiToolStripMenuItem";
-            this.dobavljačiToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
+            this.dobavljačiToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.dobavljačiToolStripMenuItem.Text = "Dobavljači";
             // 
             // kategorijeToolStripMenuItem
             // 
             this.kategorijeToolStripMenuItem.Name = "kategorijeToolStripMenuItem";
-            this.kategorijeToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
+            this.kategorijeToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.kategorijeToolStripMenuItem.Text = "Trgovina";
             // 
             // reportsToolStripMenuItem
@@ -193,7 +193,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 547);
+            this.ClientSize = new System.Drawing.Size(1084, 649);
             this.Controls.Add(this.lblKorisnickoIme);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);

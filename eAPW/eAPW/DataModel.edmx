@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ProgramskoInzenjerstvoDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ProgramskoInzenjerstvoDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Djelovi">
           <Key>
             <PropertyRef Name="id" />
@@ -89,16 +89,15 @@
           <Property Name="iznos" Type="varchar" MaxLength="15" />
           <Property Name="Maloprodaja/veleprodaja" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="trgovina" Type="int" />
+          <Property Name="lokacija" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Racun_Has_Djelovi">
           <Key>
             <PropertyRef Name="id_racun" />
             <PropertyRef Name="id_djelovi" />
-            <PropertyRef Name="id_lokacija" />
           </Key>
           <Property Name="id_racun" Type="int" Nullable="false" />
           <Property Name="id_djelovi" Type="int" Nullable="false" />
-          <Property Name="id_lokacija" Type="int" Nullable="false" />
           <Property Name="kolicina" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Rezervacija">
@@ -111,27 +110,16 @@
           <Property Name="kupacEmail" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="izvrseno" Type="bit" Nullable="false" />
           <Property Name="napravioNarudzbu" Type="int" Nullable="false" />
+          <Property Name="lokacija" Type="int" />
         </EntityType>
         <EntityType Name="Rezervacija_has_Djelovi">
           <Key>
             <PropertyRef Name="id_rezervacija" />
             <PropertyRef Name="int_djelovi" />
-            <PropertyRef Name="id_lokacija" />
           </Key>
           <Property Name="id_rezervacija" Type="int" Nullable="false" />
           <Property Name="int_djelovi" Type="int" Nullable="false" />
-          <Property Name="id_lokacija" Type="int" Nullable="false" />
           <Property Name="kolicina" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Tip">
           <Key>
@@ -293,18 +281,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Racun_Has_Djelovi_Lokacija">
-          <End Role="Lokacija" Type="Self.Lokacija" Multiplicity="1" />
-          <End Role="Racun_Has_Djelovi" Type="Self.Racun_Has_Djelovi" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Lokacija">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Racun_Has_Djelovi">
-              <PropertyRef Name="id_lokacija" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Racun_Has_Djelovi_Racun">
           <End Role="Racun" Type="Self.Racun" Multiplicity="1" />
           <End Role="Racun_Has_Djelovi" Type="Self.Racun_Has_Djelovi" Multiplicity="*" />
@@ -314,6 +290,18 @@
             </Principal>
             <Dependent Role="Racun_Has_Djelovi">
               <PropertyRef Name="id_racun" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Racun_Lokacija">
+          <End Role="Lokacija" Type="Self.Lokacija" Multiplicity="1" />
+          <End Role="Racun" Type="Self.Racun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lokacija">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Racun">
+              <PropertyRef Name="lokacija" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -353,18 +341,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Rezervacija_has_Djelovi_Lokacija">
-          <End Role="Lokacija" Type="Self.Lokacija" Multiplicity="1" />
-          <End Role="Rezervacija_has_Djelovi" Type="Self.Rezervacija_has_Djelovi" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Lokacija">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Rezervacija_has_Djelovi">
-              <PropertyRef Name="id_lokacija" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Rezervacija_has_Djelovi_Rezervacija">
           <End Role="Rezervacija" Type="Self.Rezervacija" Multiplicity="1" />
           <End Role="Rezervacija_has_Djelovi" Type="Self.Rezervacija_has_Djelovi" Multiplicity="*" />
@@ -374,6 +350,18 @@
             </Principal>
             <Dependent Role="Rezervacija_has_Djelovi">
               <PropertyRef Name="id_rezervacija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rezervacija_Lokacija">
+          <End Role="Lokacija" Type="Self.Lokacija" Multiplicity="0..1" />
+          <End Role="Rezervacija" Type="Self.Rezervacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lokacija">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Rezervacija">
+              <PropertyRef Name="lokacija" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -438,7 +426,6 @@
           <EntitySet Name="Racun_Has_Djelovi" EntityType="Self.Racun_Has_Djelovi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rezervacija" EntityType="Self.Rezervacija" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rezervacija_has_Djelovi" EntityType="Self.Rezervacija_has_Djelovi" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tip" EntityType="Self.Tip" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Trgovina" EntityType="Self.Trgovina" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Zaposlenik" EntityType="Self.Zaposlenik" Schema="dbo" store:Type="Tables" />
@@ -483,13 +470,13 @@
             <End Role="Djelovi" EntitySet="Djelovi" />
             <End Role="Racun_Has_Djelovi" EntitySet="Racun_Has_Djelovi" />
           </AssociationSet>
-          <AssociationSet Name="FK_Racun_Has_Djelovi_Lokacija" Association="Self.FK_Racun_Has_Djelovi_Lokacija">
-            <End Role="Lokacija" EntitySet="Lokacija" />
-            <End Role="Racun_Has_Djelovi" EntitySet="Racun_Has_Djelovi" />
-          </AssociationSet>
           <AssociationSet Name="FK_Racun_Has_Djelovi_Racun" Association="Self.FK_Racun_Has_Djelovi_Racun">
             <End Role="Racun" EntitySet="Racun" />
             <End Role="Racun_Has_Djelovi" EntitySet="Racun_Has_Djelovi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Racun_Lokacija" Association="Self.FK_Racun_Lokacija">
+            <End Role="Lokacija" EntitySet="Lokacija" />
+            <End Role="Racun" EntitySet="Racun" />
           </AssociationSet>
           <AssociationSet Name="FK_Racun_Trgovina" Association="Self.FK_Racun_Trgovina">
             <End Role="Trgovina" EntitySet="Trgovina" />
@@ -503,13 +490,13 @@
             <End Role="Djelovi" EntitySet="Djelovi" />
             <End Role="Rezervacija_has_Djelovi" EntitySet="Rezervacija_has_Djelovi" />
           </AssociationSet>
-          <AssociationSet Name="FK_Rezervacija_has_Djelovi_Lokacija" Association="Self.FK_Rezervacija_has_Djelovi_Lokacija">
-            <End Role="Lokacija" EntitySet="Lokacija" />
-            <End Role="Rezervacija_has_Djelovi" EntitySet="Rezervacija_has_Djelovi" />
-          </AssociationSet>
           <AssociationSet Name="FK_Rezervacija_has_Djelovi_Rezervacija" Association="Self.FK_Rezervacija_has_Djelovi_Rezervacija">
             <End Role="Rezervacija" EntitySet="Rezervacija" />
             <End Role="Rezervacija_has_Djelovi" EntitySet="Rezervacija_has_Djelovi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rezervacija_Lokacija" Association="Self.FK_Rezervacija_Lokacija">
+            <End Role="Lokacija" EntitySet="Lokacija" />
+            <End Role="Rezervacija" EntitySet="Rezervacija" />
           </AssociationSet>
           <AssociationSet Name="FK_Rezervacija_Zaposlenik" Association="Self.FK_Rezervacija_Zaposlenik">
             <End Role="Zaposlenik" EntitySet="Zaposlenik" />
@@ -528,7 +515,8 @@
             <End Role="Zaposlenik" EntitySet="Zaposlenik" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProgramskoInzenjerstvoDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -565,13 +553,13 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Adresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Lokacija_has_djelovi" Relationship="Self.FK_Lokacija_has_djelovi_Lokacija" FromRole="Lokacija" ToRole="Lokacija_has_djelovi" />
+          <NavigationProperty Name="Racuns" Relationship="Self.FK_Racun_Lokacija" FromRole="Lokacija" ToRole="Racun" />
+          <NavigationProperty Name="Rezervacijas" Relationship="Self.FK_Rezervacija_Lokacija" FromRole="Lokacija" ToRole="Rezervacija" />
           <NavigationProperty Name="Zaposleniks" Relationship="Self.FK_Zaposlenik_Lokacija" FromRole="Lokacija" ToRole="Zaposlenik" />
-          <NavigationProperty Name="Racun_Has_Djelovi" Relationship="ProgramskoInzenjerstvoDBModel.FK_Racun_Has_Djelovi_Lokacija" FromRole="Lokacija" ToRole="Racun_Has_Djelovi" />
-          <NavigationProperty Name="Rezervacija_has_Djelovi" Relationship="ProgramskoInzenjerstvoDBModel.FK_Rezervacija_has_Djelovi_Lokacija" FromRole="Lokacija" ToRole="Rezervacija_has_Djelovi" />
         </EntityType>
         <EntityType Name="Lokacija_has_djelovi">
           <Key>
@@ -637,6 +625,8 @@
           <Property Name="iznos" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="Maloprodaja_veleprodaja" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="trgovina" Type="Int32" />
+          <Property Name="lokacija" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Lokacija1" Relationship="Self.FK_Racun_Lokacija" FromRole="Racun" ToRole="Lokacija" />
           <NavigationProperty Name="Racun_Has_Djelovi" Relationship="Self.FK_Racun_Has_Djelovi_Racun" FromRole="Racun" ToRole="Racun_Has_Djelovi" />
           <NavigationProperty Name="Trgovina1" Relationship="Self.FK_Racun_Trgovina" FromRole="Racun" ToRole="Trgovina" />
           <NavigationProperty Name="Zaposlenik1" Relationship="Self.FK_Racun_Zaposlenik" FromRole="Racun" ToRole="Zaposlenik" />
@@ -645,15 +635,12 @@
           <Key>
             <PropertyRef Name="id_racun" />
             <PropertyRef Name="id_djelovi" />
-            <PropertyRef Name="id_lokacija" />
           </Key>
           <Property Name="id_racun" Type="Int32" Nullable="false" />
           <Property Name="id_djelovi" Type="Int32" Nullable="false" />
           <Property Name="kolicina" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Djelovi" Relationship="Self.FK_Racun_Has_Djelovi_Djelovi" FromRole="Racun_Has_Djelovi" ToRole="Djelovi" />
           <NavigationProperty Name="Racun" Relationship="Self.FK_Racun_Has_Djelovi_Racun" FromRole="Racun_Has_Djelovi" ToRole="Racun" />
-          <Property Name="id_lokacija" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Lokacija" Relationship="ProgramskoInzenjerstvoDBModel.FK_Racun_Has_Djelovi_Lokacija" FromRole="Racun_Has_Djelovi" ToRole="Lokacija" />
         </EntityType>
         <EntityType Name="Rezervacija">
           <Key>
@@ -665,6 +652,8 @@
           <Property Name="kupacEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="izvrseno" Type="Boolean" Nullable="false" />
           <Property Name="napravioNarudzbu" Type="Int32" Nullable="false" />
+          <Property Name="lokacija" Type="Int32" />
+          <NavigationProperty Name="Lokacija1" Relationship="Self.FK_Rezervacija_Lokacija" FromRole="Rezervacija" ToRole="Lokacija" />
           <NavigationProperty Name="Rezervacija_has_Djelovi" Relationship="Self.FK_Rezervacija_has_Djelovi_Rezervacija" FromRole="Rezervacija" ToRole="Rezervacija_has_Djelovi" />
           <NavigationProperty Name="Zaposlenik" Relationship="Self.FK_Rezervacija_Zaposlenik" FromRole="Rezervacija" ToRole="Zaposlenik" />
         </EntityType>
@@ -672,15 +661,12 @@
           <Key>
             <PropertyRef Name="id_rezervacija" />
             <PropertyRef Name="int_djelovi" />
-            <PropertyRef Name="id_lokacija" />
           </Key>
           <Property Name="id_rezervacija" Type="Int32" Nullable="false" />
           <Property Name="int_djelovi" Type="Int32" Nullable="false" />
           <Property Name="kolicina" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Djelovi" Relationship="Self.FK_Rezervacija_has_Djelovi_Djelovi" FromRole="Rezervacija_has_Djelovi" ToRole="Djelovi" />
           <NavigationProperty Name="Rezervacija" Relationship="Self.FK_Rezervacija_has_Djelovi_Rezervacija" FromRole="Rezervacija_has_Djelovi" ToRole="Rezervacija" />
-          <Property Name="id_lokacija" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Lokacija" Relationship="ProgramskoInzenjerstvoDBModel.FK_Rezervacija_has_Djelovi_Lokacija" FromRole="Rezervacija_has_Djelovi" ToRole="Lokacija" />
         </EntityType>
         <EntityType Name="Tip">
           <Key>
@@ -825,6 +811,30 @@
             </Principal>
             <Dependent Role="Lokacija_has_djelovi">
               <PropertyRef Name="id_lokacija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Racun_Lokacija">
+          <End Role="Lokacija" Type="Self.Lokacija" Multiplicity="1" />
+          <End Role="Racun" Type="Self.Racun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lokacija">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Racun">
+              <PropertyRef Name="lokacija" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rezervacija_Lokacija">
+          <End Role="Lokacija" Type="Self.Lokacija" Multiplicity="0..1" />
+          <End Role="Rezervacija" Type="Self.Rezervacija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lokacija">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Rezervacija">
+              <PropertyRef Name="lokacija" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1009,6 +1019,14 @@
             <End Role="Lokacija" EntitySet="Lokacijas" />
             <End Role="Lokacija_has_djelovi" EntitySet="Lokacija_has_djelovi" />
           </AssociationSet>
+          <AssociationSet Name="FK_Racun_Lokacija" Association="Self.FK_Racun_Lokacija">
+            <End Role="Lokacija" EntitySet="Lokacijas" />
+            <End Role="Racun" EntitySet="Racuns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rezervacija_Lokacija" Association="Self.FK_Rezervacija_Lokacija">
+            <End Role="Lokacija" EntitySet="Lokacijas" />
+            <End Role="Rezervacija" EntitySet="Rezervacijas" />
+          </AssociationSet>
           <AssociationSet Name="FK_Zaposlenik_Lokacija" Association="Self.FK_Zaposlenik_Lokacija">
             <End Role="Lokacija" EntitySet="Lokacijas" />
             <End Role="Zaposlenik" EntitySet="Zaposleniks" />
@@ -1053,50 +1071,7 @@
             <End Role="Zaposlenik" EntitySet="Zaposleniks" />
             <End Role="Zaposlenik_has_Tip" EntitySet="Zaposlenik_has_Tip" />
           </AssociationSet>
-          <EntitySet Name="sysdiagrams" EntityType="ProgramskoInzenjerstvoDBModel.sysdiagram" />
-          <AssociationSet Name="FK_Racun_Has_Djelovi_Lokacija" Association="ProgramskoInzenjerstvoDBModel.FK_Racun_Has_Djelovi_Lokacija">
-            <End Role="Lokacija" EntitySet="Lokacijas" />
-            <End Role="Racun_Has_Djelovi" EntitySet="Racun_Has_Djelovi" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Rezervacija_has_Djelovi_Lokacija" Association="ProgramskoInzenjerstvoDBModel.FK_Rezervacija_has_Djelovi_Lokacija">
-            <End Role="Lokacija" EntitySet="Lokacijas" />
-            <End Role="Rezervacija_has_Djelovi" EntitySet="Rezervacija_has_Djelovi" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-        <Association Name="FK_Racun_Has_Djelovi_Lokacija">
-          <End Type="ProgramskoInzenjerstvoDBModel.Lokacija" Role="Lokacija" Multiplicity="1" />
-          <End Type="ProgramskoInzenjerstvoDBModel.Racun_Has_Djelovi" Role="Racun_Has_Djelovi" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Lokacija">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Racun_Has_Djelovi">
-              <PropertyRef Name="id_lokacija" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Rezervacija_has_Djelovi_Lokacija">
-          <End Type="ProgramskoInzenjerstvoDBModel.Lokacija" Role="Lokacija" Multiplicity="1" />
-          <End Type="ProgramskoInzenjerstvoDBModel.Rezervacija_has_Djelovi" Role="Rezervacija_has_Djelovi" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Lokacija">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Rezervacija_has_Djelovi">
-              <PropertyRef Name="id_lokacija" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1192,13 +1167,13 @@
                 <ScalarProperty Name="iznos" ColumnName="iznos" />
                 <ScalarProperty Name="Maloprodaja_veleprodaja" ColumnName="Maloprodaja/veleprodaja" />
                 <ScalarProperty Name="trgovina" ColumnName="trgovina" />
+                <ScalarProperty Name="lokacija" ColumnName="lokacija" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Racun_Has_Djelovi">
             <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.Racun_Has_Djelovi">
               <MappingFragment StoreEntitySet="Racun_Has_Djelovi">
-                <ScalarProperty Name="id_lokacija" ColumnName="id_lokacija" />
                 <ScalarProperty Name="id_racun" ColumnName="id_racun" />
                 <ScalarProperty Name="id_djelovi" ColumnName="id_djelovi" />
                 <ScalarProperty Name="kolicina" ColumnName="kolicina" />
@@ -1214,13 +1189,13 @@
                 <ScalarProperty Name="kupacEmail" ColumnName="kupacEmail" />
                 <ScalarProperty Name="izvrseno" ColumnName="izvrseno" />
                 <ScalarProperty Name="napravioNarudzbu" ColumnName="napravioNarudzbu" />
+                <ScalarProperty Name="lokacija" ColumnName="lokacija" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Rezervacija_has_Djelovi">
             <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.Rezervacija_has_Djelovi">
               <MappingFragment StoreEntitySet="Rezervacija_has_Djelovi">
-                <ScalarProperty Name="id_lokacija" ColumnName="id_lokacija" />
                 <ScalarProperty Name="id_rezervacija" ColumnName="id_rezervacija" />
                 <ScalarProperty Name="int_djelovi" ColumnName="int_djelovi" />
                 <ScalarProperty Name="kolicina" ColumnName="kolicina" />
@@ -1267,17 +1242,6 @@
                 <ScalarProperty Name="id_zaposlenik" ColumnName="id_zaposlenik" />
                 <ScalarProperty Name="id_tip" ColumnName="id_tip" />
                 <ScalarProperty Name="datum" ColumnName="datum" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

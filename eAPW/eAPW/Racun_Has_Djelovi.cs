@@ -17,10 +17,8 @@ namespace eAPW
         public int id_racun { get; set; }
         public int id_djelovi { get; set; }
         public int kolicina { get; set; }
-        public int id_lokacija { get; set; }
     
         public virtual Djelovi Djelovi { get; set; }
         public virtual Racun Racun { get; set; }
-        public virtual Lokacija Lokacija { get; set; }
     }
 }

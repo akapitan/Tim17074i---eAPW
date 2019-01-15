@@ -176,16 +176,16 @@ namespace eAPW
                 {
                     List<Djelovi> listaDjelovaRezervacija = new List<Djelovi>();
 
-                    foreach (Rezervacija_has_Djelovi rhd in rez.Rezervacija_has_Djelovi.Where(x => x.Lokacija.naziv == FrmGlavna.prijavljenaLokacija.naziv))
-                    {
-                        Djelovi dio = db.Djelovis.Where(x => x.id == rhd.int_djelovi).Single();
-                        Lokacija_has_djelovi lhd = db.Lokacija_has_djelovi.Where(y => y.id_djelovi == dio.id).SingleOrDefault();
+                    //foreach (Rezervacija_has_Djelovi rhd in rez.Rezervacija_has_Djelovi.Where(x => x.Lokacija.naziv == FrmGlavna.prijavljenaLokacija.naziv))
+                    //{
+                    //    Djelovi dio = db.Djelovis.Where(x => x.id == rhd.int_djelovi).Single();
+                    //    Lokacija_has_djelovi lhd = db.Lokacija_has_djelovi.Where(y => y.id_djelovi == dio.id).SingleOrDefault();
 
-                        if(rhd.kolicina <= lhd.kolicina)
-                        {
-                            listaDjelovaRezervacija.Add(dio);
-                        }                       
-                    }
+                    //    if(rhd.kolicina <= lhd.kolicina)
+                    //    {
+                    //        listaDjelovaRezervacija.Add(dio);
+                    //    }                       
+                    //}
                     if (listaDjelovaRezervacija.Count > 0 && listaDjelovaRezervacija.Count == rez.Rezervacija_has_Djelovi.Count)
                     {
                         pripremiMail(rez.kupacEmail, listaDjelovaRezervacija);

@@ -26,7 +26,9 @@ namespace eAPW
         public string iznos { get; set; }
         public string Maloprodaja_veleprodaja { get; set; }
         public Nullable<int> trgovina { get; set; }
+        public int lokacija { get; set; }
     
+        public virtual Lokacija Lokacija1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Racun_Has_Djelovi> Racun_Has_Djelovi { get; set; }
         public virtual Trgovina Trgovina1 { get; set; }

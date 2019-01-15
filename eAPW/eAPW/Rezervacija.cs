@@ -26,7 +26,9 @@ namespace eAPW
         public string kupacEmail { get; set; }
         public bool izvrseno { get; set; }
         public int napravioNarudzbu { get; set; }
+        public Nullable<int> lokacija { get; set; }
     
+        public virtual Lokacija Lokacija1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rezervacija_has_Djelovi> Rezervacija_has_Djelovi { get; set; }
         public virtual Zaposlenik Zaposlenik { get; set; }

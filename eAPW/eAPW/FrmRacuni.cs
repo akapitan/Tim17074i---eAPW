@@ -33,6 +33,8 @@ namespace eAPW
                 dataGridView1.Columns["Zaposlenik1"].Visible = false;
                 dataGridView1.Columns["trgovina"].Visible = false;
                 dataGridView1.Columns["Trgovina1"].Visible = false;
+                dataGridView1.Columns["lokacija"].Visible = false;
+                dataGridView1.Columns["Lokacija1"].Visible = false;
 
             }
         }

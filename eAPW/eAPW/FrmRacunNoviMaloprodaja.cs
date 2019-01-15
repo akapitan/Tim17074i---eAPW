@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace eAPW
 {
@@ -39,12 +40,13 @@ namespace eAPW
             dataGridView1.Columns["Id"].Visible = true;
             dataGridView1.Columns["Naziv"].Visible = true;
             dataGridView1.Columns["maloprodajnaCijena"].Visible = true;
+            dataGridView1.Columns["Kolicina"].Visible = true;
 
-            DataGridViewColumn col = new DataGridViewTextBoxColumn();
-            col.DataPropertyName = "Kolicina";
-            col.HeaderText = "Kolicina";
-            col.Name = "foo";
-            dataGridView1.Columns.Add(col);
+            //DataGridViewColumn col = new DataGridViewTextBoxColumn();
+            //col.DataPropertyName = "Kolicina";
+            //col.HeaderText = "Kolicina";
+            //col.Name = "foo";
+            //dataGridView1.Columns.Add(col);
 
             if (bl.Count == 0) txtIznos.Text = "0 kn";
             else
@@ -52,7 +54,7 @@ namespace eAPW
                 int iznos = 0;
                 foreach (Djelovi dio in bl)
                 {
-                    //iznos += (dio.kolicina * dio.maloprodajnaCijena);
+                    iznos += (dio.kolicina * dio.maloprodajnaCijena);
                 }
                 txtIznos.Text = iznos.ToString() + " kn";
             }
@@ -86,11 +88,15 @@ namespace eAPW
         {
             using (var db = new ProgramskoInzenjerstvoDBEntities())
             {
+
                 Racun noviRacun = new Racun();
                 noviRacun.zaposlenik = FrmGlavna.prijavljeniKorisnik.ID;
-                noviRacun.datum = DateTime.Now;
+                noviRacun.datum = DateTime.UtcNow;
                 noviRacun.iznos = txtIznos.Text;
                 noviRacun.Maloprodaja_veleprodaja = "Maloprodaja";
+                int lokacijaId =  int.Parse(ConfigurationManager.AppSettings["LokacijaID"]);
+                noviRacun.lokacija = lokacijaId;
+
                 db.Racuns.Attach(noviRacun);
                 db.Racuns.Add(noviRacun);
                 db.SaveChanges();
@@ -110,8 +116,19 @@ namespace eAPW
                     rhd.kolicina = djelovi.kolicina;
                     dodaniRacun.Racun_Has_Djelovi.Add(rhd);
 
-                    Djelovi dioOduzmiKolicinu = db.Djelovis.First(x => x.id == djelovi.id);
-                    dioOduzmiKolicinu.kolicina -= djelovi.kolicina;
+                    //Djelovi dioOduzmiKolicinu = db.Djelovis.First(x => x.id == djelovi.id);
+                    //dioOduzmiKolicinu.kolicina -= djelovi.kolicina;
+
+                    Lokacija_has_djelovi lhd = db.Lokacija_has_djelovi.Where(x => x.id_lokacija == lokacijaId && x.id_djelovi == djelovi.id).SingleOrDefault();
+                    if(lhd != null)
+                    {
+                        lhd.kolicina -= djelovi.kolicina;
+                        djelovi.kolicina = 0;
+                    }
+                    
+
+
+
                 }
 
                 db.SaveChanges();

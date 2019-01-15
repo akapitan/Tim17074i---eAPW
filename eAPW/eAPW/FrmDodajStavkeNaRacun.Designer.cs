@@ -152,6 +152,7 @@
             this.Controls.Add(this.dgvPopisStavki);
             this.Name = "FrmDodajStavkeNaRacun";
             this.Text = "FrmDodajStavkeNaRacun";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmDodajStavkeNaRacun_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

@@ -22,7 +22,7 @@ namespace eAPW
             this.Racun_Has_Djelovi = new HashSet<Racun_Has_Djelovi>();
             this.Rezervacija_has_Djelovi = new HashSet<Rezervacija_has_Djelovi>();
         }
-         
+    
         public int id { get; set; }
         public string naziv { get; set; }
         public int proizodac { get; set; }
@@ -30,8 +30,8 @@ namespace eAPW
         public int kategorija { get; set; }
         public int maloprodajnaCijena { get; set; }
         public int veleprodajnaCijena { get; set; }
-        public int kolicina;
-    
+        public int kolicina { get; set; }
+            
         public virtual Kategorija Kategorija1 { get; set; }
         public virtual Model_vozila Model_vozila { get; set; }
         public virtual Proizvodac Proizvodac { get; set; }

@@ -171,9 +171,6 @@
     <Compile Include="Rezervacija_has_Djelovi.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Tip.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
