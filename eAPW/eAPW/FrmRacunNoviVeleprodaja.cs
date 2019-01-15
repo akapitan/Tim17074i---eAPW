@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace eAPW
 {
@@ -20,6 +21,7 @@ namespace eAPW
             bl.Clear();
             txtZaposlenik.Text = FrmGlavna.prijavljeniKorisnik.korisnickoIme;
             this.dtpDatum.Enabled = false;
+            ispisComboBox();
         }
 
         private void btnDodajNovuTvrtku_Click(object sender, EventArgs e)
@@ -49,12 +51,13 @@ namespace eAPW
             dataGridView1.Columns["Id"].Visible = true;
             dataGridView1.Columns["Naziv"].Visible = true;
             dataGridView1.Columns["veleprodajnaCijena"].Visible = true;
+            dataGridView1.Columns["kolicina"].Visible = true;
 
-            DataGridViewColumn col = new DataGridViewTextBoxColumn();
-            col.DataPropertyName = "Kolicina";
-            col.HeaderText = "Kolicina";
-            col.Name = "foo";
-            dataGridView1.Columns.Add(col);
+            //DataGridViewColumn col = new DataGridViewTextBoxColumn();
+            //col.DataPropertyName = "Kolicina";
+            //col.HeaderText = "Kolicina";
+            //col.Name = "foo";
+            //dataGridView1.Columns.Add(col);
 
             if (bl.Count == 0) txtIznos.Text = "0 kn";
             else
@@ -143,6 +146,8 @@ namespace eAPW
                 noviRacun.datum = DateTime.Now;
                 noviRacun.iznos = txtIznos.Text;
                 noviRacun.Maloprodaja_veleprodaja = "Veleprodaja";
+                int lokacijaId = int.Parse(ConfigurationManager.AppSettings["LokacijaID"]);
+                noviRacun.lokacija = lokacijaId;
                 Trgovina trgovina = cboxTvrtka.SelectedItem as Trgovina;
                 noviRacun.trgovina = trgovina.id;
 
@@ -164,8 +169,14 @@ namespace eAPW
                     rhd.kolicina = djelovi.kolicina;
                     dodaniRacun.Racun_Has_Djelovi.Add(rhd);
 
-                    Djelovi dioOduzmiKolicinu = db.Djelovis.First(x => x.id == djelovi.id);
-                    dioOduzmiKolicinu.kolicina -= djelovi.kolicina;
+                    //Djelovi dioOduzmiKolicinu = db.Djelovis.First(x => x.id == djelovi.id);
+                    //dioOduzmiKolicinu.kolicina -= djelovi.kolicina;
+                    Lokacija_has_djelovi lhd = db.Lokacija_has_djelovi.Where(x => x.id_lokacija == lokacijaId && x.id_djelovi == djelovi.id).SingleOrDefault();
+                    if (lhd != null)
+                    {
+                        lhd.kolicina -= djelovi.kolicina;
+                        djelovi.kolicina = 0;
+                    }
                 }
 
                 db.SaveChanges();
