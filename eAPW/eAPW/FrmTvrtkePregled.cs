@@ -17,6 +17,7 @@ namespace eAPW
         public FrmTvrtkePregled()
         {
             InitializeComponent();
+            btnSpremi.Enabled = false;
         }
 
         public FrmTvrtkePregled(Trgovina prenesenaTrgovina)
@@ -27,6 +28,8 @@ namespace eAPW
             txtNaziv.Text = trgovina.naziv;
             txtAdresa.Text = trgovina.adresa;
             txtOIB.Text = trgovina.oib;
+
+            btnDodaj.Enabled = false;
         }
 
         private void btnIzlaz_Click(object sender, EventArgs e)
@@ -49,6 +52,7 @@ namespace eAPW
                 }
                 else
                 {
+                   
                     db.Trgovinas.Attach(t);
                     db.Trgovinas.Add(t);
                     db.SaveChanges();
@@ -63,15 +67,25 @@ namespace eAPW
         {
             if (trgovina != null)
             {
-                using (var db = new ProgramskoInzenjerstvoDBEntities())
+                try
                 {
-                    Trgovina selektiranaTrgovina = (from x in db.Trgovinas where x.oib == trgovina.oib select x).SingleOrDefault();
-                    selektiranaTrgovina.oib = txtOIB.Text;
-                    selektiranaTrgovina.adresa = txtAdresa.Text;
-                    selektiranaTrgovina.naziv = txtNaziv.Text;
-
-                    db.SaveChanges();
+                    using (var db = new ProgramskoInzenjerstvoDBEntities())
+                    {
+                        Trgovina selektiranaTrgovina = (from x in db.Trgovinas where x.oib == trgovina.oib select x).SingleOrDefault();
+                        selektiranaTrgovina.oib = txtOIB.Text.Trim();
+                        selektiranaTrgovina.adresa = txtAdresa.Text;
+                        selektiranaTrgovina.naziv = txtNaziv.Text;
+                        
+                        db.SaveChanges();
+                        MessageBox.Show("Uspješno izmjenjeni podaci trgovine.");
+                    }
                 }
+                catch 
+                {
+                    MessageBox.Show("Desila se greško kod ažuriranja podataka.");
+                    
+                }
+                
             }
         }
     }

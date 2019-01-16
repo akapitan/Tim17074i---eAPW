@@ -35,10 +35,10 @@ namespace eAPW
                 else
                 {
 
-                    bool jeAdmin = korisnik.Zaposlenik_has_Tip.Select(x => x.id_tip == 1).SingleOrDefault();
+                    var jeAdmin = korisnik.Zaposlenik_has_Tip.Where(x => x.id_tip == 1).SingleOrDefault();
                     
 
-                    if (korisnik.Lokacija.id == int.Parse(ConfigurationManager.AppSettings["LokacijaID"]) || jeAdmin)
+                    if (korisnik.Lokacija.id == int.Parse(ConfigurationManager.AppSettings["LokacijaID"]) || jeAdmin != null)
                     {
                         if (korisnik.lozinka.Trim() == txtLozinka.Text)
                         {
