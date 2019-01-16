@@ -22,13 +22,13 @@ namespace eAPW
         {
             InitializeComponent();
             zaposlenik = z;
-            txtIme.Text = zaposlenik.ime;
-            txtPrezime.Text = zaposlenik.prezime;
-            txtAdresa.Text = zaposlenik.adresa;
-            txtOIB.Text = zaposlenik.oib;
-            txtEmail.Text = zaposlenik.email;
-            txtKorisnicko.Text = zaposlenik.korisnickoIme;
-            txtLozinka.Text = zaposlenik.lozinka;
+            txtIme.Text = zaposlenik.ime.Trim();
+            txtPrezime.Text = zaposlenik.prezime.Trim();
+            txtAdresa.Text = zaposlenik.adresa.Trim();
+            txtOIB.Text = zaposlenik.oib.Trim();
+            txtEmail.Text = zaposlenik.email.Trim();
+            txtKorisnicko.Text = zaposlenik.korisnickoIme.Trim();
+            txtLozinka.Text = zaposlenik.lozinka.Trim();
 
 
         }
@@ -96,13 +96,16 @@ namespace eAPW
                     //Zaposlenik zaposlenik2 = new Zaposlenik(txtIme.Text, txtPrezime.Text, txtAdresa.Text, txtOIB.Text, txtEmail.Text, txtKorisnicko.Text, txtLozinka.Text);
                     Zaposlenik zaposlenik2 = new Zaposlenik();
 
-                    zaposlenik2.ime = txtIme.Text;
-                    zaposlenik2.prezime = txtPrezime.Text;
-                    zaposlenik2.adresa = txtAdresa.Text;
-                    zaposlenik2.oib = txtOIB.Text;
-                    zaposlenik2.email = txtEmail.Text;
-                    zaposlenik2.korisnickoIme = txtKorisnicko.Text;
-                    zaposlenik2.lozinka = txtLozinka.Text;
+                    zaposlenik2.ime = txtIme.Text.Trim();
+                    zaposlenik2.prezime = txtPrezime.Text.Trim();
+                    zaposlenik2.adresa = txtAdresa.Text.Trim();
+                    zaposlenik2.oib = txtOIB.Text.Trim();
+                    zaposlenik2.email = txtEmail.Text.Trim();
+                    zaposlenik2.korisnickoIme = txtKorisnicko.Text.Trim();
+                    zaposlenik2.lozinka = txtLozinka.Text.Trim();
+
+                    Lokacija radnoMjesto = cBoxRadnoMjesto.SelectedItem as Lokacija;
+                    zaposlenik2.radnoMjesto = radnoMjesto.id;
                     //bool a = provjeriKorisnickoIme(zaposlenik2);
 
                     try
@@ -130,7 +133,7 @@ namespace eAPW
                         }
                         else
                         {
-                            MessageBox.Show("A štaš??");
+                            MessageBox.Show("Unesi ispravan OIB");
                         }
 
                     }
@@ -140,21 +143,24 @@ namespace eAPW
                     }
 
                 }
-                //Izmjena korisnika
 
+                //Izmjena korisnika
                 else
                 {
                     try
                     {
                         db.Zaposleniks.Attach(zaposlenik);
-                        zaposlenik.ime = txtIme.Text;
-                        zaposlenik.prezime = txtPrezime.Text;
-                        zaposlenik.email = txtEmail.Text;
-                        zaposlenik.adresa = txtAdresa.Text;
-                        zaposlenik.oib = txtOIB.Text;
-                        zaposlenik.korisnickoIme = txtKorisnicko.Text;
-                        zaposlenik.lozinka = txtLozinka.Text;
+                        zaposlenik.ime = txtIme.Text.Trim();
+                        zaposlenik.prezime = txtPrezime.Text.Trim();
+                        zaposlenik.email = txtEmail.Text.Trim();
+                        zaposlenik.adresa = txtAdresa.Text.Trim();
+                        zaposlenik.oib = txtOIB.Text.Trim();
+                        zaposlenik.korisnickoIme = txtKorisnicko.Text.Trim();
+                        zaposlenik.lozinka = txtLozinka.Text.Trim();
                         zaposlenik.Zaposlenik_has_Tip.Clear();
+
+                        Lokacija radnoMjesto = cBoxRadnoMjesto.SelectedItem as Lokacija;
+                        zaposlenik.radnoMjesto = radnoMjesto.id;
 
                         foreach (Tip t in listaSelektiranihUloga)
                         {
@@ -175,7 +181,7 @@ namespace eAPW
                     catch (Exception)
                     {
 
-                        throw;
+                        MessageBox.Show("Greška kod izmjene korisnika");
                     }
 
                 }
