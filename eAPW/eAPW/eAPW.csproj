@@ -76,6 +76,18 @@
     <Compile Include="Djelovi.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FrmAdminCRUDZaposlenikNovi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminCRUDZaposlenikNovi.Designer.cs">
+      <DependentUpon>FrmAdminCRUDZaposlenikNovi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminCRUDZaposlenik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminCRUDZaposlenik.Designer.cs">
+      <DependentUpon>FrmAdminCRUDZaposlenik.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDodajStavkeNaRacun.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,11 +219,17 @@
     <Compile Include="Zaposlenik_has_Tip.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmAdminCRUDZaposlenikNovi.resx">
+      <DependentUpon>FrmAdminCRUDZaposlenikNovi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDodajStavkeNaRacun.resx">
       <DependentUpon>FrmDodajStavkeNaRacun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDodajStavkeNaRacunVeleprodaja.resx">
       <DependentUpon>FrmDodajStavkeNaRacunVeleprodaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminCRUDZaposlenik.resx">
+      <DependentUpon>FrmAdminCRUDZaposlenik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGlavna.resx">
       <DependentUpon>FrmGlavna.cs</DependentUpon>

@@ -54,5 +54,13 @@ namespace eAPW
             formRezervacija.WindowState = FormWindowState.Maximized;
             formRezervacija.Show();
         }
+
+        private void zaposleniciToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAdminCRUDZaposlenik frmZaposleniciCRUD = new FrmAdminCRUDZaposlenik();
+            frmZaposleniciCRUD.MdiParent = this;
+            frmZaposleniciCRUD.WindowState = FormWindowState.Maximized;
+            frmZaposleniciCRUD.Show();
+        }
     }
 }
