@@ -46,5 +46,13 @@ namespace eAPW
             Fskladiste.WindowState = FormWindowState.Maximized;
             Fskladiste.Show();
         }
+
+        private void rezervacijaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRezervacija formRezervacija = new FrmRezervacija();
+            formRezervacija.MdiParent = this;
+            formRezervacija.WindowState = FormWindowState.Maximized;
+            formRezervacija.Show();
+        }
     }
 }

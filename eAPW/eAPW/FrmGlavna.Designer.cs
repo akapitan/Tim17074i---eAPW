@@ -75,7 +75,7 @@
             // izlazToolStripMenuItem
             // 
             this.izlazToolStripMenuItem.Name = "izlazToolStripMenuItem";
-            this.izlazToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.izlazToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
             this.izlazToolStripMenuItem.Text = "Izlaz";
             this.izlazToolStripMenuItem.Click += new System.EventHandler(this.izlazToolStripMenuItem_Click);
             // 
@@ -115,6 +115,7 @@
             this.rezervacijaToolStripMenuItem.Name = "rezervacijaToolStripMenuItem";
             this.rezervacijaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.rezervacijaToolStripMenuItem.Text = "Rezervacija";
+            this.rezervacijaToolStripMenuItem.Click += new System.EventHandler(this.rezervacijaToolStripMenuItem_Click);
             // 
             // adminCRUDToolStripMenuItem
             // 
@@ -129,19 +130,19 @@
             // zaposleniciToolStripMenuItem
             // 
             this.zaposleniciToolStripMenuItem.Name = "zaposleniciToolStripMenuItem";
-            this.zaposleniciToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.zaposleniciToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.zaposleniciToolStripMenuItem.Text = "Zaposlenici";
             // 
             // dobavljačiToolStripMenuItem
             // 
             this.dobavljačiToolStripMenuItem.Name = "dobavljačiToolStripMenuItem";
-            this.dobavljačiToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.dobavljačiToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.dobavljačiToolStripMenuItem.Text = "Dobavljači";
             // 
             // kategorijeToolStripMenuItem
             // 
             this.kategorijeToolStripMenuItem.Name = "kategorijeToolStripMenuItem";
-            this.kategorijeToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.kategorijeToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.kategorijeToolStripMenuItem.Text = "Trgovina";
             // 
             // reportsToolStripMenuItem

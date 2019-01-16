@@ -124,6 +124,24 @@
     <Compile Include="FrmRacunPrikazi.Designer.cs">
       <DependentUpon>FrmRacunPrikazi.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRezervacija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRezervacija.Designer.cs">
+      <DependentUpon>FrmRezervacija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRezervacijaNovi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRezervacijaNovi.Designer.cs">
+      <DependentUpon>FrmRezervacijaNovi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRezervacijaPrikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRezervacijaPrikaz.Designer.cs">
+      <DependentUpon>FrmRezervacijaPrikaz.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSkladiste.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +227,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRacunNoviVeleprodaja.resx">
       <DependentUpon>FrmRacunNoviVeleprodaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRezervacija.resx">
+      <DependentUpon>FrmRezervacija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRezervacijaNovi.resx">
+      <DependentUpon>FrmRezervacijaNovi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRezervacijaPrikaz.resx">
+      <DependentUpon>FrmRezervacijaPrikaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSkladiste.resx">
       <DependentUpon>FrmSkladiste.cs</DependentUpon>
