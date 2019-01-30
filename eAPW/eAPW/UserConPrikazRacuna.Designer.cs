@@ -50,6 +50,7 @@
             // 
             this.txtTvrtkaOIB.Location = new System.Drawing.Point(116, 120);
             this.txtTvrtkaOIB.Name = "txtTvrtkaOIB";
+            this.txtTvrtkaOIB.ReadOnly = true;
             this.txtTvrtkaOIB.Size = new System.Drawing.Size(146, 22);
             this.txtTvrtkaOIB.TabIndex = 4;
             // 
@@ -66,6 +67,7 @@
             // 
             this.txtTvrtkaAdresa.Location = new System.Drawing.Point(116, 79);
             this.txtTvrtkaAdresa.Name = "txtTvrtkaAdresa";
+            this.txtTvrtkaAdresa.ReadOnly = true;
             this.txtTvrtkaAdresa.Size = new System.Drawing.Size(146, 22);
             this.txtTvrtkaAdresa.TabIndex = 5;
             // 
@@ -82,6 +84,7 @@
             // 
             this.txtTvrtkaNaziv.Location = new System.Drawing.Point(116, 47);
             this.txtTvrtkaNaziv.Name = "txtTvrtkaNaziv";
+            this.txtTvrtkaNaziv.ReadOnly = true;
             this.txtTvrtkaNaziv.Size = new System.Drawing.Size(146, 22);
             this.txtTvrtkaNaziv.TabIndex = 6;
             // 

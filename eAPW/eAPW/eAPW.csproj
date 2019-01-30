@@ -41,6 +41,26 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.12.0.2402.15\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.12.0.2402.15\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.12.0.2402.15\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.WinForms.12.0.2402.15\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
@@ -136,6 +156,12 @@
     <Compile Include="FrmRacunPrikazi.Designer.cs">
       <DependentUpon>FrmRacunPrikazi.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReport1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReport1.Designer.cs">
+      <DependentUpon>FrmReport1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRezervacija.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +211,14 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProgramskoInzenjerstvoDBDataSet.cs">
+      <DependentUpon>ProgramskoInzenjerstvoDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramskoInzenjerstvoDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProgramskoInzenjerstvoDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Proizvodac.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -246,6 +280,9 @@
     <EmbeddedResource Include="FrmRacunNoviVeleprodaja.resx">
       <DependentUpon>FrmRacunNoviVeleprodaja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmReport1.resx">
+      <DependentUpon>FrmReport1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRezervacija.resx">
       <DependentUpon>FrmRezervacija.cs</DependentUpon>
     </EmbeddedResource>
@@ -270,6 +307,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="UserConPrikazRacuna.resx">
       <DependentUpon>UserConPrikazRacuna.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +320,17 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="ProgramskoInzenjerstvoDBDataSet.xsc">
+      <DependentUpon>ProgramskoInzenjerstvoDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProgramskoInzenjerstvoDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProgramskoInzenjerstvoDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProgramskoInzenjerstvoDBDataSet.xss">
+      <DependentUpon>ProgramskoInzenjerstvoDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
