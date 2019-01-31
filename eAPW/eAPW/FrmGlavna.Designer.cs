@@ -46,6 +46,7 @@
             this.upoteZaKorištenjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblKorisnickoIme = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.djeloviProdaniUZadnjihXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,7 +150,8 @@
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.trgovinaToolStripMenuItem});
+            this.trgovinaToolStripMenuItem,
+            this.djeloviProdaniUZadnjihXToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -157,7 +159,7 @@
             // trgovinaToolStripMenuItem
             // 
             this.trgovinaToolStripMenuItem.Name = "trgovinaToolStripMenuItem";
-            this.trgovinaToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.trgovinaToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
             this.trgovinaToolStripMenuItem.Text = "Stanje na skladištu";
             this.trgovinaToolStripMenuItem.Click += new System.EventHandler(this.trgovinaToolStripMenuItem_Click);
             // 
@@ -191,6 +193,13 @@
             this.label1.Size = new System.Drawing.Size(96, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Prijavljen kao ";
+            // 
+            // djeloviProdaniUZadnjihXToolStripMenuItem
+            // 
+            this.djeloviProdaniUZadnjihXToolStripMenuItem.Name = "djeloviProdaniUZadnjihXToolStripMenuItem";
+            this.djeloviProdaniUZadnjihXToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.djeloviProdaniUZadnjihXToolStripMenuItem.Text = "Djelovi prodani u zadnjih X";
+            this.djeloviProdaniUZadnjihXToolStripMenuItem.Click += new System.EventHandler(this.djeloviProdaniUZadnjihXToolStripMenuItem_Click);
             // 
             // FrmGlavna
             // 
@@ -230,5 +239,6 @@
         private System.Windows.Forms.ToolStripMenuItem upoteZaKorištenjeToolStripMenuItem;
         private System.Windows.Forms.Label lblKorisnickoIme;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem djeloviProdaniUZadnjihXToolStripMenuItem;
     }
 }

@@ -176,6 +176,12 @@
     <Compile Include="FrmRacunPrikazi.Designer.cs">
       <DependentUpon>FrmRacunPrikazi.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReportDjeloviProdaniUZadnjihX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportDjeloviProdaniUZadnjihX.Designer.cs">
+      <DependentUpon>FrmReportDjeloviProdaniUZadnjihX.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReportStanjeNaSkladistu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,6 +309,9 @@
     <EmbeddedResource Include="FrmRacunPrikazi.resx">
       <DependentUpon>FrmRacunPrikazi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportDjeloviProdaniUZadnjihX.resx">
+      <DependentUpon>FrmReportDjeloviProdaniUZadnjihX.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmReportStanjeNaSkladistu.resx">
       <DependentUpon>FrmReportStanjeNaSkladistu.cs</DependentUpon>
     </EmbeddedResource>
@@ -331,6 +340,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportDjelovaProdanihUZadnjihX.rdlc" />
     <EmbeddedResource Include="ReportStanjeNaSkladištu.rdlc" />
     <EmbeddedResource Include="UserConPrikazRacuna.resx">
       <DependentUpon>UserConPrikazRacuna.cs</DependentUpon>

@@ -70,5 +70,13 @@ namespace eAPW
             stanjeNaSkladistu.WindowState = FormWindowState.Maximized;
             stanjeNaSkladistu.Show();
         }
+
+        private void djeloviProdaniUZadnjihXToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReportDjeloviProdaniUZadnjihX djeloviProdaniUZadnjihX = new FrmReportDjeloviProdaniUZadnjihX();
+            djeloviProdaniUZadnjihX.MdiParent = this;
+            djeloviProdaniUZadnjihX.WindowState = FormWindowState.Maximized;
+            djeloviProdaniUZadnjihX.Show();
+        }
     }
 }
