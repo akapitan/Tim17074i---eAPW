@@ -28,6 +28,12 @@ namespace eAPW
                 foreach (Rezervacija r in db.Rezervacijas.Where(x => x.Lokacija1.id == lokacijaID)) listaRezervacija.Add(r);
                 BindingSource bs = new BindingSource(listaRezervacija, null);
                 dataGridView1.DataSource = bs;
+
+                dataGridView1.Columns["napravioNarudzbu"].Visible = false;
+                dataGridView1.Columns["Lokacija1"].Visible = false;
+                dataGridView1.Columns["lokacija"].Visible = false;
+                dataGridView1.Columns["Rezervacija_has_Djelovi"].Visible = false;
+                dataGridView1.Columns["Zaposlenik"].Visible = false;
             }
         }
 

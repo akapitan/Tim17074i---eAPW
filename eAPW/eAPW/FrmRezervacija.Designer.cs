@@ -43,7 +43,7 @@
             this.btnIzbrisi.Location = new System.Drawing.Point(732, 394);
             this.btnIzbrisi.Name = "btnIzbrisi";
             this.btnIzbrisi.Size = new System.Drawing.Size(90, 44);
-            this.btnIzbrisi.TabIndex = 23;
+            this.btnIzbrisi.TabIndex = 2;
             this.btnIzbrisi.Text = "Izbriši";
             this.btnIzbrisi.UseVisualStyleBackColor = true;
             this.btnIzbrisi.Click += new System.EventHandler(this.btnIzbrisi_Click);
@@ -53,7 +53,7 @@
             this.btnPrikazi.Location = new System.Drawing.Point(636, 394);
             this.btnPrikazi.Name = "btnPrikazi";
             this.btnPrikazi.Size = new System.Drawing.Size(90, 44);
-            this.btnPrikazi.TabIndex = 24;
+            this.btnPrikazi.TabIndex = 1;
             this.btnPrikazi.Text = "Prikazi";
             this.btnPrikazi.UseVisualStyleBackColor = true;
             this.btnPrikazi.Click += new System.EventHandler(this.btnPrikazi_Click);
@@ -63,8 +63,8 @@
             this.bntNovi.Location = new System.Drawing.Point(540, 394);
             this.bntNovi.Name = "bntNovi";
             this.bntNovi.Size = new System.Drawing.Size(90, 44);
-            this.bntNovi.TabIndex = 25;
-            this.bntNovi.Text = "Novi";
+            this.bntNovi.TabIndex = 0;
+            this.bntNovi.Text = "Nova rezervacija";
             this.bntNovi.UseVisualStyleBackColor = true;
             this.bntNovi.Click += new System.EventHandler(this.bntNovi_Click);
             // 
@@ -73,7 +73,7 @@
             this.btnIzlaz.Location = new System.Drawing.Point(17, 394);
             this.btnIzlaz.Name = "btnIzlaz";
             this.btnIzlaz.Size = new System.Drawing.Size(90, 44);
-            this.btnIzlaz.TabIndex = 26;
+            this.btnIzlaz.TabIndex = 3;
             this.btnIzlaz.Text = "Izlaz";
             this.btnIzlaz.UseVisualStyleBackColor = true;
             this.btnIzlaz.Click += new System.EventHandler(this.btnIzlaz_Click);

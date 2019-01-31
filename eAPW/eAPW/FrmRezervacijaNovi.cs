@@ -74,6 +74,29 @@ namespace eAPW
 
             dgvPopisProizvodaKojegNemaNaSkladistu.DataSource = listaDjelova;
             dgvKupacRezervacija.DataSource = listaKupacRezervacija;
+
+            dgvPopisProizvodaKojegNemaNaSkladistu.Columns["kolicina"].Visible = false;
+            dgvPopisProizvodaKojegNemaNaSkladistu.Columns["Kategorija1"].Visible = false;
+            dgvPopisProizvodaKojegNemaNaSkladistu.Columns["Model_vozila"].Visible = false;
+            dgvPopisProizvodaKojegNemaNaSkladistu.Columns["Proizvodac"].Visible = false;
+            dgvPopisProizvodaKojegNemaNaSkladistu.Columns["Lokacija_has_djelovi"].Visible = false;
+            dgvPopisProizvodaKojegNemaNaSkladistu.Columns["Narudzba_has_Djelovi"].Visible = false;
+            dgvPopisProizvodaKojegNemaNaSkladistu.Columns["Racun_Has_Djelovi"].Visible = false;
+            dgvPopisProizvodaKojegNemaNaSkladistu.Columns["Rezervacija_has_Djelovi"].Visible = false;
+
+            dgvKupacRezervacija.Columns["id"].Visible = false;
+            dgvKupacRezervacija.Columns["Kategorija1"].Visible = false;
+            dgvKupacRezervacija.Columns["Model_vozila"].Visible = false;
+            dgvKupacRezervacija.Columns["Proizvodac"].Visible = false;
+            dgvKupacRezervacija.Columns["Lokacija_has_djelovi"].Visible = false;
+            dgvKupacRezervacija.Columns["Narudzba_has_Djelovi"].Visible = false;
+            dgvKupacRezervacija.Columns["Racun_Has_Djelovi"].Visible = false;
+            dgvKupacRezervacija.Columns["Rezervacija_has_Djelovi"].Visible = false;
+            dgvKupacRezervacija.Columns["proizodac"].Visible = false;
+            dgvKupacRezervacija.Columns["modelVozila"].Visible = false;
+            dgvKupacRezervacija.Columns["kategorija"].Visible = false;
+            dgvKupacRezervacija.Columns["maloprodajnaCijena"].Visible = false;
+            dgvKupacRezervacija.Columns["veleprodajnaCijena"].Visible = false;
         }
 
         private void btnIzbrisi_Click(object sender, EventArgs e)
@@ -95,7 +118,10 @@ namespace eAPW
 
         private void bntIzdaj_Click(object sender, EventArgs e)
         {
-            if (IsValid(txtKupacEmail.Text) && txtKupacIme.Text != "" && txtKupacPrezime.Text != "" && listaKupacRezervacija.Count != 0)
+            bool jeLiSvimDjelovimaDodanaKolicina = listaKupacRezervacija.Any(x => x.kolicina == 0);
+            if (jeLiSvimDjelovimaDodanaKolicina) MessageBox.Show("Molimo unesite količine proizvodima za rezervaciju");
+
+            else if (IsValid(txtKupacEmail.Text) && txtKupacIme.Text != "" && txtKupacPrezime.Text != "" && listaKupacRezervacija.Count != 0)
                 using (var db = new ProgramskoInzenjerstvoDBEntities())
                 {
                     Rezervacija rez = new Rezervacija();
@@ -114,12 +140,12 @@ namespace eAPW
                     rez = null;
                     rez = db.Rezervacijas.OrderByDescending(x => x.id).First();
 
-                    foreach (Djelovi djelovi in listaKupacRezervacija)
+                    foreach (Djelovi dio in listaKupacRezervacija)
                     {
                         Rezervacija_has_Djelovi rhd = new Rezervacija_has_Djelovi();
                         rhd.id_rezervacija = rez.id;
-                        rhd.int_djelovi = djelovi.id;
-                        rhd.kolicina = 0;
+                        rhd.int_djelovi = dio.id;
+                        rhd.kolicina = dio.kolicina;
                         
                         db.Rezervacija_has_Djelovi.Add(rhd);
 
@@ -127,9 +153,13 @@ namespace eAPW
                     db.SaveChanges();
                     MessageBox.Show("Uspjesno se dodali novu rezervaciju");
                 }
-            else
+            else if (IsValid(txtKupacEmail.Text) == false)
             {
-                MessageBox.Show("Molimo popuniti sve potrebne podatke");
+                MessageBox.Show("Molimo upišite pravilan mail");
+            }
+            else if(txtKupacIme.Text == "" || txtKupacPrezime.Text == "")
+            {
+                MessageBox.Show("Molimo upišite podatke");
             }
         }
         private bool IsValid(string emailaddress)
@@ -146,6 +176,41 @@ namespace eAPW
                     return false;
                 }
             else return false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Djelovi selecktirani = dgvKupacRezervacija.CurrentRow.DataBoundItem as Djelovi;
+                selecktirani.kolicina = Convert.ToInt16(txtKolicina.Text);
+                ispisDataGrid();
+                
+            }
+            catch 
+            {
+
+                
+            }
+            
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvKupacRezervacija_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Djelovi selektirani = dgvKupacRezervacija.CurrentRow.DataBoundItem as Djelovi;
+                txtSelektiraniDio.Text = selektirani.naziv;
+                txtKolicina.Text = selektirani.kolicina.ToString();
+            }
+            catch 
+            {
+            }
         }
     }
 }
