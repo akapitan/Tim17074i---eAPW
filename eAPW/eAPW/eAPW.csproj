@@ -329,8 +329,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ReportStanjeNaSkladistu.rdlc" />
+    <EmbeddedResource Include="ReportStanjeNaSkladištu.rdlc" />
     <EmbeddedResource Include="UserConPrikazRacuna.resx">
       <DependentUpon>UserConPrikazRacuna.cs</DependentUpon>
     </EmbeddedResource>
@@ -380,6 +381,7 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
       <LastGenOutput>DataModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\eAPW_Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VanjskaKlasa\VanjskaKlasa.csproj">
