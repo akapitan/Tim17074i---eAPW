@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.DjelovaProdanihUZadnjihXBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ProgramskoInzenjerstvoDBDataSet = new eAPW.ProgramskoInzenjerstvoDBDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -38,6 +38,7 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.btnUnesi = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DjelovaProdanihUZadnjihXBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProgramskoInzenjerstvoDBDataSet)).BeginInit();
             this.SuspendLayout();
@@ -54,9 +55,9 @@
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.DjelovaProdanihUZadnjihXBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.DjelovaProdanihUZadnjihXBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "eAPW.ReportDjelovaProdanihUZadnjihX.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(21, 106);
             this.reportViewer1.Name = "reportViewer1";
@@ -100,11 +101,21 @@
             this.btnUnesi.UseVisualStyleBackColor = true;
             this.btnUnesi.Click += new System.EventHandler(this.btnUnesi_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(419, 76);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 24);
+            this.comboBox1.TabIndex = 4;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // FrmReportDjeloviProdaniUZadnjihX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 701);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnUnesi);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker2);
@@ -130,5 +141,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnUnesi;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

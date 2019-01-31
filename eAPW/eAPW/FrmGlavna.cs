@@ -78,5 +78,13 @@ namespace eAPW
             djeloviProdaniUZadnjihX.WindowState = FormWindowState.Maximized;
             djeloviProdaniUZadnjihX.Show();
         }
+
+        private void rezervacijeUZadnjihXToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReportRezervacijeUZadnjihX rezervacijeUZadnjihX = new FrmReportRezervacijeUZadnjihX();
+            rezervacijeUZadnjihX.MdiParent = this;
+            rezervacijeUZadnjihX.WindowState = FormWindowState.Maximized;
+            rezervacijeUZadnjihX.Show();
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace eAPW
         public FrmPrijava()
         {
             InitializeComponent();
-            
+            txtLozinka.PasswordChar = '#';
             txtLokacija.Text = ConfigurationManager.AppSettings["LokacijaNaziv"];
             
         }
