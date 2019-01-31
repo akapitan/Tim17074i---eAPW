@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Mail;
+using VanjskaKlasa;
+using System.Configuration;
 
 namespace eAPW
 {
@@ -127,32 +129,32 @@ namespace eAPW
             provjeriRezervacije();
         }
 
-        public bool posaljiMail(string primateljEmail, string mailBody)
-        {
-            MailMessage mail = new MailMessage("akapitan@foi.hr", primateljEmail);
-            SmtpClient client = new SmtpClient();
-            client.Port = 25;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.UseDefaultCredentials = false;
-            client.Host = "mail.foi.hr";
-            client.Credentials = new System.Net.NetworkCredential("akapitan", "foi-OranGisi13");
-            mail.Subject = "Stigli su Vaši naručeni proizvodi";
+        //public bool posaljiMail(string primateljEmail, string mailBody)
+        //{
+        //    MailMessage mail = new MailMessage("akapitan@foi.hr", primateljEmail);
+        //    SmtpClient client = new SmtpClient();
+        //    client.Port = 25;
+        //    client.DeliveryMethod = SmtpDeliveryMethod.Network;
+        //    client.UseDefaultCredentials = false;
+        //    client.Host = "mail.foi.hr";
+        //    client.Credentials = new System.Net.NetworkCredential("akapitan", "foi-OranGisi13");
+        //    mail.Subject = "Stigli su Vaši naručeni proizvodi";
 
-            mail.Body = mailBody;
-            try
-            {
-                client.Send(mail);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-                
-            }
-            
-        }
+        //    mail.Body = mailBody;
+        //    try
+        //    {
+        //        client.Send(mail);
+        //        return true;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return false;
 
-        public void pripremiMail(string primateljEmail, List<Djelovi> listaDjelova)
+        //    }
+
+        //}
+
+        public void pripremiMail(string primateljEmail,string lokacijaAdresa, List<Djelovi> listaDjelova)
         {
 
             string mailBody = "Sljedeći proizvodi su ponovo u našoj ponudi : \n\n";
@@ -160,10 +162,20 @@ namespace eAPW
             {
                 mailBody += "  - " + dio.naziv + "\n";
             }
-            mailBody += " \n\n Vaš eAPW - Auto Parts Werehouse\n Varaždinska \n 42000 Varaždin";
+            mailBody += " \n\nVaš eAPW - Auto Parts Werehouse\n" +FrmGlavna.prijavljeniKorisnik.ime.Trim() +" " +FrmGlavna.prijavljeniKorisnik.prezime.Trim()+ "\n"+ lokacijaAdresa;
 
-            if (posaljiMail(primateljEmail, mailBody) == true) MessageBox.Show("Uspješno se poslali mail na adresu " + primateljEmail);
-            else MessageBox.Show("Došlo je do pogreške kod slanja emaila");
+            //if (posaljiMail(primateljEmail, mailBody) == true) MessageBox.Show("Uspješno se poslali mail na adresu " + primateljEmail);
+            //else MessageBox.Show("Došlo je do pogreške kod slanja emaila");
+
+            SlanjeMaila klasaSlanjeMaila = new SlanjeMaila();
+            if (klasaSlanjeMaila.posaljiMail(primateljEmail, mailBody))
+            {
+                MessageBox.Show("Uspješno se poslali mail na adresu " + primateljEmail);
+            }else
+            {
+                MessageBox.Show("Došlo je do pogreške kod slanja emaila");
+            }
+                
 
                        
         }
@@ -172,14 +184,15 @@ namespace eAPW
         {
             using (var db = new ProgramskoInzenjerstvoDBEntities())
             {
-                foreach (Rezervacija rez in db.Rezervacijas.Where(x => x.izvrseno == false))
+                int lokacijaID = Convert.ToInt32(ConfigurationManager.AppSettings["LokacijaID"]);
+                foreach (Rezervacija rez in db.Rezervacijas.Where(x => x.izvrseno == false && x.lokacija == lokacijaID))
                 {
                     List<Djelovi> listaDjelovaRezervacija = new List<Djelovi>();
 
-                    foreach (Rezervacija_has_Djelovi rhd in rez.Rezervacija_has_Djelovi.Where(x => x.Rezervacija.lokacija == 2))
+                    foreach (Rezervacija_has_Djelovi rhd in rez.Rezervacija_has_Djelovi)
                     {
                         Djelovi dio = db.Djelovis.Where(x => x.id == rhd.int_djelovi).Single();
-                        Lokacija_has_djelovi lhd = db.Lokacija_has_djelovi.Where(y => y.id_djelovi == dio.id).SingleOrDefault();
+                        Lokacija_has_djelovi lhd = db.Lokacija_has_djelovi.Where(y => y.id_djelovi == dio.id && y.id_lokacija == lokacijaID).SingleOrDefault();
                         
                         if (rhd.kolicina <= lhd.kolicina)
                         {
@@ -188,11 +201,12 @@ namespace eAPW
                     }
                     if (listaDjelovaRezervacija.Count > 0 && listaDjelovaRezervacija.Count == rez.Rezervacija_has_Djelovi.Count)
                     {
-                        pripremiMail(rez.kupacEmail, listaDjelovaRezervacija);
+                        string lokacijaAdresa = db.Lokacijas.Where(x => x.id == lokacijaID).Select(x => x.Adresa).SingleOrDefault();
+                        
+                        pripremiMail(rez.kupacEmail,lokacijaAdresa, listaDjelovaRezervacija);
                         Rezervacija rezervacija = db.Rezervacijas.Single(x => x.id == rez.id);
                         rezervacija.izvrseno = true;
-
-
+                        
                     }
                 }
                 db.SaveChanges();

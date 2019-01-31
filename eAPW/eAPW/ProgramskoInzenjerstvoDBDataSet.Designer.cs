@@ -15271,7 +15271,7 @@ SELECT id_zaposlenik, id_tip, datum FROM Zaposlenik_has_Tip WHERE (id_tip = @id_
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Lokacija1TableAdapter : global::System.ComponentModel.Component {
+    public partial class BrojRacunaNaLokacijama : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -15285,7 +15285,7 @@ SELECT id_zaposlenik, id_tip, datum FROM Zaposlenik_has_Tip WHERE (id_tip = @id_
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public Lokacija1TableAdapter() {
+        public BrojRacunaNaLokacijama() {
             this.ClearBeforeFill = true;
         }
         
@@ -15443,7 +15443,7 @@ SELECT id_zaposlenik, id_tip, datum FROM Zaposlenik_has_Tip WHERE (id_tip = @id_
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Zaposlenik1TableAdapter : global::System.ComponentModel.Component {
+    public partial class BrojRacunaPoZaposleniku : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -15457,7 +15457,7 @@ SELECT id_zaposlenik, id_tip, datum FROM Zaposlenik_has_Tip WHERE (id_tip = @id_
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public Zaposlenik1TableAdapter() {
+        public BrojRacunaPoZaposleniku() {
             this.ClearBeforeFill = true;
         }
         

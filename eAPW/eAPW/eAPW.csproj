@@ -156,12 +156,6 @@
     <Compile Include="FrmRacunPrikazi.Designer.cs">
       <DependentUpon>FrmRacunPrikazi.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmReport1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmReport1.Designer.cs">
-      <DependentUpon>FrmReport1.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmRezervacija.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,9 +274,6 @@
     <EmbeddedResource Include="FrmRacunNoviVeleprodaja.resx">
       <DependentUpon>FrmRacunNoviVeleprodaja.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmReport1.resx">
-      <DependentUpon>FrmReport1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmRezervacija.resx">
       <DependentUpon>FrmRezervacija.cs</DependentUpon>
     </EmbeddedResource>
@@ -307,8 +298,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Report1.rdlc" />
-    <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="UserConPrikazRacuna.resx">
       <DependentUpon>UserConPrikazRacuna.cs</DependentUpon>
     </EmbeddedResource>
@@ -358,6 +347,12 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
       <LastGenOutput>DataModel.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VanjskaKlasa\VanjskaKlasa.csproj">
+      <Project>{f85aeb95-f539-4887-b65c-efa543c508fc}</Project>
+      <Name>VanjskaKlasa</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
