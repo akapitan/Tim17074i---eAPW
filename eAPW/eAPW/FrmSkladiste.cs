@@ -157,7 +157,7 @@ namespace eAPW
         public void pripremiMail(string primateljEmail,string lokacijaAdresa, List<Djelovi> listaDjelova)
         {
 
-            string mailBody = "Sljedeći proizvodi su ponovo u našoj ponudi : \n\n";
+            string mailBody = "Poštovani \nObavještavamo Vas da su sljedeći proizvodi su ponovo u našoj ponudi : \n\n";
             foreach (Djelovi dio in listaDjelova)
             {
                 mailBody += "  - " + dio.naziv + "\n";

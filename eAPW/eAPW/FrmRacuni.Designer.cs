@@ -81,7 +81,7 @@
             this.bntNovi.Name = "bntNovi";
             this.bntNovi.Size = new System.Drawing.Size(90, 44);
             this.bntNovi.TabIndex = 18;
-            this.bntNovi.Text = "Novi";
+            this.bntNovi.Text = "Maloprodaja";
             this.bntNovi.UseVisualStyleBackColor = true;
             this.bntNovi.Click += new System.EventHandler(this.bntNovi_Click);
             // 

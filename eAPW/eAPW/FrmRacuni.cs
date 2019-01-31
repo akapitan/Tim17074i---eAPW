@@ -24,7 +24,7 @@ namespace eAPW
             using (var db = new ProgramskoInzenjerstvoDBEntities())
             {
                 List<Racun> ls = new List<Racun>();
-                foreach (Racun z in db.Racuns)
+                foreach (Racun z in db.Racuns.OrderByDescending(x=> x.datum))
                 {
                     ls.Add(z);
                 }

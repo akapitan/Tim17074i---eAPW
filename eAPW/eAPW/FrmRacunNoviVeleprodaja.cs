@@ -139,6 +139,8 @@ namespace eAPW
 
         private void bntIzdaj_Click(object sender, EventArgs e)
         {
+            if (bl.Count == 0) MessageBox.Show("Ne možete napraviti račun bez djelova");
+            else
             using (var db = new ProgramskoInzenjerstvoDBEntities())
             {
                 Racun noviRacun = new Racun();
