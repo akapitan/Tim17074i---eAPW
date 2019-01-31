@@ -65,10 +65,10 @@ namespace eAPW
 
         private void trgovinaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FrmReport1 frmReportTrgovine = new FrmReport1();
-            //frmReportTrgovine.MdiParent = this;
-            //frmReportTrgovine.WindowState = FormWindowState.Maximized;
-            //frmReportTrgovine.Show();
+            FrmReportStanjeNaSkladistu stanjeNaSkladistu = new FrmReportStanjeNaSkladistu();
+            stanjeNaSkladistu.MdiParent = this;
+            stanjeNaSkladistu.WindowState = FormWindowState.Maximized;
+            stanjeNaSkladistu.Show();
         }
     }
 }

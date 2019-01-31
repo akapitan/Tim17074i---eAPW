@@ -77,9 +77,9 @@
             // 
             // bntNovi
             // 
-            this.bntNovi.Location = new System.Drawing.Point(439, 469);
+            this.bntNovi.Location = new System.Drawing.Point(435, 469);
             this.bntNovi.Name = "bntNovi";
-            this.bntNovi.Size = new System.Drawing.Size(90, 44);
+            this.bntNovi.Size = new System.Drawing.Size(94, 44);
             this.bntNovi.TabIndex = 18;
             this.bntNovi.Text = "Maloprodaja";
             this.bntNovi.UseVisualStyleBackColor = true;

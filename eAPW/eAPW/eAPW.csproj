@@ -61,6 +61,26 @@
       <HintPath>..\packages\Microsoft.ReportViewer.Runtime.WinForms.12.0.2402.15\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MigraDoc.DocumentObjectModel, Version=1.32.4334.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\MigraDoc.DocumentObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MigraDoc.Rendering, Version=1.32.4334.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\MigraDoc.Rendering.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MigraDoc.RtfRendering, Version=1.32.4334.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\MigraDoc.RtfRendering.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\PdfSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\PdfSharp.Charting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
@@ -155,6 +175,12 @@
     </Compile>
     <Compile Include="FrmRacunPrikazi.Designer.cs">
       <DependentUpon>FrmRacunPrikazi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportStanjeNaSkladistu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportStanjeNaSkladistu.Designer.cs">
+      <DependentUpon>FrmReportStanjeNaSkladistu.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRezervacija.cs">
       <SubType>Form</SubType>
@@ -274,6 +300,12 @@
     <EmbeddedResource Include="FrmRacunNoviVeleprodaja.resx">
       <DependentUpon>FrmRacunNoviVeleprodaja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRacunPrikazi.resx">
+      <DependentUpon>FrmRacunPrikazi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportStanjeNaSkladistu.resx">
+      <DependentUpon>FrmReportStanjeNaSkladistu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRezervacija.resx">
       <DependentUpon>FrmRezervacija.cs</DependentUpon>
     </EmbeddedResource>
@@ -298,6 +330,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportStanjeNaSkladistu.rdlc" />
     <EmbeddedResource Include="UserConPrikazRacuna.resx">
       <DependentUpon>UserConPrikazRacuna.cs</DependentUpon>
     </EmbeddedResource>

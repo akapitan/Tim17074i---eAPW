@@ -157,8 +157,8 @@
             // trgovinaToolStripMenuItem
             // 
             this.trgovinaToolStripMenuItem.Name = "trgovinaToolStripMenuItem";
-            this.trgovinaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.trgovinaToolStripMenuItem.Text = "Trgovine";
+            this.trgovinaToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.trgovinaToolStripMenuItem.Text = "Stanje na skladištu";
             this.trgovinaToolStripMenuItem.Click += new System.EventHandler(this.trgovinaToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
