@@ -401,6 +401,9 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
       <LastGenOutput>DataModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\aAPW_Logo3.jpg" />
+    <None Include="Resources\aAPW_Logo3.png" />
+    <None Include="Resources\aAPW_Logo.PNG" />
     <None Include="Resources\eAPW_Logo.png" />
   </ItemGroup>
   <ItemGroup>

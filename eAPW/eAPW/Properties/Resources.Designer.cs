@@ -63,9 +63,29 @@ namespace eAPW.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap eAPW_Logo {
+        internal static System.Drawing.Bitmap aAPW_Logo {
             get {
-                object obj = ResourceManager.GetObject("eAPW_Logo", resourceCulture);
+                object obj = ResourceManager.GetObject("aAPW_Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap aAPW_Logo3 {
+            get {
+                object obj = ResourceManager.GetObject("aAPW_Logo3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap aAPW_Logo31 {
+            get {
+                object obj = ResourceManager.GetObject("aAPW_Logo31", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

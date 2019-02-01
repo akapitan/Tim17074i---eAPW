@@ -43,11 +43,11 @@
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trgovinaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.djeloviProdaniUZadnjihXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rezervacijeUZadnjihXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.upoteZaKorištenjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblKorisnickoIme = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.rezervacijeUZadnjihXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip1.Size = new System.Drawing.Size(1084, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
@@ -77,7 +78,7 @@
             // izlazToolStripMenuItem
             // 
             this.izlazToolStripMenuItem.Name = "izlazToolStripMenuItem";
-            this.izlazToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.izlazToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.izlazToolStripMenuItem.Text = "Izlaz";
             this.izlazToolStripMenuItem.Click += new System.EventHandler(this.izlazToolStripMenuItem_Click);
             // 
@@ -95,27 +96,27 @@
             // skladišteToolStripMenuItem
             // 
             this.skladišteToolStripMenuItem.Name = "skladišteToolStripMenuItem";
-            this.skladišteToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.skladišteToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.skladišteToolStripMenuItem.Text = "Skladište";
             this.skladišteToolStripMenuItem.Click += new System.EventHandler(this.skladišteToolStripMenuItem_Click);
             // 
             // prodajaToolStripMenuItem
             // 
             this.prodajaToolStripMenuItem.Name = "prodajaToolStripMenuItem";
-            this.prodajaToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.prodajaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.prodajaToolStripMenuItem.Text = "Prodaja";
             this.prodajaToolStripMenuItem.Click += new System.EventHandler(this.prodajaToolStripMenuItem_Click);
             // 
             // narudžbaToolStripMenuItem
             // 
             this.narudžbaToolStripMenuItem.Name = "narudžbaToolStripMenuItem";
-            this.narudžbaToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.narudžbaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.narudžbaToolStripMenuItem.Text = "Narudžba";
             // 
             // rezervacijaToolStripMenuItem
             // 
             this.rezervacijaToolStripMenuItem.Name = "rezervacijaToolStripMenuItem";
-            this.rezervacijaToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.rezervacijaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.rezervacijaToolStripMenuItem.Text = "Rezervacija";
             this.rezervacijaToolStripMenuItem.Click += new System.EventHandler(this.rezervacijaToolStripMenuItem_Click);
             // 
@@ -172,6 +173,13 @@
             this.djeloviProdaniUZadnjihXToolStripMenuItem.Text = "Djelovi prodani u zadnjih X";
             this.djeloviProdaniUZadnjihXToolStripMenuItem.Click += new System.EventHandler(this.djeloviProdaniUZadnjihXToolStripMenuItem_Click);
             // 
+            // rezervacijeUZadnjihXToolStripMenuItem
+            // 
+            this.rezervacijeUZadnjihXToolStripMenuItem.Name = "rezervacijeUZadnjihXToolStripMenuItem";
+            this.rezervacijeUZadnjihXToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.rezervacijeUZadnjihXToolStripMenuItem.Text = "Rezervacije u zadnjih X";
+            this.rezervacijeUZadnjihXToolStripMenuItem.Click += new System.EventHandler(this.rezervacijeUZadnjihXToolStripMenuItem_Click);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -203,24 +211,22 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Prijavljen kao ";
             // 
-            // rezervacijeUZadnjihXToolStripMenuItem
-            // 
-            this.rezervacijeUZadnjihXToolStripMenuItem.Name = "rezervacijeUZadnjihXToolStripMenuItem";
-            this.rezervacijeUZadnjihXToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
-            this.rezervacijeUZadnjihXToolStripMenuItem.Text = "Rezervacije u zadnjih X";
-            this.rezervacijeUZadnjihXToolStripMenuItem.Click += new System.EventHandler(this.rezervacijeUZadnjihXToolStripMenuItem_Click);
-            // 
             // FrmGlavna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackgroundImage = global::eAPW.Properties.Resources.aAPW_Logo31;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1084, 649);
             this.Controls.Add(this.lblKorisnickoIme);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.IsMdiContainer = true;
             this.Name = "FrmGlavna";
             this.Text = "FrmGlavna";
+            this.Load += new System.EventHandler(this.FrmGlavna_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -86,5 +86,10 @@ namespace eAPW
             rezervacijeUZadnjihX.WindowState = FormWindowState.Maximized;
             rezervacijeUZadnjihX.Show();
         }
+
+        private void FrmGlavna_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

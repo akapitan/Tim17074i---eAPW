@@ -15,9 +15,12 @@ namespace eAPW
 {
     public partial class FrmSkladiste : Form
     {
+        bool jeAdmin;
+
         public FrmSkladiste()
         {
             InitializeComponent();
+            jeAdmin = FrmGlavna.prijavljeniKorisnik.Zaposlenik_has_Tip.Any(x => x.id_tip == 1);
             ispisDatagrid();
         }
 
@@ -54,35 +57,46 @@ namespace eAPW
                             }).ToList();
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = data;
-
-
-
-
             }
         }
 
-        private void ispisDatagridNaSkladistu()
+        private void ispisDatagridNaSkladistu(bool provjera)
         {
             int rowIndex = dataGridView1.CurrentCell.RowIndex;
-            int idValue = int.Parse(dataGridView1.Rows[rowIndex].Cells[0].Value.ToString());
-
+            int idValue = int.Parse(dataGridView1.Rows[rowIndex].Cells[0].Value.ToString());           
             using (var db = new ProgramskoInzenjerstvoDBEntities())
             {
-                var data = (from x in db.Lokacija_has_djelovi
-                            where x.id_djelovi == idValue
-                            select new
-                            {
-                                Lokacija = x.Lokacija.naziv,
-                                Kolicina = x.kolicina
-                            }).ToList();
-                dgvDjeloviNaSkladistima.DataSource = data;
+                if (provjera == false)
+                {
+                    int lokacijaID = Convert.ToInt32(ConfigurationManager.AppSettings["LokacijaID"]);
+                    var data = (from x in db.Lokacija_has_djelovi
+                                where x.id_djelovi == idValue && x.id_lokacija == lokacijaID
+                                select new
+                                {
+                                    Lokacija = x.Lokacija.naziv,
+                                    Kolicina = x.kolicina
+                                }).ToList();
+                    dgvDjeloviNaSkladistima.DataSource = data;
+                }
+                else
+                {
+                    int lokacijaID = Convert.ToInt32(ConfigurationManager.AppSettings["LokacijaID"]);
+                    var data = (from x in db.Lokacija_has_djelovi
+                                where x.id_djelovi == idValue 
+                                select new
+                                {
+                                    Lokacija = x.Lokacija.naziv,
+                                    Kolicina = x.kolicina
+                                }).ToList();
+                    dgvDjeloviNaSkladistima.DataSource = data;
+                }
 
             }
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            ispisDatagridNaSkladistu();
+            ispisDatagridNaSkladistu(jeAdmin);
         }
 
         private void btnIzlaz_Click(object sender, EventArgs e)
@@ -125,7 +139,7 @@ namespace eAPW
                 promjena.kolicina = int.Parse(txtPromjeniNaSkladistu.Text);
                 db.SaveChanges();
             }
-            ispisDatagridNaSkladistu();
+            ispisDatagridNaSkladistu(jeAdmin);
             provjeriRezervacije();
         }
 
