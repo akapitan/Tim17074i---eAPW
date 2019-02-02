@@ -261,7 +261,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmAdminCRUDZaposlenikNovi";
-            this.Text = "FormAdminCRUDZaposlenikNovi";
+            this.Text = "Admin CRUD Zaposlenik";
             this.Load += new System.EventHandler(this.FrmAdminCRUDZaposlenikNovi_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

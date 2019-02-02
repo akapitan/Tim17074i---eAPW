@@ -194,7 +194,7 @@
             this.Controls.Add(this.dtpDatum);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmRacuni";
-            this.Text = "FrmRacuni";
+            this.Text = "Evidencija računa";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

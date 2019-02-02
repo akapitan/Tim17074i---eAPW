@@ -78,7 +78,7 @@
             // izlazToolStripMenuItem
             // 
             this.izlazToolStripMenuItem.Name = "izlazToolStripMenuItem";
-            this.izlazToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.izlazToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
             this.izlazToolStripMenuItem.Text = "Izlaz";
             this.izlazToolStripMenuItem.Click += new System.EventHandler(this.izlazToolStripMenuItem_Click);
             // 
@@ -96,27 +96,27 @@
             // skladišteToolStripMenuItem
             // 
             this.skladišteToolStripMenuItem.Name = "skladišteToolStripMenuItem";
-            this.skladišteToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.skladišteToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.skladišteToolStripMenuItem.Text = "Skladište";
             this.skladišteToolStripMenuItem.Click += new System.EventHandler(this.skladišteToolStripMenuItem_Click);
             // 
             // prodajaToolStripMenuItem
             // 
             this.prodajaToolStripMenuItem.Name = "prodajaToolStripMenuItem";
-            this.prodajaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.prodajaToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.prodajaToolStripMenuItem.Text = "Prodaja";
             this.prodajaToolStripMenuItem.Click += new System.EventHandler(this.prodajaToolStripMenuItem_Click);
             // 
             // narudžbaToolStripMenuItem
             // 
             this.narudžbaToolStripMenuItem.Name = "narudžbaToolStripMenuItem";
-            this.narudžbaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.narudžbaToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.narudžbaToolStripMenuItem.Text = "Narudžba";
             // 
             // rezervacijaToolStripMenuItem
             // 
             this.rezervacijaToolStripMenuItem.Name = "rezervacijaToolStripMenuItem";
-            this.rezervacijaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.rezervacijaToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.rezervacijaToolStripMenuItem.Text = "Rezervacija";
             this.rezervacijaToolStripMenuItem.Click += new System.EventHandler(this.rezervacijaToolStripMenuItem_Click);
             // 
@@ -225,7 +225,7 @@
             this.DoubleBuffered = true;
             this.IsMdiContainer = true;
             this.Name = "FrmGlavna";
-            this.Text = "FrmGlavna";
+            this.Text = "eAPW";
             this.Load += new System.EventHandler(this.FrmGlavna_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

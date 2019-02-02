@@ -362,6 +362,9 @@
     <None Include="DataModel.edmx.diagram">
       <DependentUpon>DataModel.edmx</DependentUpon>
     </None>
+    <None Include="Help.chm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="ProgramskoInzenjerstvoDBDataSet.xsc">
       <DependentUpon>ProgramskoInzenjerstvoDBDataSet.xsd</DependentUpon>

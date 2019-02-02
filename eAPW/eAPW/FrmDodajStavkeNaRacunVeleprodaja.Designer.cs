@@ -150,7 +150,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvPopisStavki);
             this.Name = "FrmDodajStavkeNaRacunVeleprodaja";
-            this.Text = "FrmDodajStavkeNaRacunVeleprodaja";
+            this.Text = "eAPW  Dodaj stavke na račun";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

@@ -96,7 +96,7 @@
             this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmAdminCRUDZaposlenik";
-            this.Text = "FormFormAdminCRUDZaposlenik";
+            this.Text = "Admin CRUD Zaposlenik";
             this.Load += new System.EventHandler(this.FrmFormAdminCRUDZaposlenik_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

@@ -228,7 +228,7 @@
             this.Controls.Add(this.dtpDatum);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmRacunNoviVeleprodaja";
-            this.Text = "FrmRacunNoviVeleprodaja";
+            this.Text = "Veleprodaja Novi račun";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -139,6 +139,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmPrijava";
             this.Text = "Prijava";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmPrijava_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

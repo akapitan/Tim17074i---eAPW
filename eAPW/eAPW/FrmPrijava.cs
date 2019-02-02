@@ -95,5 +95,10 @@ namespace eAPW
         {
             Application.Exit();
         }
+
+        private void FrmPrijava_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this,"Help.chm", HelpNavigator.Index, "prijava");
+        }
     }
 }
