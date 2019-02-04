@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ProgramskoInzenjerstvoDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ProgramskoInzenjerstvoDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Djelovi">
           <Key>
             <PropertyRef Name="id" />
@@ -111,6 +111,7 @@
           <Property Name="izvrseno" Type="bit" Nullable="false" />
           <Property Name="napravioNarudzbu" Type="int" Nullable="false" />
           <Property Name="lokacija" Type="int" />
+          <Property Name="datumIzdavanja" Type="datetime" />
         </EntityType>
         <EntityType Name="Rezervacija_has_Djelovi">
           <Key>
@@ -160,6 +161,22 @@
           <Property Name="id_zaposlenik" Type="int" Nullable="false" />
           <Property Name="id_tip" Type="int" Nullable="false" />
           <Property Name="datum" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ProgramskoInzenjerstvoDB.dbo.StanjeNaSkladistu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="StanjeNaSkladistu">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="Dio" />
+            <PropertyRef Name="kategorija" />
+            <PropertyRef Name="Proizvođač" />
+            <PropertyRef Name="kolicina" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Dio" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="kategorija" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Proizvođač" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="kolicina" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Djelovi_Kategorija">
           <End Role="Kategorija" Type="Self.Kategorija" Multiplicity="1" />
@@ -430,6 +447,15 @@
           <EntitySet Name="Trgovina" EntityType="Self.Trgovina" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Zaposlenik" EntityType="Self.Zaposlenik" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Zaposlenik_has_Tip" EntityType="Self.Zaposlenik_has_Tip" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StanjeNaSkladistu" EntityType="Self.StanjeNaSkladistu" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [StanjeNaSkladistu].[id] AS [id], 
+    [StanjeNaSkladistu].[Dio] AS [Dio], 
+    [StanjeNaSkladistu].[kategorija] AS [kategorija], 
+    [StanjeNaSkladistu].[Proizvođač] AS [Proizvođač], 
+    [StanjeNaSkladistu].[kolicina] AS [kolicina]
+    FROM [dbo].[StanjeNaSkladistu] AS [StanjeNaSkladistu]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Djelovi_Kategorija" Association="Self.FK_Djelovi_Kategorija">
             <End Role="Kategorija" EntitySet="Kategorija" />
             <End Role="Djelovi" EntitySet="Djelovi" />
@@ -515,8 +541,7 @@
             <End Role="Zaposlenik" EntitySet="Zaposlenik" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProgramskoInzenjerstvoDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -656,6 +681,7 @@
           <NavigationProperty Name="Lokacija1" Relationship="Self.FK_Rezervacija_Lokacija" FromRole="Rezervacija" ToRole="Lokacija" />
           <NavigationProperty Name="Rezervacija_has_Djelovi" Relationship="Self.FK_Rezervacija_has_Djelovi_Rezervacija" FromRole="Rezervacija" ToRole="Rezervacija_has_Djelovi" />
           <NavigationProperty Name="Zaposlenik" Relationship="Self.FK_Rezervacija_Zaposlenik" FromRole="Rezervacija" ToRole="Zaposlenik" />
+          <Property Name="datumIzdavanja" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Rezervacija_has_Djelovi">
           <Key>
@@ -1071,7 +1097,22 @@
             <End Role="Zaposlenik" EntitySet="Zaposleniks" />
             <End Role="Zaposlenik_has_Tip" EntitySet="Zaposlenik_has_Tip" />
           </AssociationSet>
+          <EntitySet Name="StanjeNaSkladistus" EntityType="ProgramskoInzenjerstvoDBModel.StanjeNaSkladistu" />
         </EntityContainer>
+        <EntityType Name="StanjeNaSkladistu">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="Dio" />
+            <PropertyRef Name="kategorija" />
+            <PropertyRef Name="Proizvođač" />
+            <PropertyRef Name="kolicina" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Dio" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kategorija" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Proizvođač" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kolicina" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1183,6 +1224,7 @@
           <EntitySetMapping Name="Rezervacijas">
             <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.Rezervacija">
               <MappingFragment StoreEntitySet="Rezervacija">
+                <ScalarProperty Name="datumIzdavanja" ColumnName="datumIzdavanja" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="kupacIme" ColumnName="kupacIme" />
                 <ScalarProperty Name="kupacPrezime" ColumnName="kupacPrezime" />
@@ -1242,6 +1284,17 @@
                 <ScalarProperty Name="id_zaposlenik" ColumnName="id_zaposlenik" />
                 <ScalarProperty Name="id_tip" ColumnName="id_tip" />
                 <ScalarProperty Name="datum" ColumnName="datum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StanjeNaSkladistus">
+            <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.StanjeNaSkladistu">
+              <MappingFragment StoreEntitySet="StanjeNaSkladistu">
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+                <ScalarProperty Name="Proizvođač" ColumnName="Proizvođač" />
+                <ScalarProperty Name="kategorija" ColumnName="kategorija" />
+                <ScalarProperty Name="Dio" ColumnName="Dio" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

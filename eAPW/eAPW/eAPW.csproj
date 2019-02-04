@@ -188,12 +188,6 @@
     <Compile Include="FrmReportRezervacijeUZadnjihX.Designer.cs">
       <DependentUpon>FrmReportRezervacijeUZadnjihX.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmReportStanjeNaSkladistu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmReportStanjeNaSkladistu.Designer.cs">
-      <DependentUpon>FrmReportStanjeNaSkladistu.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmRezervacija.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +211,12 @@
     </Compile>
     <Compile Include="FrmSkladiste.Designer.cs">
       <DependentUpon>FrmSkladiste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStanjeNaSkladistu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStanjeNaSkladistu.Designer.cs">
+      <DependentUpon>FrmStanjeNaSkladistu.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTvrtkePregled.cs">
       <SubType>Form</SubType>
@@ -265,6 +265,9 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Rezervacija_has_Djelovi.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StanjeNaSkladistu.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Tip.cs">
@@ -321,9 +324,6 @@
     <EmbeddedResource Include="FrmReportRezervacijeUZadnjihX.resx">
       <DependentUpon>FrmReportRezervacijeUZadnjihX.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmReportStanjeNaSkladistu.resx">
-      <DependentUpon>FrmReportStanjeNaSkladistu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmRezervacija.resx">
       <DependentUpon>FrmRezervacija.cs</DependentUpon>
     </EmbeddedResource>
@@ -335,6 +335,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSkladiste.resx">
       <DependentUpon>FrmSkladiste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStanjeNaSkladistu.resx">
+      <DependentUpon>FrmStanjeNaSkladistu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTvrtkePregled.resx">
       <DependentUpon>FrmTvrtkePregled.cs</DependentUpon>
@@ -351,7 +354,7 @@
     </Compile>
     <EmbeddedResource Include="ReportDjelovaProdanihUZadnjihX.rdlc" />
     <EmbeddedResource Include="ReportRezervacijeUZadnjih.rdlc" />
-    <EmbeddedResource Include="ReportStanjeNaSkladištu.rdlc" />
+    <EmbeddedResource Include="ReportStanjeNaSkladistu.rdlc" />
     <EmbeddedResource Include="UserConPrikazRacuna.resx">
       <DependentUpon>UserConPrikazRacuna.cs</DependentUpon>
     </EmbeddedResource>

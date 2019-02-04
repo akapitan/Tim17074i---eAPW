@@ -42,6 +42,7 @@
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Rezervacija_Zaposlenik" ManuallyRouted="false" />
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Zaposlenik_has_Tip_Tip" ManuallyRouted="false" />
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Zaposlenik_has_Tip_Zaposlenik" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.StanjeNaSkladistu" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

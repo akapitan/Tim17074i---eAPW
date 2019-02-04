@@ -63,7 +63,7 @@ namespace eAPW
 
         private void trgovinaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmReportStanjeNaSkladistu stanjeNaSkladistu = new FrmReportStanjeNaSkladistu();
+            FrmStanjeNaSkladistu stanjeNaSkladistu = new FrmStanjeNaSkladistu();
             stanjeNaSkladistu.MdiParent = this;
             stanjeNaSkladistu.WindowState = FormWindowState.Maximized;
             stanjeNaSkladistu.Show();

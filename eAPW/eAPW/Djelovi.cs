@@ -31,7 +31,7 @@ namespace eAPW
         public int maloprodajnaCijena { get; set; }
         public int veleprodajnaCijena { get; set; }
         public int kolicina { get; set; }
-            
+    
         public virtual Kategorija Kategorija1 { get; set; }
         public virtual Model_vozila Model_vozila { get; set; }
         public virtual Proizvodac Proizvodac { get; set; }
@@ -43,5 +43,10 @@ namespace eAPW
         public virtual ICollection<Racun_Has_Djelovi> Racun_Has_Djelovi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rezervacija_has_Djelovi> Rezervacija_has_Djelovi { get; set; }
+
+        public override string ToString()
+        {
+            return naziv;
+        }
     }
 }

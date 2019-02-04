@@ -38,7 +38,7 @@ namespace eAPW
 
         public override string ToString()
         {
-            return naziv;
+            return Adresa;
         }
     }
 }

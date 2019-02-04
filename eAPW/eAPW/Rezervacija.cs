@@ -27,6 +27,7 @@ namespace eAPW
         public bool izvrseno { get; set; }
         public int napravioNarudzbu { get; set; }
         public Nullable<int> lokacija { get; set; }
+        public Nullable<System.DateTime> datumIzdavanja { get; set; }
     
         public virtual Lokacija Lokacija1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
