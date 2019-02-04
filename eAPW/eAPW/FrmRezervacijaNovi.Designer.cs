@@ -47,8 +47,8 @@
             this.txtKolicina = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtSelektiraniDio = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtSelektiraniDio = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKupacRezervacija)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisProizvodaKojegNemaNaSkladistu)).BeginInit();
@@ -237,14 +237,6 @@
             this.groupBox2.TabIndex = 42;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dodaj kolicinu rezervaciji";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // txtSelektiraniDio
-            // 
-            this.txtSelektiraniDio.Location = new System.Drawing.Point(9, 96);
-            this.txtSelektiraniDio.Name = "txtSelektiraniDio";
-            this.txtSelektiraniDio.Size = new System.Drawing.Size(126, 22);
-            this.txtSelektiraniDio.TabIndex = 40;
             // 
             // label7
             // 
@@ -254,6 +246,13 @@
             this.label7.Size = new System.Drawing.Size(63, 17);
             this.label7.TabIndex = 39;
             this.label7.Text = "Proizvod";
+            // 
+            // txtSelektiraniDio
+            // 
+            this.txtSelektiraniDio.Location = new System.Drawing.Point(9, 96);
+            this.txtSelektiraniDio.Name = "txtSelektiraniDio";
+            this.txtSelektiraniDio.Size = new System.Drawing.Size(126, 22);
+            this.txtSelektiraniDio.TabIndex = 40;
             // 
             // FrmRezervacijaNovi
             // 

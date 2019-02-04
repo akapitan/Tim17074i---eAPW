@@ -226,7 +226,6 @@
             this.IsMdiContainer = true;
             this.Name = "FrmGlavna";
             this.Text = "eAPW";
-            this.Load += new System.EventHandler(this.FrmGlavna_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

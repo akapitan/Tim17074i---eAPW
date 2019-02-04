@@ -12,7 +12,7 @@ namespace eAPW
 {
     public partial class FrmTvrtkePregled : Form
     {
-        Trgovina trgovina;
+        private Trgovina trgovina;
 
         public FrmTvrtkePregled()
         {

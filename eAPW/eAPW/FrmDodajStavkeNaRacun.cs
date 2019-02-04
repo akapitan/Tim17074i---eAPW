@@ -13,6 +13,7 @@ namespace eAPW
 {
     public partial class FrmDodajStavkeNaRacun : Form
     {
+        private Djelovi selektirani;
         public FrmDodajStavkeNaRacun()
         {
             InitializeComponent();
@@ -80,7 +81,7 @@ namespace eAPW
         {
             ispisSvihProizvoda(txtPretraga.Text);
         }
-        Djelovi selektirani;
+        
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {

@@ -12,7 +12,7 @@ namespace eAPW
 {
     public partial class FrmRezervacijaPrikaz : Form
     {
-        int rezervacijaID;
+        private int rezervacijaID;
 
         public FrmRezervacijaPrikaz(int rezId)
         {

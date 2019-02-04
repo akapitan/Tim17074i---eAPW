@@ -152,6 +152,7 @@ namespace eAPW
                     }
                     db.SaveChanges();
                     MessageBox.Show("Uspjesno se dodali novu rezervaciju");
+                    this.Close();
                 }
             else if (IsValid(txtKupacEmail.Text) == false)
             {
@@ -193,11 +194,6 @@ namespace eAPW
                 
             }
             
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void dgvKupacRezervacija_SelectionChanged(object sender, EventArgs e)

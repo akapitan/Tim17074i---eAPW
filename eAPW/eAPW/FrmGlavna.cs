@@ -12,9 +12,7 @@ namespace eAPW
 {
     public partial class FrmGlavna : Form
     {
-        public static Zaposlenik prijavljeniKorisnik;
-        public static Lokacija prijavljenaLokacija;
-        
+        public static Zaposlenik prijavljeniKorisnik;        
 
         public FrmGlavna(Zaposlenik k)
         {
@@ -41,10 +39,10 @@ namespace eAPW
 
         private void prodajaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmRacuni Fskladiste = new FrmRacuni();
-            Fskladiste.MdiParent = this;
-            Fskladiste.WindowState = FormWindowState.Maximized;
-            Fskladiste.Show();
+            FrmRacuni frmRacuni = new FrmRacuni();
+            frmRacuni.MdiParent = this;
+            frmRacuni.WindowState = FormWindowState.Maximized;
+            frmRacuni.Show();
         }
 
         private void rezervacijaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -85,11 +83,6 @@ namespace eAPW
             rezervacijeUZadnjihX.MdiParent = this;
             rezervacijeUZadnjihX.WindowState = FormWindowState.Maximized;
             rezervacijeUZadnjihX.Show();
-        }
-
-        private void FrmGlavna_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

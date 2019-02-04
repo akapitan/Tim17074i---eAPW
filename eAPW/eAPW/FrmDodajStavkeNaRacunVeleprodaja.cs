@@ -13,12 +13,15 @@ namespace eAPW
 {
     public partial class FrmDodajStavkeNaRacunVeleprodaja : Form
     {
+        private Djelovi selektirani;
+        private List<Djelovi> listDjelovi = new List<Djelovi>();
+
         public FrmDodajStavkeNaRacunVeleprodaja()
         {
             InitializeComponent();
             ispisSvihProizvoda();
         }
-        List<Djelovi> listDjelovi = new List<Djelovi>();
+        
 
         private void ispisSvihProizvoda()
         {
@@ -88,7 +91,7 @@ namespace eAPW
             ispisSvihProizvoda(txtPretraga.Text);
         }
 
-        Djelovi selektirani;
+        
 
         private void dgvPopisStavki_SelectionChanged(object sender, EventArgs e)
         {
