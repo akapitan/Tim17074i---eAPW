@@ -26,10 +26,5 @@ namespace eAPW
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Zaposlenik_has_Tip> Zaposlenik_has_Tip { get; set; }
-
-        public override string ToString()
-        {
-            return naziv;
-        }
     }
 }

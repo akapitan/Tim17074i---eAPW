@@ -98,6 +98,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrojDjelovaProdanihUZadnjihXNaLokaciji.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BrojRezervacijaUZadnjihXNaLokaciji.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -112,6 +118,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DatasetViews.cs">
+      <DependentUpon>DatasetViews.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatasetViews.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatasetViews.xsd</DependentUpon>
     </Compile>
     <Compile Include="Djelovi.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
@@ -182,11 +196,29 @@
     <Compile Include="FrmReportDjeloviProdaniUZadnjihX.Designer.cs">
       <DependentUpon>FrmReportDjeloviProdaniUZadnjihX.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReportDjeloviProdaniUZadnjihX2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportDjeloviProdaniUZadnjihX2.Designer.cs">
+      <DependentUpon>FrmReportDjeloviProdaniUZadnjihX2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportRezervacijeUZadnjih2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportRezervacijeUZadnjih2.Designer.cs">
+      <DependentUpon>FrmReportRezervacijeUZadnjih2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReportRezervacijeUZadnjihX.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmReportRezervacijeUZadnjihX.Designer.cs">
       <DependentUpon>FrmReportRezervacijeUZadnjihX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportStanjeNaSkladistu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportStanjeNaSkladistu.Designer.cs">
+      <DependentUpon>FrmReportStanjeNaSkladistu.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRezervacija.cs">
       <SubType>Form</SubType>
@@ -211,12 +243,6 @@
     </Compile>
     <Compile Include="FrmSkladiste.Designer.cs">
       <DependentUpon>FrmSkladiste.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmStanjeNaSkladistu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmStanjeNaSkladistu.Designer.cs">
-      <DependentUpon>FrmStanjeNaSkladistu.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTvrtkePregled.cs">
       <SubType>Form</SubType>
@@ -321,8 +347,17 @@
     <EmbeddedResource Include="FrmReportDjeloviProdaniUZadnjihX.resx">
       <DependentUpon>FrmReportDjeloviProdaniUZadnjihX.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportDjeloviProdaniUZadnjihX2.resx">
+      <DependentUpon>FrmReportDjeloviProdaniUZadnjihX2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportRezervacijeUZadnjih2.resx">
+      <DependentUpon>FrmReportRezervacijeUZadnjih2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmReportRezervacijeUZadnjihX.resx">
       <DependentUpon>FrmReportRezervacijeUZadnjihX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportStanjeNaSkladistu.resx">
+      <DependentUpon>FrmReportStanjeNaSkladistu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRezervacija.resx">
       <DependentUpon>FrmRezervacija.cs</DependentUpon>
@@ -335,9 +370,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSkladiste.resx">
       <DependentUpon>FrmSkladiste.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmStanjeNaSkladistu.resx">
-      <DependentUpon>FrmStanjeNaSkladistu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTvrtkePregled.resx">
       <DependentUpon>FrmTvrtkePregled.cs</DependentUpon>
@@ -353,7 +385,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ReportDjelovaProdanihUZadnjihX.rdlc" />
+    <EmbeddedResource Include="ReportDjelovaProdanihUZadnjihX2.rdlc" />
     <EmbeddedResource Include="ReportRezervacijeUZadnjih.rdlc" />
+    <EmbeddedResource Include="ReportRezervacijeUZadnjih2.rdlc" />
     <EmbeddedResource Include="ReportStanjeNaSkladistu.rdlc" />
     <EmbeddedResource Include="UserConPrikazRacuna.resx">
       <DependentUpon>UserConPrikazRacuna.cs</DependentUpon>
@@ -364,6 +398,17 @@
     </EntityDeploy>
     <None Include="DataModel.edmx.diagram">
       <DependentUpon>DataModel.edmx</DependentUpon>
+    </None>
+    <None Include="DatasetViews.xsc">
+      <DependentUpon>DatasetViews.xsd</DependentUpon>
+    </None>
+    <None Include="DatasetViews.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatasetViews.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatasetViews.xss">
+      <DependentUpon>DatasetViews.xsd</DependentUpon>
     </None>
     <None Include="Help.chm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

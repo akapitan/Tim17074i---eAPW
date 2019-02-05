@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DatasetViews" targetNamespace="http://tempuri.org/DatasetViews.xsd" xmlns:mstns="http://tempuri.org/DatasetViews.xsd" xmlns="http://tempuri.org/DatasetViews.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ProgramskoInzenjerstvoDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ProgramskoInzenjerstvoDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.eAPW.Properties.Settings.GlobalReference.Default.ProgramskoInzenjerstvoDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="StanjeNaSkladistuTableAdapter" GeneratorDataComponentClassName="StanjeNaSkladistuTableAdapter" Name="StanjeNaSkladistu" UserDataComponentName="StanjeNaSkladistuTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProgramskoInzenjerstvoDBConnectionString (Settings)" DbObjectName="ProgramskoInzenjerstvoDB.dbo.StanjeNaSkladistu" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT id, Dio, kategorija, Proizvođač, kolicina
+FROM     StanjeNaSkladistu</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="Dio" DataSetColumn="Dio" />
+              <Mapping SourceColumn="kategorija" DataSetColumn="kategorija" />
+              <Mapping SourceColumn="Proizvođač" DataSetColumn="Proizvođač" />
+              <Mapping SourceColumn="kolicina" DataSetColumn="kolicina" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BrojDjelovaProdanihUZadnjihXNaLokacijiTableAdapter" GeneratorDataComponentClassName="BrojDjelovaProdanihUZadnjihXNaLokacijiTableAdapter" Name="BrojDjelovaProdanihUZadnjihXNaLokaciji" UserDataComponentName="BrojDjelovaProdanihUZadnjihXNaLokacijiTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProgramskoInzenjerstvoDBConnectionString (Settings)" DbObjectName="ProgramskoInzenjerstvoDB.dbo.BrojDjelovaProdanihUZadnjihXNaLokaciji" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT naziv, kolicina, datum, lokacija
+FROM     BrojDjelovaProdanihUZadnjihXNaLokaciji</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="naziv" DataSetColumn="naziv" />
+              <Mapping SourceColumn="kolicina" DataSetColumn="kolicina" />
+              <Mapping SourceColumn="datum" DataSetColumn="datum" />
+              <Mapping SourceColumn="lokacija" DataSetColumn="lokacija" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BrojRezervacijaUZadnjihXNaLokacijiTableAdapter" GeneratorDataComponentClassName="BrojRezervacijaUZadnjihXNaLokacijiTableAdapter" Name="BrojRezervacijaUZadnjihXNaLokaciji" UserDataComponentName="BrojRezervacijaUZadnjihXNaLokacijiTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProgramskoInzenjerstvoDBConnectionString (Settings)" DbObjectName="ProgramskoInzenjerstvoDB.dbo.BrojRezervacijaUZadnjihXNaLokaciji" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT naziv, kolicina, datumIzdavanja, lokacija
+FROM     BrojRezervacijaUZadnjihXNaLokaciji</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="naziv" DataSetColumn="naziv" />
+              <Mapping SourceColumn="kolicina" DataSetColumn="kolicina" />
+              <Mapping SourceColumn="datumIzdavanja" DataSetColumn="datumIzdavanja" />
+              <Mapping SourceColumn="lokacija" DataSetColumn="lokacija" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DatasetViews" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DatasetViews" msprop:Generator_UserDSName="DatasetViews">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="StanjeNaSkladistu" msprop:Generator_TableClassName="StanjeNaSkladistuDataTable" msprop:Generator_TableVarName="tableStanjeNaSkladistu" msprop:Generator_TablePropName="StanjeNaSkladistu" msprop:Generator_RowDeletingName="StanjeNaSkladistuRowDeleting" msprop:Generator_RowChangingName="StanjeNaSkladistuRowChanging" msprop:Generator_RowEvHandlerName="StanjeNaSkladistuRowChangeEventHandler" msprop:Generator_RowDeletedName="StanjeNaSkladistuRowDeleted" msprop:Generator_UserTableName="StanjeNaSkladistu" msprop:Generator_RowChangedName="StanjeNaSkladistuRowChanged" msprop:Generator_RowEvArgName="StanjeNaSkladistuRowChangeEvent" msprop:Generator_RowClassName="StanjeNaSkladistuRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="Dio" msprop:Generator_ColumnVarNameInTable="columnDio" msprop:Generator_ColumnPropNameInRow="Dio" msprop:Generator_ColumnPropNameInTable="DioColumn" msprop:Generator_UserColumnName="Dio">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="kategorija" msprop:Generator_ColumnVarNameInTable="columnkategorija" msprop:Generator_ColumnPropNameInRow="kategorija" msprop:Generator_ColumnPropNameInTable="kategorijaColumn" msprop:Generator_UserColumnName="kategorija">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Proizvođač" msprop:Generator_ColumnVarNameInTable="columnProizvođač" msprop:Generator_ColumnPropNameInRow="Proizvođač" msprop:Generator_ColumnPropNameInTable="ProizvođačColumn" msprop:Generator_UserColumnName="Proizvođač">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="kolicina" msprop:Generator_ColumnVarNameInTable="columnkolicina" msprop:Generator_ColumnPropNameInRow="kolicina" msprop:Generator_ColumnPropNameInTable="kolicinaColumn" msprop:Generator_UserColumnName="kolicina" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BrojDjelovaProdanihUZadnjihXNaLokaciji" msprop:Generator_TableClassName="BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable" msprop:Generator_TableVarName="tableBrojDjelovaProdanihUZadnjihXNaLokaciji" msprop:Generator_RowChangedName="BrojDjelovaProdanihUZadnjihXNaLokacijiRowChanged" msprop:Generator_TablePropName="BrojDjelovaProdanihUZadnjihXNaLokaciji" msprop:Generator_RowDeletingName="BrojDjelovaProdanihUZadnjihXNaLokacijiRowDeleting" msprop:Generator_RowChangingName="BrojDjelovaProdanihUZadnjihXNaLokacijiRowChanging" msprop:Generator_RowEvHandlerName="BrojDjelovaProdanihUZadnjihXNaLokacijiRowChangeEventHandler" msprop:Generator_RowDeletedName="BrojDjelovaProdanihUZadnjihXNaLokacijiRowDeleted" msprop:Generator_RowClassName="BrojDjelovaProdanihUZadnjihXNaLokacijiRow" msprop:Generator_UserTableName="BrojDjelovaProdanihUZadnjihXNaLokaciji" msprop:Generator_RowEvArgName="BrojDjelovaProdanihUZadnjihXNaLokacijiRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="naziv" msprop:Generator_ColumnVarNameInTable="columnnaziv" msprop:Generator_ColumnPropNameInRow="naziv" msprop:Generator_ColumnPropNameInTable="nazivColumn" msprop:Generator_UserColumnName="naziv">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="kolicina" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnkolicina" msprop:Generator_ColumnPropNameInRow="kolicina" msprop:Generator_ColumnPropNameInTable="kolicinaColumn" msprop:Generator_UserColumnName="kolicina" type="xs:int" />
+              <xs:element name="datum" msprop:Generator_ColumnVarNameInTable="columndatum" msprop:Generator_ColumnPropNameInRow="datum" msprop:Generator_ColumnPropNameInTable="datumColumn" msprop:Generator_UserColumnName="datum" type="xs:dateTime" />
+              <xs:element name="lokacija" msprop:Generator_ColumnVarNameInTable="columnlokacija" msprop:Generator_ColumnPropNameInRow="lokacija" msprop:Generator_ColumnPropNameInTable="lokacijaColumn" msprop:Generator_UserColumnName="lokacija" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BrojRezervacijaUZadnjihXNaLokaciji" msprop:Generator_TableClassName="BrojRezervacijaUZadnjihXNaLokacijiDataTable" msprop:Generator_TableVarName="tableBrojRezervacijaUZadnjihXNaLokaciji" msprop:Generator_RowChangedName="BrojRezervacijaUZadnjihXNaLokacijiRowChanged" msprop:Generator_TablePropName="BrojRezervacijaUZadnjihXNaLokaciji" msprop:Generator_RowDeletingName="BrojRezervacijaUZadnjihXNaLokacijiRowDeleting" msprop:Generator_RowChangingName="BrojRezervacijaUZadnjihXNaLokacijiRowChanging" msprop:Generator_RowEvHandlerName="BrojRezervacijaUZadnjihXNaLokacijiRowChangeEventHandler" msprop:Generator_RowDeletedName="BrojRezervacijaUZadnjihXNaLokacijiRowDeleted" msprop:Generator_RowClassName="BrojRezervacijaUZadnjihXNaLokacijiRow" msprop:Generator_UserTableName="BrojRezervacijaUZadnjihXNaLokaciji" msprop:Generator_RowEvArgName="BrojRezervacijaUZadnjihXNaLokacijiRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="naziv" msprop:Generator_ColumnVarNameInTable="columnnaziv" msprop:Generator_ColumnPropNameInRow="naziv" msprop:Generator_ColumnPropNameInTable="nazivColumn" msprop:Generator_UserColumnName="naziv">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="kolicina" msprop:Generator_ColumnVarNameInTable="columnkolicina" msprop:Generator_ColumnPropNameInRow="kolicina" msprop:Generator_ColumnPropNameInTable="kolicinaColumn" msprop:Generator_UserColumnName="kolicina" type="xs:int" />
+              <xs:element name="datumIzdavanja" msprop:Generator_ColumnVarNameInTable="columndatumIzdavanja" msprop:Generator_ColumnPropNameInRow="datumIzdavanja" msprop:Generator_ColumnPropNameInTable="datumIzdavanjaColumn" msprop:Generator_UserColumnName="datumIzdavanja" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="lokacija" msprop:Generator_ColumnVarNameInTable="columnlokacija" msprop:Generator_ColumnPropNameInRow="lokacija" msprop:Generator_ColumnPropNameInTable="lokacijaColumn" msprop:Generator_UserColumnName="lokacija" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:StanjeNaSkladistu" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

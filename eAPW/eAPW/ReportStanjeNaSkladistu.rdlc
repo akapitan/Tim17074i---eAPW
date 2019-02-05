@@ -6,25 +6,25 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.625in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.625in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.625in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.625in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.43333in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox1">
+                    <Textbox Name="Textbox2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -32,18 +32,24 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Dio</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#4c68a2</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -61,8 +67,13 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Proizvođač</Value>
-                              <Style />
+                              <Value>kategorija</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -71,9 +82,10 @@
                       <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#4c68a2</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -91,8 +103,13 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>kategorija</Value>
-                              <Style />
+                              <Value>Proizvođač</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -101,9 +118,10 @@
                       <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#4c68a2</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -122,7 +140,12 @@
                           <TextRuns>
                             <TextRun>
                               <Value>kolicina</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -131,9 +154,10 @@
                       <rd:DefaultName>Textbox7</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#4c68a2</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -145,7 +169,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.43333in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -157,7 +181,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Dio.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Color>#4d4d4d</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -166,37 +193,7 @@
                       <rd:DefaultName>Dio</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Proizvođač">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Proizvođač.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Proizvođač</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#e5e5e5</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -217,7 +214,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!kategorija.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Color>#4d4d4d</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -226,7 +226,40 @@
                       <rd:DefaultName>kategorija</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#e5e5e5</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Proizvođač">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Proizvođač.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Color>#4d4d4d</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Proizvođač</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>#e5e5e5</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -246,8 +279,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!kolicina.Value</Value>
-                              <Style />
+                              <Value>=Sum(Fields!kolicina.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Color>#4d4d4d</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -256,7 +292,7 @@
                       <rd:DefaultName>kolicina</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#e5e5e5</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -265,7 +301,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -290,11 +325,9 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>stanjeNaSkladistu</DataSetName>
-        <Top>0.705in</Top>
-        <Left>0.78in</Left>
-        <Height>0.5in</Height>
-        <Width>4in</Width>
+        <DataSetName>StanjeNaSkladistu</DataSetName>
+        <Height>0.86667in</Height>
+        <Width>6.5in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -315,32 +348,28 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="ProgramskoInzenjerstvoDBDataSet">
+    <DataSource Name="DatasetViews">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>de07bdff-65b5-45c2-8ca9-93bb362ccff0</rd:DataSourceID>
+      <rd:DataSourceID>69688c11-f876-4225-875e-4510366ec11e</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="stanjeNaSkladistu">
+    <DataSet Name="StanjeNaSkladistu">
       <Query>
-        <DataSourceName>ProgramskoInzenjerstvoDBDataSet</DataSourceName>
+        <DataSourceName>DatasetViews</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Adresa">
-          <DataField>Adresa</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="naziv">
-          <DataField>naziv</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="kolicina">
-          <DataField>kolicina</DataField>
+        <Field Name="id">
+          <DataField>id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Dio">
+          <DataField>Dio</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="kategorija">
           <DataField>kategorija</DataField>
@@ -350,14 +379,14 @@
           <DataField>Proizvođač</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Dio">
-          <DataField>Dio</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="kolicina">
+          <DataField>kolicina</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>ProgramskoInzenjerstvoDBDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Aleksa\Desktop\Sve\FOI Things\PI\eAPW\eAPW\eAPW\ProgramskoInzenjerstvoDBDataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>DatasetViews</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Aleksa\Desktop\Sve\FOI Things\PI\eAPW\eAPW\eAPW\DatasetViews.xsd</rd:SchemaPath>
         <rd:TableName>StanjeNaSkladistu</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -366,5 +395,5 @@
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>d74bbd29-ba1b-4094-8acb-039141d5dbac</rd:ReportID>
+  <rd:ReportID>42212b2a-d1a9-477a-a7ce-a3813ae31ae3</rd:ReportID>
 </Report>

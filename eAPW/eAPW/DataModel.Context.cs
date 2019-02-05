@@ -42,5 +42,7 @@ namespace eAPW
         public virtual DbSet<Zaposlenik> Zaposleniks { get; set; }
         public virtual DbSet<Zaposlenik_has_Tip> Zaposlenik_has_Tip { get; set; }
         public virtual DbSet<StanjeNaSkladistu> StanjeNaSkladistus { get; set; }
+        public virtual DbSet<BrojDjelovaProdanihUZadnjihXNaLokaciji> BrojDjelovaProdanihUZadnjihXNaLokacijis { get; set; }
+        public virtual DbSet<BrojRezervacijaUZadnjihXNaLokaciji> BrojRezervacijaUZadnjihXNaLokacijis { get; set; }
     }
 }

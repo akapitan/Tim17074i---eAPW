@@ -163,6 +163,32 @@
           <Property Name="datum" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'ProgramskoInzenjerstvoDB.dbo.BrojDjelovaProdanihUZadnjihXNaLokaciji' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BrojDjelovaProdanihUZadnjihXNaLokaciji">
+          <Key>
+            <PropertyRef Name="naziv" />
+            <PropertyRef Name="kolicina" />
+            <PropertyRef Name="datum" />
+            <PropertyRef Name="lokacija" />
+          </Key>
+          <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="kolicina" Type="int" Nullable="false" />
+          <Property Name="datum" Type="date" Nullable="false" />
+          <Property Name="lokacija" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ProgramskoInzenjerstvoDB.dbo.BrojRezervacijaUZadnjihXNaLokaciji' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BrojRezervacijaUZadnjihXNaLokaciji">
+          <Key>
+            <PropertyRef Name="naziv" />
+            <PropertyRef Name="kolicina" />
+          </Key>
+          <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="datumIzdavanja" Type="datetime" />
+          <Property Name="kolicina" Type="int" Nullable="false" />
+          <Property Name="lokacija" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'ProgramskoInzenjerstvoDB.dbo.StanjeNaSkladistu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="StanjeNaSkladistu">
           <Key>
@@ -447,6 +473,22 @@ warning 6002: The table/view 'ProgramskoInzenjerstvoDB.dbo.StanjeNaSkladistu' do
           <EntitySet Name="Trgovina" EntityType="Self.Trgovina" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Zaposlenik" EntityType="Self.Zaposlenik" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Zaposlenik_has_Tip" EntityType="Self.Zaposlenik_has_Tip" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BrojDjelovaProdanihUZadnjihXNaLokaciji" EntityType="Self.BrojDjelovaProdanihUZadnjihXNaLokaciji" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BrojDjelovaProdanihUZadnjihXNaLokaciji].[naziv] AS [naziv], 
+    [BrojDjelovaProdanihUZadnjihXNaLokaciji].[kolicina] AS [kolicina], 
+    [BrojDjelovaProdanihUZadnjihXNaLokaciji].[datum] AS [datum], 
+    [BrojDjelovaProdanihUZadnjihXNaLokaciji].[lokacija] AS [lokacija]
+    FROM [dbo].[BrojDjelovaProdanihUZadnjihXNaLokaciji] AS [BrojDjelovaProdanihUZadnjihXNaLokaciji]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BrojRezervacijaUZadnjihXNaLokaciji" EntityType="Self.BrojRezervacijaUZadnjihXNaLokaciji" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BrojRezervacijaUZadnjihXNaLokaciji].[naziv] AS [naziv], 
+    [BrojRezervacijaUZadnjihXNaLokaciji].[datumIzdavanja] AS [datumIzdavanja], 
+    [BrojRezervacijaUZadnjihXNaLokaciji].[kolicina] AS [kolicina], 
+    [BrojRezervacijaUZadnjihXNaLokaciji].[lokacija] AS [lokacija]
+    FROM [dbo].[BrojRezervacijaUZadnjihXNaLokaciji] AS [BrojRezervacijaUZadnjihXNaLokaciji]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="StanjeNaSkladistu" EntityType="Self.StanjeNaSkladistu" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [StanjeNaSkladistu].[id] AS [id], 
@@ -1098,6 +1140,8 @@ warning 6002: The table/view 'ProgramskoInzenjerstvoDB.dbo.StanjeNaSkladistu' do
             <End Role="Zaposlenik_has_Tip" EntitySet="Zaposlenik_has_Tip" />
           </AssociationSet>
           <EntitySet Name="StanjeNaSkladistus" EntityType="ProgramskoInzenjerstvoDBModel.StanjeNaSkladistu" />
+          <EntitySet Name="BrojDjelovaProdanihUZadnjihXNaLokacijis" EntityType="ProgramskoInzenjerstvoDBModel.BrojDjelovaProdanihUZadnjihXNaLokaciji" />
+          <EntitySet Name="BrojRezervacijaUZadnjihXNaLokacijis" EntityType="ProgramskoInzenjerstvoDBModel.BrojRezervacijaUZadnjihXNaLokaciji" />
         </EntityContainer>
         <EntityType Name="StanjeNaSkladistu">
           <Key>
@@ -1112,6 +1156,28 @@ warning 6002: The table/view 'ProgramskoInzenjerstvoDB.dbo.StanjeNaSkladistu' do
           <Property Name="kategorija" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Proizvođač" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="kolicina" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BrojDjelovaProdanihUZadnjihXNaLokaciji">
+          <Key>
+            <PropertyRef Name="naziv" />
+            <PropertyRef Name="kolicina" />
+            <PropertyRef Name="datum" />
+            <PropertyRef Name="lokacija" />
+          </Key>
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kolicina" Type="Int32" Nullable="false" />
+          <Property Name="datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="lokacija" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BrojRezervacijaUZadnjihXNaLokaciji">
+          <Key>
+            <PropertyRef Name="naziv" />
+            <PropertyRef Name="kolicina" />
+          </Key>
+          <Property Name="naziv" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="datumIzdavanja" Type="DateTime" Precision="3" />
+          <Property Name="kolicina" Type="Int32" Nullable="false" />
+          <Property Name="lokacija" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1295,6 +1361,26 @@ warning 6002: The table/view 'ProgramskoInzenjerstvoDB.dbo.StanjeNaSkladistu' do
                 <ScalarProperty Name="kategorija" ColumnName="kategorija" />
                 <ScalarProperty Name="Dio" ColumnName="Dio" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BrojDjelovaProdanihUZadnjihXNaLokacijis">
+            <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.BrojDjelovaProdanihUZadnjihXNaLokaciji">
+              <MappingFragment StoreEntitySet="BrojDjelovaProdanihUZadnjihXNaLokaciji">
+                <ScalarProperty Name="lokacija" ColumnName="lokacija" />
+                <ScalarProperty Name="datum" ColumnName="datum" />
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BrojRezervacijaUZadnjihXNaLokacijis">
+            <EntityTypeMapping TypeName="ProgramskoInzenjerstvoDBModel.BrojRezervacijaUZadnjihXNaLokaciji">
+              <MappingFragment StoreEntitySet="BrojRezervacijaUZadnjihXNaLokaciji">
+                <ScalarProperty Name="lokacija" ColumnName="lokacija" />
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+                <ScalarProperty Name="datumIzdavanja" ColumnName="datumIzdavanja" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

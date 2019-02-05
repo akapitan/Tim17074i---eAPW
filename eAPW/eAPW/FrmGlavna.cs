@@ -63,7 +63,7 @@ namespace eAPW
 
         private void trgovinaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmStanjeNaSkladistu stanjeNaSkladistu = new FrmStanjeNaSkladistu();
+            FrmReportStanjeNaSkladistu stanjeNaSkladistu = new FrmReportStanjeNaSkladistu();
             stanjeNaSkladistu.MdiParent = this;
             stanjeNaSkladistu.WindowState = FormWindowState.Maximized;
             stanjeNaSkladistu.Show();
@@ -71,7 +71,7 @@ namespace eAPW
 
         private void djeloviProdaniUZadnjihXToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmReportDjeloviProdaniUZadnjihX djeloviProdaniUZadnjihX = new FrmReportDjeloviProdaniUZadnjihX();
+            FrmReportDjeloviProdaniUZadnjihX2 djeloviProdaniUZadnjihX = new FrmReportDjeloviProdaniUZadnjihX2();
             djeloviProdaniUZadnjihX.MdiParent = this;
             djeloviProdaniUZadnjihX.WindowState = FormWindowState.Maximized;
             djeloviProdaniUZadnjihX.Show();
@@ -79,7 +79,7 @@ namespace eAPW
 
         private void rezervacijeUZadnjihXToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmReportRezervacijeUZadnjihX rezervacijeUZadnjihX = new FrmReportRezervacijeUZadnjihX();
+            FrmReportRezervacijeUZadnjih2 rezervacijeUZadnjihX = new FrmReportRezervacijeUZadnjih2();
             rezervacijeUZadnjihX.MdiParent = this;
             rezervacijeUZadnjihX.WindowState = FormWindowState.Maximized;
             rezervacijeUZadnjihX.Show();

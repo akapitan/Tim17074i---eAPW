@@ -6,10 +6,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.34167in</Width>
+              <Width>2.69in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.34167in</Width>
+              <Width>2.69in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -18,7 +18,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox1">
+                    <Textbox Name="Textbox2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -26,18 +26,24 @@
                           <TextRuns>
                             <TextRun>
                               <Value>naziv</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#4c68a2</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -55,8 +61,13 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Kolicina</Value>
-                              <Style />
+                              <Value>kolicina</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -65,9 +76,10 @@
                       <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#4c68a2</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -91,7 +103,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!naziv.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Color>#4d4d4d</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -100,7 +115,7 @@
                       <rd:DefaultName>naziv</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#e5e5e5</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -113,24 +128,27 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Kolicina">
+                    <Textbox Name="kolicina">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Kolicina.Value</Value>
-                              <Style />
+                              <Value>=Fields!kolicina.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Color>#4d4d4d</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Kolicina</rd:DefaultName>
+                      <rd:DefaultName>kolicina</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#e5e5e5</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -161,11 +179,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
-        <Top>0.14389in</Top>
-        <Left>0.73833in</Left>
+        <DataSetName>ReportRezervacijeUZadnjih</DataSetName>
+        <Top>0.06944in</Top>
+        <Left>0.66667in</Left>
         <Height>0.5in</Height>
-        <Width>4.68334in</Width>
+        <Width>5.38in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -193,17 +211,17 @@
         <ChartSeriesHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Label>Kolicina</Label>
+              <Label>kolicina</Label>
             </ChartMember>
           </ChartMembers>
         </ChartSeriesHierarchy>
         <ChartData>
           <ChartSeriesCollection>
-            <ChartSeries Name="Kolicina">
+            <ChartSeries Name="kolicina">
               <ChartDataPoints>
                 <ChartDataPoint>
                   <ChartDataPointValues>
-                    <Y>=Sum(Fields!Kolicina.Value)</Y>
+                    <Y>=Sum(Fields!kolicina.Value)</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
@@ -242,7 +260,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Djelovi</Caption>
+                  <Caption>Axis Title</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -317,7 +335,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Količina</Caption>
+                  <Caption>Axis Title</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -434,10 +452,11 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>DataSet1</DataSetName>
-        <Top>0.71333in</Top>
+        <DataSetName>ReportRezervacijeUZadnjih</DataSetName>
+        <Top>0.73833in</Top>
+        <Left>0.43833in</Left>
         <Height>2in</Height>
-        <Width>6.5in</Width>
+        <Width>5.60833in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -449,7 +468,7 @@
         </Style>
       </Chart>
     </ReportItems>
-    <Height>2.71333in</Height>
+    <Height>3.155in</Height>
     <Style />
   </Body>
   <Width>6.5in</Width>
@@ -463,8 +482,8 @@
           <Source>Embedded</Source>
           <Value>aAPW_Logo</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.24388in</Top>
-          <Left>1.34208in</Left>
+          <Top>0.14972in</Top>
+          <Left>1.34249in</Left>
           <Height>0.70056in</Height>
           <Width>1.43333in</Width>
           <Style>
@@ -473,14 +492,14 @@
             </Border>
           </Style>
         </Image>
-        <Textbox Name="Textbox2">
+        <Textbox Name="Textbox4">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Broj rezervacija </Value>
+                  <Value>Izdane rezervacije po djelovima</Value>
                   <Style>
                     <FontSize>15pt</FontSize>
                   </Style>
@@ -490,10 +509,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.49444in</Top>
-          <Left>2.52958in</Left>
+          <Top>0.40028in</Top>
+          <Left>2.44666in</Left>
           <Height>0.26667in</Height>
-          <Width>2.34501in</Width>
+          <Width>3.06168in</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -520,18 +539,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="ProgramskoInzenjerstvoDBDataSet">
+    <DataSource Name="DatasetViews">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>13fe5f62-b370-43c7-b4ca-3c3f77a1bbe0</rd:DataSourceID>
+      <rd:DataSourceID>85a3211c-d219-49a3-b67a-3d58d15c324e</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="ReportRezervacijeUZadnjih">
       <Query>
-        <DataSourceName>ProgramskoInzenjerstvoDBDataSet</DataSourceName>
+        <DataSourceName>DatasetViews</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -539,18 +558,26 @@
           <DataField>naziv</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Kolicina">
-          <DataField>Kolicina</DataField>
+        <Field Name="kolicina">
+          <DataField>kolicina</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="datumIzdavanja">
+          <DataField>datumIzdavanja</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="lokacija">
+          <DataField>lokacija</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>ProgramskoInzenjerstvoDBDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Aleksa\Desktop\Sve\FOI Things\PI\eAPW\eAPW\eAPW\ProgramskoInzenjerstvoDBDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>BrojRezervacijaUZadnjihX</rd:TableName>
+        <rd:DataSetName>DatasetViews</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Aleksa\Desktop\Sve\FOI Things\PI\eAPW\eAPW\eAPW\DatasetViews.xsd</rd:SchemaPath>
+        <rd:TableName>BrojRezervacijaUZadnjihXNaLokaciji</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>BrojRezervacijaUZadnjihXTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>BrojRezervacijaUZadnjihXNaLokacijiTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -571,5 +598,5 @@ qrKOafUpXLiVdlH95c9/TlP6PDrDwvpMEb0wb95iMwSiIVHrO5QpBVlctGhResXPoyE863NlSvG61GuF
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>4c41bff5-53a6-4334-a4e4-de6b03d1bf2b</rd:ReportID>
+  <rd:ReportID>e8ea8f11-8e92-408f-b5f2-42da0915107a</rd:ReportID>
 </Report>

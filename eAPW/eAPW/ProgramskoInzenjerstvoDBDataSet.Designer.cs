@@ -66,6 +66,10 @@ namespace eAPW {
         
         private BrojRezervacijaUZadnjihXDataTable tableBrojRezervacijaUZadnjihX;
         
+        private BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable tableBrojDjelovaProdanihUZadnjihXNaLokaciji;
+        
+        private BrojRezervacijaUZadnjihXNaLokacijiDataTable tableBrojRezervacijaUZadnjihXNaLokaciji;
+        
         private StanjeNaSkladistu1DataTable tableStanjeNaSkladistu1;
         
         private global::System.Data.DataRelation relationFK_Djelovi_Kategorija;
@@ -208,6 +212,12 @@ namespace eAPW {
                 }
                 if ((ds.Tables["BrojRezervacijaUZadnjihX"] != null)) {
                     base.Tables.Add(new BrojRezervacijaUZadnjihXDataTable(ds.Tables["BrojRezervacijaUZadnjihX"]));
+                }
+                if ((ds.Tables["BrojDjelovaProdanihUZadnjihXNaLokaciji"] != null)) {
+                    base.Tables.Add(new BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable(ds.Tables["BrojDjelovaProdanihUZadnjihXNaLokaciji"]));
+                }
+                if ((ds.Tables["BrojRezervacijaUZadnjihXNaLokaciji"] != null)) {
+                    base.Tables.Add(new BrojRezervacijaUZadnjihXNaLokacijiDataTable(ds.Tables["BrojRezervacijaUZadnjihXNaLokaciji"]));
                 }
                 if ((ds.Tables["StanjeNaSkladistu1"] != null)) {
                     base.Tables.Add(new StanjeNaSkladistu1DataTable(ds.Tables["StanjeNaSkladistu1"]));
@@ -444,6 +454,26 @@ namespace eAPW {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable BrojDjelovaProdanihUZadnjihXNaLokaciji {
+            get {
+                return this.tableBrojDjelovaProdanihUZadnjihXNaLokaciji;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public BrojRezervacijaUZadnjihXNaLokacijiDataTable BrojRezervacijaUZadnjihXNaLokaciji {
+            get {
+                return this.tableBrojRezervacijaUZadnjihXNaLokaciji;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public StanjeNaSkladistu1DataTable StanjeNaSkladistu1 {
             get {
                 return this.tableStanjeNaSkladistu1;
@@ -579,6 +609,12 @@ namespace eAPW {
                 }
                 if ((ds.Tables["BrojRezervacijaUZadnjihX"] != null)) {
                     base.Tables.Add(new BrojRezervacijaUZadnjihXDataTable(ds.Tables["BrojRezervacijaUZadnjihX"]));
+                }
+                if ((ds.Tables["BrojDjelovaProdanihUZadnjihXNaLokaciji"] != null)) {
+                    base.Tables.Add(new BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable(ds.Tables["BrojDjelovaProdanihUZadnjihXNaLokaciji"]));
+                }
+                if ((ds.Tables["BrojRezervacijaUZadnjihXNaLokaciji"] != null)) {
+                    base.Tables.Add(new BrojRezervacijaUZadnjihXNaLokacijiDataTable(ds.Tables["BrojRezervacijaUZadnjihXNaLokaciji"]));
                 }
                 if ((ds.Tables["StanjeNaSkladistu1"] != null)) {
                     base.Tables.Add(new StanjeNaSkladistu1DataTable(ds.Tables["StanjeNaSkladistu1"]));
@@ -742,6 +778,18 @@ namespace eAPW {
                     this.tableBrojRezervacijaUZadnjihX.InitVars();
                 }
             }
+            this.tableBrojDjelovaProdanihUZadnjihXNaLokaciji = ((BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable)(base.Tables["BrojDjelovaProdanihUZadnjihXNaLokaciji"]));
+            if ((initTable == true)) {
+                if ((this.tableBrojDjelovaProdanihUZadnjihXNaLokaciji != null)) {
+                    this.tableBrojDjelovaProdanihUZadnjihXNaLokaciji.InitVars();
+                }
+            }
+            this.tableBrojRezervacijaUZadnjihXNaLokaciji = ((BrojRezervacijaUZadnjihXNaLokacijiDataTable)(base.Tables["BrojRezervacijaUZadnjihXNaLokaciji"]));
+            if ((initTable == true)) {
+                if ((this.tableBrojRezervacijaUZadnjihXNaLokaciji != null)) {
+                    this.tableBrojRezervacijaUZadnjihXNaLokaciji.InitVars();
+                }
+            }
             this.tableStanjeNaSkladistu1 = ((StanjeNaSkladistu1DataTable)(base.Tables["StanjeNaSkladistu1"]));
             if ((initTable == true)) {
                 if ((this.tableStanjeNaSkladistu1 != null)) {
@@ -825,6 +873,10 @@ namespace eAPW {
             base.Tables.Add(this.tableDjelovaProdanihUZadnjihX);
             this.tableBrojRezervacijaUZadnjihX = new BrojRezervacijaUZadnjihXDataTable();
             base.Tables.Add(this.tableBrojRezervacijaUZadnjihX);
+            this.tableBrojDjelovaProdanihUZadnjihXNaLokaciji = new BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable();
+            base.Tables.Add(this.tableBrojDjelovaProdanihUZadnjihXNaLokaciji);
+            this.tableBrojRezervacijaUZadnjihXNaLokaciji = new BrojRezervacijaUZadnjihXNaLokacijiDataTable();
+            base.Tables.Add(this.tableBrojRezervacijaUZadnjihXNaLokaciji);
             this.tableStanjeNaSkladistu1 = new StanjeNaSkladistu1DataTable();
             base.Tables.Add(this.tableStanjeNaSkladistu1);
             this.relationFK_Djelovi_Kategorija = new global::System.Data.DataRelation("FK_Djelovi_Kategorija", new global::System.Data.DataColumn[] {
@@ -1057,6 +1109,18 @@ namespace eAPW {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeBrojDjelovaProdanihUZadnjihXNaLokaciji() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeBrojRezervacijaUZadnjihXNaLokaciji() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeStanjeNaSkladistu1() {
             return false;
         }
@@ -1178,6 +1242,12 @@ namespace eAPW {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void BrojRezervacijaUZadnjihXRowChangeEventHandler(object sender, BrojRezervacijaUZadnjihXRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void BrojDjelovaProdanihUZadnjihXNaLokacijiRowChangeEventHandler(object sender, BrojDjelovaProdanihUZadnjihXNaLokacijiRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void BrojRezervacijaUZadnjihXNaLokacijiRowChangeEventHandler(object sender, BrojRezervacijaUZadnjihXNaLokacijiRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void StanjeNaSkladistu1RowChangeEventHandler(object sender, StanjeNaSkladistu1RowChangeEvent e);
@@ -7696,6 +7766,547 @@ namespace eAPW {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable : global::System.Data.TypedTableBase<BrojDjelovaProdanihUZadnjihXNaLokacijiRow> {
+            
+            private global::System.Data.DataColumn columnnaziv;
+            
+            private global::System.Data.DataColumn columnProdano;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable() {
+                this.TableName = "BrojDjelovaProdanihUZadnjihXNaLokaciji";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nazivColumn {
+                get {
+                    return this.columnnaziv;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ProdanoColumn {
+                get {
+                    return this.columnProdano;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public BrojDjelovaProdanihUZadnjihXNaLokacijiRow this[int index] {
+                get {
+                    return ((BrojDjelovaProdanihUZadnjihXNaLokacijiRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event BrojDjelovaProdanihUZadnjihXNaLokacijiRowChangeEventHandler BrojDjelovaProdanihUZadnjihXNaLokacijiRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event BrojDjelovaProdanihUZadnjihXNaLokacijiRowChangeEventHandler BrojDjelovaProdanihUZadnjihXNaLokacijiRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event BrojDjelovaProdanihUZadnjihXNaLokacijiRowChangeEventHandler BrojDjelovaProdanihUZadnjihXNaLokacijiRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event BrojDjelovaProdanihUZadnjihXNaLokacijiRowChangeEventHandler BrojDjelovaProdanihUZadnjihXNaLokacijiRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddBrojDjelovaProdanihUZadnjihXNaLokacijiRow(BrojDjelovaProdanihUZadnjihXNaLokacijiRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public BrojDjelovaProdanihUZadnjihXNaLokacijiRow AddBrojDjelovaProdanihUZadnjihXNaLokacijiRow(string naziv, int Prodano) {
+                BrojDjelovaProdanihUZadnjihXNaLokacijiRow rowBrojDjelovaProdanihUZadnjihXNaLokacijiRow = ((BrojDjelovaProdanihUZadnjihXNaLokacijiRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        naziv,
+                        Prodano};
+                rowBrojDjelovaProdanihUZadnjihXNaLokacijiRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowBrojDjelovaProdanihUZadnjihXNaLokacijiRow);
+                return rowBrojDjelovaProdanihUZadnjihXNaLokacijiRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable cln = ((BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnnaziv = base.Columns["naziv"];
+                this.columnProdano = base.Columns["Prodano"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnnaziv = new global::System.Data.DataColumn("naziv", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnaziv);
+                this.columnProdano = new global::System.Data.DataColumn("Prodano", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProdano);
+                this.columnnaziv.AllowDBNull = false;
+                this.columnnaziv.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public BrojDjelovaProdanihUZadnjihXNaLokacijiRow NewBrojDjelovaProdanihUZadnjihXNaLokacijiRow() {
+                return ((BrojDjelovaProdanihUZadnjihXNaLokacijiRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new BrojDjelovaProdanihUZadnjihXNaLokacijiRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(BrojDjelovaProdanihUZadnjihXNaLokacijiRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.BrojDjelovaProdanihUZadnjihXNaLokacijiRowChanged != null)) {
+                    this.BrojDjelovaProdanihUZadnjihXNaLokacijiRowChanged(this, new BrojDjelovaProdanihUZadnjihXNaLokacijiRowChangeEvent(((BrojDjelovaProdanihUZadnjihXNaLokacijiRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.BrojDjelovaProdanihUZadnjihXNaLokacijiRowChanging != null)) {
+                    this.BrojDjelovaProdanihUZadnjihXNaLokacijiRowChanging(this, new BrojDjelovaProdanihUZadnjihXNaLokacijiRowChangeEvent(((BrojDjelovaProdanihUZadnjihXNaLokacijiRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.BrojDjelovaProdanihUZadnjihXNaLokacijiRowDeleted != null)) {
+                    this.BrojDjelovaProdanihUZadnjihXNaLokacijiRowDeleted(this, new BrojDjelovaProdanihUZadnjihXNaLokacijiRowChangeEvent(((BrojDjelovaProdanihUZadnjihXNaLokacijiRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.BrojDjelovaProdanihUZadnjihXNaLokacijiRowDeleting != null)) {
+                    this.BrojDjelovaProdanihUZadnjihXNaLokacijiRowDeleting(this, new BrojDjelovaProdanihUZadnjihXNaLokacijiRowChangeEvent(((BrojDjelovaProdanihUZadnjihXNaLokacijiRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveBrojDjelovaProdanihUZadnjihXNaLokacijiRow(BrojDjelovaProdanihUZadnjihXNaLokacijiRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ProgramskoInzenjerstvoDBDataSet ds = new ProgramskoInzenjerstvoDBDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class BrojRezervacijaUZadnjihXNaLokacijiDataTable : global::System.Data.TypedTableBase<BrojRezervacijaUZadnjihXNaLokacijiRow> {
+            
+            private global::System.Data.DataColumn columnnaziv;
+            
+            private global::System.Data.DataColumn columndatumIzdavanja;
+            
+            private global::System.Data.DataColumn columnkolicina;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public BrojRezervacijaUZadnjihXNaLokacijiDataTable() {
+                this.TableName = "BrojRezervacijaUZadnjihXNaLokaciji";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal BrojRezervacijaUZadnjihXNaLokacijiDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected BrojRezervacijaUZadnjihXNaLokacijiDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nazivColumn {
+                get {
+                    return this.columnnaziv;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn datumIzdavanjaColumn {
+                get {
+                    return this.columndatumIzdavanja;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kolicinaColumn {
+                get {
+                    return this.columnkolicina;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public BrojRezervacijaUZadnjihXNaLokacijiRow this[int index] {
+                get {
+                    return ((BrojRezervacijaUZadnjihXNaLokacijiRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event BrojRezervacijaUZadnjihXNaLokacijiRowChangeEventHandler BrojRezervacijaUZadnjihXNaLokacijiRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event BrojRezervacijaUZadnjihXNaLokacijiRowChangeEventHandler BrojRezervacijaUZadnjihXNaLokacijiRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event BrojRezervacijaUZadnjihXNaLokacijiRowChangeEventHandler BrojRezervacijaUZadnjihXNaLokacijiRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event BrojRezervacijaUZadnjihXNaLokacijiRowChangeEventHandler BrojRezervacijaUZadnjihXNaLokacijiRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddBrojRezervacijaUZadnjihXNaLokacijiRow(BrojRezervacijaUZadnjihXNaLokacijiRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public BrojRezervacijaUZadnjihXNaLokacijiRow AddBrojRezervacijaUZadnjihXNaLokacijiRow(string naziv, System.DateTime datumIzdavanja, int kolicina) {
+                BrojRezervacijaUZadnjihXNaLokacijiRow rowBrojRezervacijaUZadnjihXNaLokacijiRow = ((BrojRezervacijaUZadnjihXNaLokacijiRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        naziv,
+                        datumIzdavanja,
+                        kolicina};
+                rowBrojRezervacijaUZadnjihXNaLokacijiRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowBrojRezervacijaUZadnjihXNaLokacijiRow);
+                return rowBrojRezervacijaUZadnjihXNaLokacijiRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                BrojRezervacijaUZadnjihXNaLokacijiDataTable cln = ((BrojRezervacijaUZadnjihXNaLokacijiDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new BrojRezervacijaUZadnjihXNaLokacijiDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnnaziv = base.Columns["naziv"];
+                this.columndatumIzdavanja = base.Columns["datumIzdavanja"];
+                this.columnkolicina = base.Columns["kolicina"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnnaziv = new global::System.Data.DataColumn("naziv", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnaziv);
+                this.columndatumIzdavanja = new global::System.Data.DataColumn("datumIzdavanja", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndatumIzdavanja);
+                this.columnkolicina = new global::System.Data.DataColumn("kolicina", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkolicina);
+                this.columnnaziv.AllowDBNull = false;
+                this.columnnaziv.MaxLength = 50;
+                this.columnkolicina.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public BrojRezervacijaUZadnjihXNaLokacijiRow NewBrojRezervacijaUZadnjihXNaLokacijiRow() {
+                return ((BrojRezervacijaUZadnjihXNaLokacijiRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new BrojRezervacijaUZadnjihXNaLokacijiRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(BrojRezervacijaUZadnjihXNaLokacijiRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.BrojRezervacijaUZadnjihXNaLokacijiRowChanged != null)) {
+                    this.BrojRezervacijaUZadnjihXNaLokacijiRowChanged(this, new BrojRezervacijaUZadnjihXNaLokacijiRowChangeEvent(((BrojRezervacijaUZadnjihXNaLokacijiRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.BrojRezervacijaUZadnjihXNaLokacijiRowChanging != null)) {
+                    this.BrojRezervacijaUZadnjihXNaLokacijiRowChanging(this, new BrojRezervacijaUZadnjihXNaLokacijiRowChangeEvent(((BrojRezervacijaUZadnjihXNaLokacijiRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.BrojRezervacijaUZadnjihXNaLokacijiRowDeleted != null)) {
+                    this.BrojRezervacijaUZadnjihXNaLokacijiRowDeleted(this, new BrojRezervacijaUZadnjihXNaLokacijiRowChangeEvent(((BrojRezervacijaUZadnjihXNaLokacijiRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.BrojRezervacijaUZadnjihXNaLokacijiRowDeleting != null)) {
+                    this.BrojRezervacijaUZadnjihXNaLokacijiRowDeleting(this, new BrojRezervacijaUZadnjihXNaLokacijiRowChangeEvent(((BrojRezervacijaUZadnjihXNaLokacijiRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveBrojRezervacijaUZadnjihXNaLokacijiRow(BrojRezervacijaUZadnjihXNaLokacijiRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ProgramskoInzenjerstvoDBDataSet ds = new ProgramskoInzenjerstvoDBDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "BrojRezervacijaUZadnjihXNaLokacijiDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class StanjeNaSkladistu1DataTable : global::System.Data.TypedTableBase<StanjeNaSkladistu1Row> {
             
             private global::System.Data.DataColumn columnid;
@@ -10239,6 +10850,127 @@ namespace eAPW {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class BrojDjelovaProdanihUZadnjihXNaLokacijiRow : global::System.Data.DataRow {
+            
+            private BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable tableBrojDjelovaProdanihUZadnjihXNaLokaciji;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal BrojDjelovaProdanihUZadnjihXNaLokacijiRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableBrojDjelovaProdanihUZadnjihXNaLokaciji = ((BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string naziv {
+                get {
+                    return ((string)(this[this.tableBrojDjelovaProdanihUZadnjihXNaLokaciji.nazivColumn]));
+                }
+                set {
+                    this[this.tableBrojDjelovaProdanihUZadnjihXNaLokaciji.nazivColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Prodano {
+                get {
+                    try {
+                        return ((int)(this[this.tableBrojDjelovaProdanihUZadnjihXNaLokaciji.ProdanoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Prodano\' in table \'BrojDjelovaProdanihUZadnjihXNaLokaciji\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBrojDjelovaProdanihUZadnjihXNaLokaciji.ProdanoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsProdanoNull() {
+                return this.IsNull(this.tableBrojDjelovaProdanihUZadnjihXNaLokaciji.ProdanoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetProdanoNull() {
+                this[this.tableBrojDjelovaProdanihUZadnjihXNaLokaciji.ProdanoColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class BrojRezervacijaUZadnjihXNaLokacijiRow : global::System.Data.DataRow {
+            
+            private BrojRezervacijaUZadnjihXNaLokacijiDataTable tableBrojRezervacijaUZadnjihXNaLokaciji;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal BrojRezervacijaUZadnjihXNaLokacijiRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableBrojRezervacijaUZadnjihXNaLokaciji = ((BrojRezervacijaUZadnjihXNaLokacijiDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string naziv {
+                get {
+                    return ((string)(this[this.tableBrojRezervacijaUZadnjihXNaLokaciji.nazivColumn]));
+                }
+                set {
+                    this[this.tableBrojRezervacijaUZadnjihXNaLokaciji.nazivColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime datumIzdavanja {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableBrojRezervacijaUZadnjihXNaLokaciji.datumIzdavanjaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'datumIzdavanja\' in table \'BrojRezervacijaUZadnjihXNaLokacij" +
+                                "i\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBrojRezervacijaUZadnjihXNaLokaciji.datumIzdavanjaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int kolicina {
+                get {
+                    return ((int)(this[this.tableBrojRezervacijaUZadnjihXNaLokaciji.kolicinaColumn]));
+                }
+                set {
+                    this[this.tableBrojRezervacijaUZadnjihXNaLokaciji.kolicinaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdatumIzdavanjaNull() {
+                return this.IsNull(this.tableBrojRezervacijaUZadnjihXNaLokaciji.datumIzdavanjaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdatumIzdavanjaNull() {
+                this[this.tableBrojRezervacijaUZadnjihXNaLokaciji.datumIzdavanjaColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class StanjeNaSkladistu1Row : global::System.Data.DataRow {
             
             private StanjeNaSkladistu1DataTable tableStanjeNaSkladistu1;
@@ -11006,6 +11738,74 @@ namespace eAPW {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public BrojRezervacijaUZadnjihXRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class BrojDjelovaProdanihUZadnjihXNaLokacijiRowChangeEvent : global::System.EventArgs {
+            
+            private BrojDjelovaProdanihUZadnjihXNaLokacijiRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public BrojDjelovaProdanihUZadnjihXNaLokacijiRowChangeEvent(BrojDjelovaProdanihUZadnjihXNaLokacijiRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public BrojDjelovaProdanihUZadnjihXNaLokacijiRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class BrojRezervacijaUZadnjihXNaLokacijiRowChangeEvent : global::System.EventArgs {
+            
+            private BrojRezervacijaUZadnjihXNaLokacijiRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public BrojRezervacijaUZadnjihXNaLokacijiRowChangeEvent(BrojRezervacijaUZadnjihXNaLokacijiRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public BrojRezervacijaUZadnjihXNaLokacijiRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -17953,6 +18753,344 @@ GROUP BY Djelovi.naziv";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class BrojDjelovaProdanihUZadnjihXNaLokacijiTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public BrojDjelovaProdanihUZadnjihXNaLokacijiTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "BrojDjelovaProdanihUZadnjihXNaLokaciji";
+            tableMapping.ColumnMappings.Add("naziv", "naziv");
+            tableMapping.ColumnMappings.Add("Prodano", "Prodano");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::eAPW.Properties.Settings.Default.ProgramskoInzenjerstvoDBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT naziv, Prodano FROM dbo.BrojDjelovaProdanihUZadnjihXNaLokaciji";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(ProgramskoInzenjerstvoDBDataSet.BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual ProgramskoInzenjerstvoDBDataSet.BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            ProgramskoInzenjerstvoDBDataSet.BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable dataTable = new ProgramskoInzenjerstvoDBDataSet.BrojDjelovaProdanihUZadnjihXNaLokacijiDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class BrojRezervacijaUZadnjihXNaLokacijiTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public BrojRezervacijaUZadnjihXNaLokacijiTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "BrojRezervacijaUZadnjihXNaLokaciji";
+            tableMapping.ColumnMappings.Add("naziv", "naziv");
+            tableMapping.ColumnMappings.Add("datumIzdavanja", "datumIzdavanja");
+            tableMapping.ColumnMappings.Add("kolicina", "kolicina");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::eAPW.Properties.Settings.Default.ProgramskoInzenjerstvoDBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT naziv, datumIzdavanja, kolicina FROM dbo.BrojRezervacijaUZadnjihXNaLokacij" +
+                "i";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(ProgramskoInzenjerstvoDBDataSet.BrojRezervacijaUZadnjihXNaLokacijiDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual ProgramskoInzenjerstvoDBDataSet.BrojRezervacijaUZadnjihXNaLokacijiDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            ProgramskoInzenjerstvoDBDataSet.BrojRezervacijaUZadnjihXNaLokacijiDataTable dataTable = new ProgramskoInzenjerstvoDBDataSet.BrojRezervacijaUZadnjihXNaLokacijiDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class StanjeNaSkladistu1TableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -18571,21 +19709,21 @@ GROUP BY Djelovi.naziv";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._model_vozilaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Model_vozila.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._model_vozilaTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._zaposlenikTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Zaposlenik.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._zaposlenikTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._model_vozilaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Model_vozila.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._model_vozilaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -18604,15 +19742,6 @@ GROUP BY Djelovi.naziv";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._proizvodacTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._djeloviTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Djelovi.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._djeloviTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -18652,12 +19781,30 @@ GROUP BY Djelovi.naziv";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._djeloviTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Djelovi.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._djeloviTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._rezervacija_has_DjeloviTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Rezervacija_has_Djelovi.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._rezervacija_has_DjeloviTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._racun_Has_DjeloviTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Racun_Has_Djelovi.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._racun_Has_DjeloviTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -18670,15 +19817,6 @@ GROUP BY Djelovi.naziv";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._zaposlenik_has_TipTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Zaposlenik_has_Tip.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._zaposlenik_has_TipTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._lokacija_has_djeloviTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Lokacija_has_djelovi.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -18688,12 +19826,12 @@ GROUP BY Djelovi.naziv";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._racun_Has_DjeloviTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Racun_Has_Djelovi.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._zaposlenik_has_TipTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Zaposlenik_has_Tip.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._racun_Has_DjeloviTableAdapter.Update(updatedRows));
+                    result = (result + this._zaposlenik_has_TipTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -18723,19 +19861,19 @@ GROUP BY Djelovi.naziv";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._model_vozilaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Model_vozila.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._model_vozilaTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._zaposlenikTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Zaposlenik.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._zaposlenikTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._model_vozilaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Model_vozila.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._model_vozilaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -18752,14 +19890,6 @@ GROUP BY Djelovi.naziv";
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._proizvodacTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._djeloviTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Djelovi.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._djeloviTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -18795,11 +19925,27 @@ GROUP BY Djelovi.naziv";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._djeloviTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Djelovi.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._djeloviTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._rezervacija_has_DjeloviTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Rezervacija_has_Djelovi.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._rezervacija_has_DjeloviTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._racun_Has_DjeloviTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Racun_Has_Djelovi.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._racun_Has_DjeloviTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -18811,14 +19957,6 @@ GROUP BY Djelovi.naziv";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._zaposlenik_has_TipTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Zaposlenik_has_Tip.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._zaposlenik_has_TipTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._lokacija_has_djeloviTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Lokacija_has_djelovi.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -18827,11 +19965,11 @@ GROUP BY Djelovi.naziv";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._racun_Has_DjeloviTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Racun_Has_Djelovi.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._zaposlenik_has_TipTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Zaposlenik_has_Tip.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._racun_Has_DjeloviTableAdapter.Update(addedRows));
+                    result = (result + this._zaposlenik_has_TipTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -18845,11 +19983,11 @@ GROUP BY Djelovi.naziv";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(ProgramskoInzenjerstvoDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._racun_Has_DjeloviTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Racun_Has_Djelovi.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._zaposlenik_has_TipTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Zaposlenik_has_Tip.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._racun_Has_DjeloviTableAdapter.Update(deletedRows));
+                    result = (result + this._zaposlenik_has_TipTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -18861,14 +19999,6 @@ GROUP BY Djelovi.naziv";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._zaposlenik_has_TipTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Zaposlenik_has_Tip.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._zaposlenik_has_TipTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._narudzba_has_DjeloviTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Narudzba_has_Djelovi.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -18877,11 +20007,27 @@ GROUP BY Djelovi.naziv";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._racun_Has_DjeloviTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Racun_Has_Djelovi.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._racun_Has_DjeloviTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._rezervacija_has_DjeloviTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Rezervacija_has_Djelovi.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._rezervacija_has_DjeloviTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._djeloviTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Djelovi.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._djeloviTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -18917,14 +20063,6 @@ GROUP BY Djelovi.naziv";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._djeloviTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Djelovi.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._djeloviTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._proizvodacTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Proizvodac.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -18941,19 +20079,19 @@ GROUP BY Djelovi.naziv";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._zaposlenikTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Zaposlenik.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._zaposlenikTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._model_vozilaTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Model_vozila.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._model_vozilaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._zaposlenikTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Zaposlenik.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._zaposlenikTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
