@@ -31,40 +31,49 @@ namespace eAPW
 
         private void btnUnesi_Click(object sender, EventArgs e)
         {
-            int lokacijaId = int.Parse(ConfigurationManager.AppSettings["LokacijaID"]);
-
-            BindingList<BrojRezervacijaUZadnjihXNaLokaciji> ListaProdaniDjelovi = null;
-            BindingList<BrojRezervacijaUZadnjihXNaLokaciji> drugaLista = new BindingList<BrojRezervacijaUZadnjihXNaLokaciji>();
-            using (var db = new ProgramskoInzenjerstvoDBEntities())
+            if(dateTimePicker1.Value < dateTimePicker2.Value.AddDays(-1))
             {
-                ListaProdaniDjelovi = new BindingList<BrojRezervacijaUZadnjihXNaLokaciji>
-                    (db.BrojRezervacijaUZadnjihXNaLokacijis.Where(x => x.lokacija == lokacijaId
-                    && x.datumIzdavanja < dateTimePicker2.Value && x.datumIzdavanja > dateTimePicker1.Value).ToList());
-            }
-            
+                int lokacijaId = int.Parse(ConfigurationManager.AppSettings["LokacijaID"]);
 
-            string id = "sf";
-            foreach (BrojRezervacijaUZadnjihXNaLokaciji a in ListaProdaniDjelovi.OrderBy(x => x.naziv))
-            {
-
-                if (id == a.naziv)
+                BindingList<BrojRezervacijaUZadnjihXNaLokaciji> ListaProdaniDjelovi = null;
+                BindingList<BrojRezervacijaUZadnjihXNaLokaciji> drugaLista = new BindingList<BrojRezervacijaUZadnjihXNaLokaciji>();
+                using (var db = new ProgramskoInzenjerstvoDBEntities())
                 {
-                    BrojRezervacijaUZadnjihXNaLokaciji stari = drugaLista.Where(x => x.naziv == id).Single();
-                    stari.kolicina += a.kolicina;
+                    ListaProdaniDjelovi = new BindingList<BrojRezervacijaUZadnjihXNaLokaciji>
+                        (db.BrojRezervacijaUZadnjihXNaLokacijis.Where(x => x.lokacija == lokacijaId
+                        && x.datumIzdavanja < dateTimePicker2.Value && x.datumIzdavanja > dateTimePicker1.Value).ToList());
                 }
-                else
-                {
-                    BrojRezervacijaUZadnjihXNaLokaciji novi = new BrojRezervacijaUZadnjihXNaLokaciji();
-                    novi.naziv = a.naziv;
-                    novi.kolicina = a.kolicina;
-                    drugaLista.Add(novi);
 
-                    id = a.naziv;
+
+                string id = "sf";
+                foreach (BrojRezervacijaUZadnjihXNaLokaciji a in ListaProdaniDjelovi.OrderBy(x => x.naziv))
+                {
+
+                    if (id == a.naziv)
+                    {
+                        BrojRezervacijaUZadnjihXNaLokaciji stari = drugaLista.Where(x => x.naziv == id).Single();
+                        stari.kolicina += a.kolicina;
+                    }
+                    else
+                    {
+                        BrojRezervacijaUZadnjihXNaLokaciji novi = new BrojRezervacijaUZadnjihXNaLokaciji();
+                        novi.naziv = a.naziv;
+                        novi.kolicina = a.kolicina;
+                        drugaLista.Add(novi);
+
+                        id = a.naziv;
+                    }
+                                       
                 }
 
                 BrojRezervacijaUZadnjihXNaLokacijiBindingSource.DataSource = null;
                 BrojRezervacijaUZadnjihXNaLokacijiBindingSource.DataSource = drugaLista;
 
+
+            }
+            else
+            {
+                MessageBox.Show("Molimo upisite valjane podatke");
             }
 
 

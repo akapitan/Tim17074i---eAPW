@@ -118,7 +118,7 @@
             this.Controls.Add(this.dgvDjeloviNaSkladistima);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmSkladiste";
-            this.Text = "FrmSkladiste";
+            this.Text = "Skladište";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDjeloviNaSkladistima)).EndInit();
             this.ResumeLayout(false);

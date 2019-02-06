@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace eAPW
 {
@@ -24,7 +25,8 @@ namespace eAPW
             using (var db = new ProgramskoInzenjerstvoDBEntities())
             {
                 List<Racun> ls = new List<Racun>();
-                foreach (Racun z in db.Racuns.OrderByDescending(x=> x.datum))
+                int lokacijaId = int.Parse(ConfigurationManager.AppSettings["LokacijaID"]);
+                foreach (Racun z in db.Racuns.Where(x=> x.lokacija == lokacijaId).OrderByDescending(x=> x.datum))
                 {
                     ls.Add(z);
                 }

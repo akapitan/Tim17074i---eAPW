@@ -12,7 +12,7 @@ namespace eAPW
 {
     public partial class FrmAdminCRUDZaposlenikNovi : Form
     {
-        Zaposlenik zaposlenik;
+        private Zaposlenik zaposlenik;
         public FrmAdminCRUDZaposlenikNovi()
         {
             InitializeComponent();

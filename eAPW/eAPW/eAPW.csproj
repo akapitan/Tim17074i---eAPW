@@ -190,12 +190,6 @@
     <Compile Include="FrmRacunPrikazi.Designer.cs">
       <DependentUpon>FrmRacunPrikazi.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmReportDjeloviProdaniUZadnjihX.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmReportDjeloviProdaniUZadnjihX.Designer.cs">
-      <DependentUpon>FrmReportDjeloviProdaniUZadnjihX.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmReportDjeloviProdaniUZadnjihX2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,12 +201,6 @@
     </Compile>
     <Compile Include="FrmReportRezervacijeUZadnjih2.Designer.cs">
       <DependentUpon>FrmReportRezervacijeUZadnjih2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmReportRezervacijeUZadnjihX.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmReportRezervacijeUZadnjihX.Designer.cs">
-      <DependentUpon>FrmReportRezervacijeUZadnjihX.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmReportStanjeNaSkladistu.cs">
       <SubType>Form</SubType>
@@ -269,14 +257,6 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="ProgramskoInzenjerstvoDBDataSet.cs">
-      <DependentUpon>ProgramskoInzenjerstvoDBDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ProgramskoInzenjerstvoDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProgramskoInzenjerstvoDBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Proizvodac.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -344,17 +324,11 @@
     <EmbeddedResource Include="FrmRacunPrikazi.resx">
       <DependentUpon>FrmRacunPrikazi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmReportDjeloviProdaniUZadnjihX.resx">
-      <DependentUpon>FrmReportDjeloviProdaniUZadnjihX.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmReportDjeloviProdaniUZadnjihX2.resx">
       <DependentUpon>FrmReportDjeloviProdaniUZadnjihX2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReportRezervacijeUZadnjih2.resx">
       <DependentUpon>FrmReportRezervacijeUZadnjih2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmReportRezervacijeUZadnjihX.resx">
-      <DependentUpon>FrmReportRezervacijeUZadnjihX.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReportStanjeNaSkladistu.resx">
       <DependentUpon>FrmReportStanjeNaSkladistu.cs</DependentUpon>
@@ -384,9 +358,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ReportDjelovaProdanihUZadnjihX.rdlc" />
     <EmbeddedResource Include="ReportDjelovaProdanihUZadnjihX2.rdlc" />
-    <EmbeddedResource Include="ReportRezervacijeUZadnjih.rdlc" />
     <EmbeddedResource Include="ReportRezervacijeUZadnjih2.rdlc" />
     <EmbeddedResource Include="ReportStanjeNaSkladistu.rdlc" />
     <EmbeddedResource Include="UserConPrikazRacuna.resx">
@@ -414,17 +386,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
-    <None Include="ProgramskoInzenjerstvoDBDataSet.xsc">
-      <DependentUpon>ProgramskoInzenjerstvoDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ProgramskoInzenjerstvoDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ProgramskoInzenjerstvoDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ProgramskoInzenjerstvoDBDataSet.xss">
-      <DependentUpon>ProgramskoInzenjerstvoDBDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

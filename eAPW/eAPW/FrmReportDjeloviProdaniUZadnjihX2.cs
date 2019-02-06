@@ -31,37 +31,46 @@ namespace eAPW
 
         private void btnUnesi_Click(object sender, EventArgs e)
         {
-            int lokacijaId = int.Parse(ConfigurationManager.AppSettings["LokacijaID"]);
-
-            BindingList<BrojDjelovaProdanihUZadnjihXNaLokaciji> ListaProdaniDjelovi = null;
-            using (var db = new ProgramskoInzenjerstvoDBEntities())
+            if(dateTimePicker1.Value < dateTimePicker2.Value.AddDays(-1))
             {
-                ListaProdaniDjelovi = new BindingList<BrojDjelovaProdanihUZadnjihXNaLokaciji>
-                    (db.BrojDjelovaProdanihUZadnjihXNaLokacijis.Where(x => x.lokacija == lokacijaId 
-                    && x.datum < dateTimePicker2.Value && x.datum >dateTimePicker1.Value).ToList());
-            }
-            BindingList<BrojDjelovaProdanihUZadnjihXNaLokaciji> drugaLista = new BindingList<BrojDjelovaProdanihUZadnjihXNaLokaciji>();
+                int lokacijaId = int.Parse(ConfigurationManager.AppSettings["LokacijaID"]);
 
-            string id = "sf";
-            foreach(BrojDjelovaProdanihUZadnjihXNaLokaciji a in ListaProdaniDjelovi.OrderBy(x=> x.naziv))
-            {
-                
-                if(id == a.naziv)
+                BindingList<BrojDjelovaProdanihUZadnjihXNaLokaciji> ListaProdaniDjelovi = null;
+                using (var db = new ProgramskoInzenjerstvoDBEntities())
                 {
-                    BrojDjelovaProdanihUZadnjihXNaLokaciji stari = drugaLista.Where(x => x.naziv == id).Single();
-                    stari.kolicina += a.kolicina;
-                }else
-                {
-                    BrojDjelovaProdanihUZadnjihXNaLokaciji novi = new BrojDjelovaProdanihUZadnjihXNaLokaciji();
-                    novi.naziv = a.naziv;
-                    novi.kolicina = a.kolicina;
-                    drugaLista.Add(novi);
+                    ListaProdaniDjelovi = new BindingList<BrojDjelovaProdanihUZadnjihXNaLokaciji>
+                        (db.BrojDjelovaProdanihUZadnjihXNaLokacijis.Where(x => x.lokacija == lokacijaId
+                        && x.datum < dateTimePicker2.Value && x.datum > dateTimePicker1.Value).ToList());
+                }
+                BindingList<BrojDjelovaProdanihUZadnjihXNaLokaciji> drugaLista = new BindingList<BrojDjelovaProdanihUZadnjihXNaLokaciji>();
 
-                    id = a.naziv;
+                string id = "sf";
+                foreach (BrojDjelovaProdanihUZadnjihXNaLokaciji a in ListaProdaniDjelovi.OrderBy(x => x.naziv))
+                {
+
+                    if (id == a.naziv)
+                    {
+                        BrojDjelovaProdanihUZadnjihXNaLokaciji stari = drugaLista.Where(x => x.naziv == id).Single();
+                        stari.kolicina += a.kolicina;
+                    }
+                    else
+                    {
+                        BrojDjelovaProdanihUZadnjihXNaLokaciji novi = new BrojDjelovaProdanihUZadnjihXNaLokaciji();
+                        novi.naziv = a.naziv;
+                        novi.kolicina = a.kolicina;
+                        drugaLista.Add(novi);
+
+                        id = a.naziv;
+                    }
+                    
                 }
                 BrojDjelovaProdanihUZadnjihXNaLokacijiBindingSource.DataSource = null;
                 BrojDjelovaProdanihUZadnjihXNaLokacijiBindingSource.DataSource = drugaLista;
 
+            }
+            else
+            {
+                MessageBox.Show("Molimo upisite valjane podatke");
             }
 
 

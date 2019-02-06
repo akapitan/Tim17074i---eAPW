@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e21763a8abf5490db054ab2bc84fdcfc" Name="Diagram1">
+      <Diagram DiagramId="e21763a8abf5490db054ab2bc84fdcfc" Name="Diagram1" ZoomLevel="64">
         <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Djelovi" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Kategorija" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.Lokacija" Width="1.5" PointX="1.5" PointY="16.25" IsExpanded="true" />
@@ -42,9 +42,9 @@
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Rezervacija_Zaposlenik" ManuallyRouted="false" />
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Zaposlenik_has_Tip_Tip" ManuallyRouted="false" />
         <AssociationConnector Association="ProgramskoInzenjerstvoDBModel.FK_Zaposlenik_has_Tip_Zaposlenik" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.StanjeNaSkladistu" Width="1.5" PointX="7.375" PointY="0.75" />
-        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.BrojDjelovaProdanihUZadnjihXNaLokaciji" Width="1.5" PointX="7.375" PointY="8.75" />
-        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.BrojRezervacijaUZadnjihXNaLokaciji" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.StanjeNaSkladistu" Width="1.75" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.BrojDjelovaProdanihUZadnjihXNaLokaciji" Width="1.5" PointX="13.125" PointY="0.75" />
+        <EntityTypeShape EntityType="ProgramskoInzenjerstvoDBModel.BrojRezervacijaUZadnjihXNaLokaciji" Width="3.375" PointX="9.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
