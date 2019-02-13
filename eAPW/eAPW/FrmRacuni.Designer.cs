@@ -195,6 +195,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmRacuni";
             this.Text = "Evidencija računa";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmRacuni_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

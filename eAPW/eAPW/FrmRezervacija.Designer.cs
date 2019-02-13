@@ -121,6 +121,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmRezervacija";
             this.Text = "FrmRezervacija";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmRezervacija_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

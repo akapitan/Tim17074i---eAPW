@@ -151,6 +151,7 @@
             this.Controls.Add(this.dgvPopisStavki);
             this.Name = "FrmDodajStavkeNaRacun";
             this.Text = "Maloprodaja Dodaj stavke na račun";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmDodajStavkeNaRacun_HelpRequested);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmDodajStavkeNaRacun_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

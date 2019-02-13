@@ -145,5 +145,10 @@ namespace eAPW
                 this.Close();
             }
         }
+
+        private void FrmDodajStavkeNaRacun_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "Help.chm", HelpNavigator.Topic, "Prodaja.htm");
+        }
     }
 }

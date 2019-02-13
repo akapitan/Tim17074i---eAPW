@@ -272,6 +272,7 @@
             this.Name = "FrmRezervacijaNovi";
             this.Text = "FrmRezervacijaNovi";
             this.Load += new System.EventHandler(this.FrmRezervacijaNovi_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmRezervacijaNovi_HelpRequested);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKupacRezervacija)).EndInit();

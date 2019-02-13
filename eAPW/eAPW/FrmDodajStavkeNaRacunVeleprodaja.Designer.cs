@@ -151,6 +151,7 @@
             this.Controls.Add(this.dgvPopisStavki);
             this.Name = "FrmDodajStavkeNaRacunVeleprodaja";
             this.Text = "eAPW  Dodaj stavke na račun";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmDodajStavkeNaRacunVeleprodaja_HelpRequested);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

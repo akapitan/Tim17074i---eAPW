@@ -107,5 +107,10 @@ namespace eAPW
                 frp.Show();
             }
         }
+
+        private void FrmRacuni_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "Help.chm", HelpNavigator.Topic, "Prodaja.htm");
+        }
     }
 }

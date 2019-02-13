@@ -84,5 +84,10 @@ namespace eAPW
             rezervacijeUZadnjihX.WindowState = FormWindowState.Maximized;
             rezervacijeUZadnjihX.Show();
         }
+
+        private void FrmGlavna_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "Help.chm", HelpNavigator.Topic, "Pocetna.htm");
+        }
     }
 }

@@ -88,5 +88,10 @@ namespace eAPW
                 
             }
         }
+
+        private void FrmTvrtkePregled_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "Help.chm", HelpNavigator.Topic, "Prodaja.htm");
+        }
     }
 }

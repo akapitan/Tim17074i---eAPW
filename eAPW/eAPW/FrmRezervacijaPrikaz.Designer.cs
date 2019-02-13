@@ -129,6 +129,7 @@
             this.Name = "FrmRezervacijaPrikaz";
             this.Text = "FrmRezervacijaPrikaz";
             this.Load += new System.EventHandler(this.FrmRezervacijaPrikaz_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmRezervacijaPrikaz_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

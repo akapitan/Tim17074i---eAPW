@@ -208,5 +208,10 @@ namespace eAPW
             {
             }
         }
+
+        private void FrmRezervacijaNovi_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "Help.chm", HelpNavigator.Topic, "RezervacijaDjelova.htm");
+        }
     }
 }

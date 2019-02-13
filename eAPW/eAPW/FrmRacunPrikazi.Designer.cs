@@ -129,6 +129,7 @@
             this.Name = "FrmRacunPrikazi";
             this.Text = "Prikaži račun";
             this.Load += new System.EventHandler(this.FrmRacunPrikazi_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmRacunPrikazi_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -47,5 +47,10 @@ namespace eAPW
                 dataGridView1.DataSource = new BindingSource(model, null);
             }
         }
+
+        private void FrmRezervacijaPrikaz_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "Help.chm", HelpNavigator.Topic, "RezervacijaDjelova.htm");
+        }
     }
 }

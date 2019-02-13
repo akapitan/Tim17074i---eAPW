@@ -76,6 +76,11 @@ namespace eAPW
             dohvatiPodatke();
         }
 
+        private void FrmRacunPrikazi_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "Help.chm", HelpNavigator.Topic, "Prodaja.htm");
+        }
+
         //private void button1_Click(object sender, EventArgs e)
         //{
         //    using (var db = new ProgramskoInzenjerstvoDBEntities())
@@ -106,7 +111,7 @@ namespace eAPW
         //                         iznos = (x.maloprodajnaCijena * y.kolicina).ToString() + " kn"
 
         //                     }).ToList();
-                
+
 
         //        var zaposlenik = (from x in db.Zaposleniks
         //                          join y in db.Racuns on x.ID equals y.zaposlenik
@@ -121,9 +126,9 @@ namespace eAPW
         //                          }).SingleOrDefault();
 
         //        //////////////////////
-                
+
         //    }
         //}
-        
+
     }
 }

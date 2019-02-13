@@ -226,6 +226,7 @@
             this.IsMdiContainer = true;
             this.Name = "FrmGlavna";
             this.Text = "eAPW";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmGlavna_HelpRequested);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

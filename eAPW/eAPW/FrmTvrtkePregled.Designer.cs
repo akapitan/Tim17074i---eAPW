@@ -140,6 +140,7 @@
             this.Controls.Add(this.label2);
             this.Name = "FrmTvrtkePregled";
             this.Text = "Pregled tvrtke";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FrmTvrtkePregled_HelpRequested);
             this.ResumeLayout(false);
             this.PerformLayout();
 
