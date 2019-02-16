@@ -10,21 +10,41 @@ using System.Windows.Forms;
 
 namespace eAPW
 {
+    /// <summary>
+    /// klasa forme prikaza rezervacije
+    /// </summary>
     public partial class FrmRezervacijaPrikaz : Form
     {
+        /// <summary>
+        /// Spremljeni preneseni id rezervacije za prikazati
+        /// </summary>
         private int rezervacijaID;
 
+        /// <summary>
+        /// Konstruktor forme
+        /// </summary>
+        /// <param name="rezId"></param>
         public FrmRezervacijaPrikaz(int rezId)
         {
             InitializeComponent();
             rezervacijaID = rezId;
         }
 
+        /// <summary>
+        /// Izlaz iz forme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bntNatrag_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Popunjavanje podacima poslije inicijalizacije
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmRezervacijaPrikaz_Load(object sender, EventArgs e)
         {
             using (var db = new ProgramskoInzenjerstvoDBEntities())
@@ -48,6 +68,11 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Otvaranje help dokumenta pritiskom na F1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="hlpevent"></param>
         private void FrmRezervacijaPrikaz_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             Help.ShowHelp(this, "Help.chm", HelpNavigator.Topic, "RezervacijaDjelova.htm");

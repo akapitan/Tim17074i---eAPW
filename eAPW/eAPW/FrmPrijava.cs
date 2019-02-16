@@ -12,8 +12,14 @@ using System.Configuration;
 
 namespace eAPW
 {
+    /// <summary>
+    /// Forma za prijavu
+    /// </summary>
     public partial class FrmPrijava : Form
     {
+        /// <summary>
+        /// Konstruktor forme za prijavu
+        /// </summary>
         public FrmPrijava()
         {
             InitializeComponent();
@@ -21,6 +27,9 @@ namespace eAPW
             txtLokacija.Text = ConfigurationManager.AppSettings["LokacijaNaziv"];
             
         }
+        /// <summary>
+        /// Funkcija za provjeru korisničkih podataka za prijavu
+        /// </summary>
         private void ProvjeriZaposlenika()
         {
             using (var db = new ProgramskoInzenjerstvoDBEntities())
@@ -58,10 +67,21 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Pokretanje projere korisničkih podataka klikom na gumb prijava.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonPrijava_Click(object sender, EventArgs e)
         {
             ProvjeriZaposlenika();
         }
+
+        /// <summary>
+        /// Pokretanje projere korisničkih podataka klikom na gumb "prijava"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             ProvjeriZaposlenika();
@@ -69,12 +89,21 @@ namespace eAPW
             this.Close();
         }
         
-
+        /// <summary>
+        /// Izlaz iz aplikacije
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonPrijavaOdustani_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Provjera korisničkih podataka klikom na enter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtKorisnicko_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -83,6 +112,11 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Provjera korisničkih podataka klikom na gumb enter kad je fokusiran na txtLozinka.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtLozinka_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -91,11 +125,21 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Izlaz iz aplikacije klikom gumba "odustani".
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonPrijavaOdustani_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// pozivanje help dokumenta klikom na F1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="hlpevent"></param>
         private void FrmPrijava_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             Help.ShowHelp(this,"Help.chm", HelpNavigator.Topic, "Prijava.htm");

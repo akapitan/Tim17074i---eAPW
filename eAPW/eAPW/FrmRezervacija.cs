@@ -11,14 +11,23 @@ using System.Configuration;
 
 namespace eAPW
 {
+    /// <summary>
+    /// Klasa forme za evidencije rezervacije
+    /// </summary>
     public partial class FrmRezervacija : Form
     {
+        /// <summary>
+        /// Konstruktor forme
+        /// </summary>
         public FrmRezervacija()
         {
             InitializeComponent();
             ispisDatagrid();
         }
 
+        /// <summary>
+        /// Funkcija za ispis rezervacija u datagridview
+        /// </summary>
         private void ispisDatagrid()
         {
             int lokacijaID = Convert.ToInt32( ConfigurationManager.AppSettings["LokacijaID"]);
@@ -37,11 +46,21 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Izlaz iz forme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIzlaz_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Prikaz selektirane rezervacije
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPrikazi_Click(object sender, EventArgs e)
         {
             Rezervacija r = dataGridView1.CurrentRow.DataBoundItem as Rezervacija;
@@ -52,6 +71,11 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Otvaranje forme za dodavanje nove rezervacije
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bntNovi_Click(object sender, EventArgs e)
         {
             FrmRezervacijaNovi frn = new FrmRezervacijaNovi();
@@ -59,6 +83,12 @@ namespace eAPW
             ispisDatagrid();
         }
 
+
+        /// <summary>
+        /// Brisanje rezervacije
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIzbrisi_Click(object sender, EventArgs e)
         {
             try
@@ -94,6 +124,11 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Otvaranje help dokumenta pritiskom na F1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="hlpevent"></param>
         private void FrmRezervacija_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             Help.ShowHelp(this, "Help.chm", HelpNavigator.Topic, "RezervacijaDjelova.htm");

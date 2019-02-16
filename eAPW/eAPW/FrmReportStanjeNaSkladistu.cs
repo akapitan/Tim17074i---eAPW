@@ -11,13 +11,24 @@ using System.Configuration;
 
 namespace eAPW
 {
+    /// <summary>
+    /// Klasa forme sa izvještajem o stanju na skladištu sa lokacije
+    /// </summary>
     public partial class FrmReportStanjeNaSkladistu : Form
     {
+        /// <summary>
+        /// Konstruktor forme FrmReportStanjeNaSkladistu
+        /// </summary>
         public FrmReportStanjeNaSkladistu()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Prikazuje početne podatke na kontroli
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmReportStanjeNaSkladistu_Load(object sender, EventArgs e)
         {
             int lokacijaId = int.Parse(ConfigurationManager.AppSettings["LokacijaID"]);
@@ -32,6 +43,11 @@ namespace eAPW
             this.reportViewer1.RefreshReport();
         }
 
+        /// <summary>
+        /// Izlaz iz forme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnIzlaz_Click(object sender, EventArgs e)
         {
             this.Close();

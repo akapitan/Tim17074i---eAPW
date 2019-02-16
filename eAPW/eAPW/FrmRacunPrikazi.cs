@@ -7,21 +7,39 @@ using System.Windows.Forms;
 
 namespace eAPW
 {
+    /// <summary>
+    /// Klasa forme za prikazivanje računa
+    /// </summary>
     public partial class FrmRacunPrikazi : Form
     {
+        /// <summary>
+        /// Preneseni id računa. Koriste ga više metoda.
+        /// </summary>
         int idRacun;
 
+        /// <summary>
+        /// Konstruktor forme FrmRacuniPrikazi
+        /// </summary>
+        /// <param name="selektiraniRacunId"></param>
         public FrmRacunPrikazi(int selektiraniRacunId)
         {
             InitializeComponent();
             idRacun = selektiraniRacunId;
         }
 
+        /// <summary>
+        /// Izlaz iz forme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bntNatrag_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Funkcija za dohvačanje podataka računa i ispis na datagrid
+        /// </summary>
         private void dohvatiPodatke()
         {
             using (var db = new ProgramskoInzenjerstvoDBEntities())
@@ -71,11 +89,22 @@ namespace eAPW
             }
         
     }
+
+        /// <summary>
+        /// Pozivanje funkcije za  popunjavanje podataka
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmRacunPrikazi_Load(object sender, EventArgs e)
         {
             dohvatiPodatke();
         }
 
+        /// <summary>
+        /// Otvaranje help dokumenta pritiskom na F1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="hlpevent"></param>
         private void FrmRacunPrikazi_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             Help.ShowHelp(this, "Help.chm", HelpNavigator.Topic, "Prodaja.htm");

@@ -11,24 +11,45 @@ using System.Configuration;
 
 namespace eAPW
 {
+    /// <summary>
+    /// Klasa forme s izvještajem o broju rezervacija
+    /// </summary>
     public partial class FrmReportRezervacijeUZadnjih2 : Form
     {
+        /// <summary>
+        /// Konstruktor klase
+        /// </summary>
         public FrmReportRezervacijeUZadnjih2()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Dodavanje početnih vrijednosti poslije inicijalizacije
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmReportRezervacijeUZadnjih2_Load(object sender, EventArgs e)
         {
             DateTime datumPrijeJednogMjeseca = DateTime.Now.AddMonths(-1);
             dateTimePicker1.Value = datumPrijeJednogMjeseca;
         }
 
+        /// <summary>
+        /// Izlaz iz forme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnIzlaz_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Klikom na unsei popunjavaju se podaci o rezervaciji
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUnesi_Click(object sender, EventArgs e)
         {
             if(dateTimePicker1.Value < dateTimePicker2.Value.AddDays(-1))

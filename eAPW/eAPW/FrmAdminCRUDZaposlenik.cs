@@ -10,18 +10,34 @@ using System.Windows.Forms;
 
 namespace eAPW
 {
+    /// <summary>
+    /// Klasa forme za upravljanje zaposlenicima
+    /// </summary>
     public partial class FrmAdminCRUDZaposlenik : Form
     {
+        /// <summary>
+        /// Konstruktor forme FrmAdminCRUDZaposlenik
+        /// </summary>
         public FrmAdminCRUDZaposlenik()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Izlaz iz forme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNatrag_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Prikazuje početne podatke na kontroli
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmFormAdminCRUDZaposlenik_Load(object sender, EventArgs e)
         {
             ProvjeriZaposlenika();
@@ -42,6 +58,12 @@ namespace eAPW
             }
         }
 
+
+        /// <summary>
+        /// Otvara formu FrmAdminCRUDZaposlenikNovi za unos novog zaposlenika
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNovi_Click(object sender, EventArgs e)
         {
             FrmAdminCRUDZaposlenikNovi f = new FrmAdminCRUDZaposlenikNovi();
@@ -49,6 +71,11 @@ namespace eAPW
             ProvjeriZaposlenika();
         }
 
+        /// <summary>
+        /// Otvara formu FrmAdminCRUDZaposlenikNovi za izmjenu podatke selektiranog zaposlenika
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIzmjeni_Click(object sender, EventArgs e)
         {
             Zaposlenik zaIzmjenu = dataGridView1.CurrentRow.DataBoundItem as Zaposlenik;

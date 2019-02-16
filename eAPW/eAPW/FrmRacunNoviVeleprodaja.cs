@@ -11,10 +11,19 @@ using System.Configuration;
 
 namespace eAPW
 {
+    /// <summary>
+    /// Klasa za kreiranje veleprodajnog računa
+    /// </summary>
     public partial class FrmRacunNoviVeleprodaja : Form
     {
+        /// <summary>
+        /// Dodane stavke na račun
+        /// </summary>
         public static BindingList<Djelovi> bl = new BindingList<Djelovi>(); 
 
+        /// <summary>
+        /// Konstruktor forme za dodavanje veleprodajnog računa
+        /// </summary>
         public FrmRacunNoviVeleprodaja()
         {
             InitializeComponent();
@@ -24,12 +33,20 @@ namespace eAPW
             ispisComboBox();
         }
 
+        /// <summary>
+        /// Otvaranje forme za dodavanje/ažuriranje tvrtki
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDodajNovuTvrtku_Click(object sender, EventArgs e)
         {
             new FrmTvrtkePregled().ShowDialog();
             ispisComboBox();
         }
 
+        /// <summary>
+        /// Funkcija za ispis tvrtki u combobox.
+        /// </summary>
         private void ispisComboBox()
         {
             using (var db = new ProgramskoInzenjerstvoDBEntities())
@@ -39,6 +56,10 @@ namespace eAPW
                 cboxTvrtka.DataSource = bs;
             }
         }
+
+        /// <summary>
+        /// Ispis stavaka na datagridview s liste "bl"
+        /// </summary>
         private void ispisDatagridview()
         {
 
@@ -73,11 +94,21 @@ namespace eAPW
 
         }
 
+        /// <summary>
+        /// Izlaz iz forme.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIzlaz_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Otvaranje forme za dodavnje stavaka na veleprodajni račun.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             FrmDodajStavkeNaRacunVeleprodaja fdsnrv = new FrmDodajStavkeNaRacunVeleprodaja();
@@ -85,41 +116,11 @@ namespace eAPW
             ispisDatagridview();
         }
 
-        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "foo")
-            {
-
-                using (var db = new ProgramskoInzenjerstvoDBEntities())
-                {
-                    int cijenaUkupno = 0;
-                    if (bl.Count == 0) txtIznos.Text = "0 kn";
-                    for (int i = 0; i < bl.Count; i++)
-                    {
-                        Djelovi selektirani = dataGridView1.CurrentRow.DataBoundItem as Djelovi;
-                        int maxKolicina = (from x in db.Djelovis where x.id == selektirani.id select x.kolicina).SingleOrDefault();
-                        int korisnickiUnosKolicine = Convert.ToInt32(dataGridView1["foo", e.RowIndex].Value);
-                        //MessageBox.Show(korisnickiUnosKolicine.ToString() + " = " + maxKolicina.ToString());
-                        if (korisnickiUnosKolicine > maxKolicina || korisnickiUnosKolicine < 0)
-                        {
-                            dataGridView1["foo", e.RowIndex].Value = 0;
-                            txtIznos.Text = "N/A";
-                            MessageBox.Show("Na skladištu ima " + maxKolicina.ToString() + ". Molimo uskladite to s vašim unosom.");
-                            break;
-                        }
-                        else
-                        {
-                            int cijena = bl[i].veleprodajnaCijena;
-                            cijenaUkupno += (bl[i].kolicina * cijena);
-                            txtIznos.Text = cijenaUkupno.ToString() + " kn";
-                        }
-
-                    }
-
-                }
-            }
-        }
-
+        /// <summary>
+        /// Funkcija za brisanje elementa s liste i osvježavanje prikaza
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIzbrisi_Click(object sender, EventArgs e)
         {
             try
@@ -137,6 +138,11 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Funkcija za izdavanje računa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bntIzdaj_Click(object sender, EventArgs e)
         {
             if (bl.Count == 0) MessageBox.Show("Ne možete napraviti račun bez djelova");
@@ -186,6 +192,11 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Otvaranje forme za ažuriranje selektirane tvrtke
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPregledTvrtke_Click(object sender, EventArgs e)
         {
             Trgovina t = cboxTvrtka.SelectedItem as Trgovina;
@@ -195,6 +206,11 @@ namespace eAPW
             ispisComboBox();
         }
 
+        /// <summary>
+        /// Otvaranje help dokumenta pritiskom na F1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="hlpevent"></param>
         private void FrmRacunNoviVeleprodaja_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             Help.ShowHelp(this, "Help.chm", HelpNavigator.Topic, "Prodaja.htm");

@@ -13,10 +13,19 @@ using System.Configuration;
 
 namespace eAPW
 {
+    /// <summary>
+    /// Forma za prikaz skladišta
+    /// </summary>
     public partial class FrmSkladiste : Form
     {
+        /// <summary>
+        /// Gledanje da li je korisnik admin
+        /// </summary>
         bool jeAdmin;
 
+        /// <summary>
+        /// Konstruktor forme
+        /// </summary>
         public FrmSkladiste()
         {
             InitializeComponent();
@@ -24,6 +33,9 @@ namespace eAPW
             ispisDatagrid();
         }
 
+        /// <summary>
+        /// Ispis podataka o skladištu
+        /// </summary>
         private void ispisDatagrid()
         {
             using (var db = new ProgramskoInzenjerstvoDBEntities())
@@ -42,6 +54,11 @@ namespace eAPW
                 
             }
         }
+
+        /// <summary>
+        /// Ispis podataka prema pretraživanju
+        /// </summary>
+        /// <param name="pretraga"></param>
         private void ispisDatagrid2(string pretraga)
         {
             using (var db = new ProgramskoInzenjerstvoDBEntities())
@@ -60,6 +77,10 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Ispis podataka o stanju na skladištima
+        /// </summary>
+        /// <param name="provjera"></param>
         private void ispisDatagridNaSkladistu(bool provjera)
         {
             int rowIndex = dataGridView1.CurrentCell.RowIndex;
@@ -94,22 +115,31 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Pokretanje funcije za popunjavanje promjenom selektirane lokacije
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             ispisDatagridNaSkladistu(jeAdmin);
         }
 
+        /// <summary>
+        /// Izlaz iz forme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIzlaz_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void txtPretraga_TextChanged(object sender, EventArgs e)
-        {
-            
-            
-        }
-
+        /// <summary>
+        /// Popunjavanje polja s informacijama o djelovima na skladištu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvDjeloviNaSkladistima_SelectionChanged(object sender, EventArgs e)
         {
             try
@@ -127,6 +157,12 @@ namespace eAPW
             
         }
 
+
+        /// <summary>
+        /// Mjenjanje broj dijelova na skladištu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPromjeniNaSkladistu_Click(object sender, EventArgs e)
         {
             
@@ -168,6 +204,12 @@ namespace eAPW
 
         //}
 
+        /// <summary>
+        /// Priprema mail elementa za slanje
+        /// </summary>
+        /// <param name="primateljEmail"></param>
+        /// <param name="lokacijaAdresa"></param>
+        /// <param name="listaDjelova"></param>
         public void pripremiMail(string primateljEmail,string lokacijaAdresa, List<Djelovi> listaDjelova)
         {
 
@@ -194,6 +236,9 @@ namespace eAPW
                        
         }
 
+        /// <summary>
+        /// Provjera retervacije za slanje maila
+        /// </summary>
         public void provjeriRezervacije()
         {
             using (var db = new ProgramskoInzenjerstvoDBEntities())

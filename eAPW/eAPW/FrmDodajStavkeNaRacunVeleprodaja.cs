@@ -11,18 +11,33 @@ using System.Configuration;
 
 namespace eAPW
 {
+    /// <summary>
+    /// Forma za dodavanje stavaka na veleprodajni račun
+    /// </summary>
     public partial class FrmDodajStavkeNaRacunVeleprodaja : Form
     {
+        /// <summary>
+        /// Selektirani dio od korisnika. Koriste ga više metoda.
+        /// </summary>
         private Djelovi selektirani;
+
+        /// <summary>
+        /// Lista djelova na računu. Koriste ga više metoda.
+        /// </summary>
         private List<Djelovi> listDjelovi = new List<Djelovi>();
 
+        /// <summary>
+        /// Konstruktor forme FrmDodajStavkeNaRacunVeleprodaja
+        /// </summary>
         public FrmDodajStavkeNaRacunVeleprodaja()
         {
             InitializeComponent();
             ispisSvihProizvoda();
         }
         
-
+        /// <summary>
+        /// Funkcija za ispis proizvoda na lokaciji
+        /// </summary>
         private void ispisSvihProizvoda()
         {
             listDjelovi = new List<Djelovi>();
@@ -48,11 +63,20 @@ namespace eAPW
 
         }
 
+        /// <summary>
+        /// Izlaz iz forme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Selektirana pretraga i ispis proizvoda.
+        /// </summary>
+        /// <param name="textPretraga"></param>
         private void ispisSvihProizvoda(string textPretraga)
         {
             using (var db = new ProgramskoInzenjerstvoDBEntities())
@@ -86,13 +110,22 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Pozivanje funkcje za ispis dijelova po pretragi okidanjem na promjenu u txtPretraga.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtPretraga_TextChanged(object sender, EventArgs e)
         {
             ispisSvihProizvoda(txtPretraga.Text);
         }
 
         
-
+        /// <summary>
+        /// Okidanje promjenom selekcije. Mijenja informaciju u detaljnom pregledu. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvPopisStavki_SelectionChanged(object sender, EventArgs e)
         {
             int trenutnaLokacijaID = int.Parse(ConfigurationManager.AppSettings["LokacijaID"].ToString());
@@ -119,6 +152,11 @@ namespace eAPW
             
         }
 
+        /// <summary>
+        /// Dodavanje stavaka na veleprodajni racun
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             if (selektirani != null)
@@ -144,6 +182,11 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Pozivanje help dokumenta pritiskom na F1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="hlpevent"></param>
         private void FrmDodajStavkeNaRacunVeleprodaja_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             Help.ShowHelp(this, "Help.chm", HelpNavigator.Topic, "Prodaja.htm");

@@ -45,7 +45,6 @@
             this.txtPretraga.Name = "txtPretraga";
             this.txtPretraga.Size = new System.Drawing.Size(144, 22);
             this.txtPretraga.TabIndex = 26;
-            this.txtPretraga.TextChanged += new System.EventHandler(this.txtPretraga_TextChanged);
             // 
             // label1
             // 
@@ -93,7 +92,7 @@
             this.txtPromjeniNaSkladistu.Name = "txtPromjeniNaSkladistu";
             this.txtPromjeniNaSkladistu.Size = new System.Drawing.Size(144, 22);
             this.txtPromjeniNaSkladistu.TabIndex = 26;
-            this.txtPromjeniNaSkladistu.TextChanged += new System.EventHandler(this.txtPretraga_TextChanged);
+            
             // 
             // btnPromjeniNaSkladistu
             // 

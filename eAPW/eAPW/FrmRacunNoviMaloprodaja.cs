@@ -11,8 +11,14 @@ using System.Configuration;
 
 namespace eAPW
 {
+    /// <summary>
+    /// Klasa forme za dodavanje maloprodajnog računa
+    /// </summary>
     public partial class FrmRacunNoviMaloprodaja : Form
     {
+        /// <summary>
+        /// Konstruktor forme
+        /// </summary>
         public FrmRacunNoviMaloprodaja()
         {
             InitializeComponent();
@@ -21,13 +27,24 @@ namespace eAPW
             this.dtpDatum.Enabled = false;
             ispisDatagridview();
         }
+        /// <summary>
+        /// Lista dijelova za dodanih na listu. Koristi ga i druga forma.
+        /// </summary>
         public static BindingList<Djelovi> bl = new BindingList<Djelovi>();
 
+        /// <summary>
+        /// Izlaz iz forme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIzlaz_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Funkcija za ispis stavaka s liste "bl"
+        /// </summary>
         private void ispisDatagridview()
         {
 
@@ -60,6 +77,11 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Otvaranje forme za dodavanje stavaka na račun
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             FrmDodajStavkeNaRacun fdsnr = new FrmDodajStavkeNaRacun();
@@ -67,6 +89,11 @@ namespace eAPW
             ispisDatagridview();
         }
 
+        /// <summary>
+        /// Funkcija za brisanje stavaka s računa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIzbrisi_Click(object sender, EventArgs e)
         {
             try
@@ -84,6 +111,11 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Funkcija za izdavanje valoprodajnog računa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bntIzdaj_Click(object sender, EventArgs e)
         {
             if (bl.Count == 0) MessageBox.Show("Ne možete napraviti račun bez djelova");
@@ -138,42 +170,11 @@ namespace eAPW
             }
         }
 
-        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "foo")
-            {
-
-                using (var db = new ProgramskoInzenjerstvoDBEntities())
-                {
-                    int cijenaUkupno = 0;
-                    if (bl.Count == 0) txtIznos.Text = "0 kn";
-                    for (int i = 0; i < bl.Count; i++)
-                    {
-                        Djelovi selektirani = dataGridView1.CurrentRow.DataBoundItem as Djelovi;
-                        int maxKolicina = (from x in db.Djelovis where x.id == selektirani.id select x.kolicina).SingleOrDefault();
-                        int korisnickiUnosKolicine = Convert.ToInt32(dataGridView1["foo", e.RowIndex].Value);
-                        //MessageBox.Show(korisnickiUnosKolicine.ToString() + " = " + maxKolicina.ToString());
-                        if (korisnickiUnosKolicine > maxKolicina || korisnickiUnosKolicine < 0)
-                        {
-                            dataGridView1["foo", e.RowIndex].Value = 0;
-                            txtIznos.Text = "N/A";
-                            MessageBox.Show("Na skladištu ima " + maxKolicina.ToString() + ". Molimo uskladite to s vašim unosom.");
-                            break;
-                        }
-                        else
-                        {
-                            int cijena = bl[i].maloprodajnaCijena;
-                            cijenaUkupno += (bl[i].kolicina * cijena);
-                            txtIznos.Text = cijenaUkupno.ToString() + " kn";
-                        }
-
-                    }
-
-                }
-            }
-
-        }
-
+        /// <summary>
+        /// Otvaranje help dokumenta klikom na F1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="hlpevent"></param>
         private void FrmRacunNoviMaloprodaja_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             Help.ShowHelp(this, "Help.chm", HelpNavigator.Topic, "Prodaja.htm");

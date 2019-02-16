@@ -11,8 +11,14 @@ using System.Configuration;
 
 namespace eAPW
 {
+    /// <summary>
+    /// Klasa za evidenciju računa
+    /// </summary>
     public partial class FrmRacuni : Form
     {
+        /// <summary>
+        /// Konstruktor forme za evidenciju računa
+        /// </summary>
         public FrmRacuni()
         {
             InitializeComponent();
@@ -20,6 +26,9 @@ namespace eAPW
             upisiPodatkeUCombobox();
         }
 
+        /// <summary>
+        /// Funkcija za ispisivanje računa.
+        /// </summary>
         private void ispisDatagrid()
         {
             using (var db = new ProgramskoInzenjerstvoDBEntities())
@@ -40,6 +49,9 @@ namespace eAPW
 
             }
         }
+        /// <summary>
+        /// Ispis zaposlenika u comboBox.
+        /// </summary>
         private void upisiPodatkeUCombobox()
         {
             cboxZaposlenik.Items.Clear();
@@ -53,11 +65,21 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Izlaz iz forme FrmRacuni
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIzlaz_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// FUnkcija za brisanje selektiranog računa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIzbrisi_Click(object sender, EventArgs e)
         {
             Racun zaIzbrisati = dataGridView1.CurrentRow.DataBoundItem as Racun;
@@ -84,6 +106,11 @@ namespace eAPW
             ispisDatagrid();
         }
 
+        /// <summary>
+        /// Otvaranje forme za dodavanje novog maloprodajnog računa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bntNovi_Click(object sender, EventArgs e)
         {
             FrmRacunNoviMaloprodaja f = new FrmRacunNoviMaloprodaja();
@@ -91,6 +118,11 @@ namespace eAPW
             ispisDatagrid();
         }
 
+        /// <summary>
+        /// Otvaranje forme za dodavanje novog veleprodajnog računa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNoviVeleprodaja_Click(object sender, EventArgs e)
         {
             FrmRacunNoviVeleprodaja f = new FrmRacunNoviVeleprodaja();
@@ -98,6 +130,11 @@ namespace eAPW
             ispisDatagrid();
         }
 
+        /// <summary>
+        /// Otvararanje forme za prikaz selektiranog računa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPrikazi_Click(object sender, EventArgs e)
         {
             Racun selektiraniRacun = dataGridView1.CurrentRow.DataBoundItem as Racun;
@@ -108,6 +145,11 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Otvaranje help dokumenta pritiskom na F1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="hlpevent"></param>
         private void FrmRacuni_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             Help.ShowHelp(this, "Help.chm", HelpNavigator.Topic, "Prodaja.htm");

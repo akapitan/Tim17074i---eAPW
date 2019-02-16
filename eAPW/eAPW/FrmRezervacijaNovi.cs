@@ -131,7 +131,7 @@ namespace eAPW
                     rez.izvrseno = false;
                     rez.napravioNarudzbu = FrmGlavna.prijavljeniKorisnik.ID;
                     rez.lokacija = Convert.ToInt32(ConfigurationManager.AppSettings["LokacijaID"]);
-
+                    rez.datumIzdavanja = DateTime.UtcNow;
 
                     db.Rezervacijas.Add(rez);
 

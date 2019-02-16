@@ -10,14 +10,27 @@ using System.Windows.Forms;
 
 namespace eAPW
 {
+    /// <summary>
+    /// Klasa FrmAdminCRUDZaposlenikNovi s metodana za unos novog i ažuriranje starih korisnika
+    /// </summary>
     public partial class FrmAdminCRUDZaposlenikNovi : Form
     {
+        /// <summary>
+        /// <value>Sprema prenesenog korisnika za ažuriranje pdoataka</value>
+        /// </summary>
         private Zaposlenik zaposlenik;
+
+        /// <summary>
+        /// Konstruktor forme FrmAdminCRUDZaposlenikNovi
+        /// </summary>        
         public FrmAdminCRUDZaposlenikNovi()
         {
             InitializeComponent();
         }
-        
+        /// <summary>
+        /// Konstruktor forme FrmAdminCRUDZaposlenikNovi s prosljeđenim korisnikom
+        /// </summary>
+        /// <param Zaposlenik="z"></param>
         public FrmAdminCRUDZaposlenikNovi(Zaposlenik z)
         {
             InitializeComponent();
@@ -32,12 +45,21 @@ namespace eAPW
 
 
         }
-
+        /// <summary>
+        /// Izlaz iz forme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Prikazuje početne podatke na kontroli
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmAdminCRUDZaposlenikNovi_Load(object sender, EventArgs e)
         {
             using (var db = new ProgramskoInzenjerstvoDBEntities())
@@ -75,6 +97,11 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Dodavanje/izmjena korisnika u bazi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             List<Tip> listaSelektiranihUloga = new List<Tip>();
@@ -188,6 +215,11 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Prikazuje početne podatke na kontroli
+        /// </summary>
+        /// <param name="provjera zaposlenika">Zaposlenik s korisničkim unesenim podacima</param>
+        /// <returns>bool, da li korisničko ime već postoji</returns>
         private bool provjeriKorisnickoIme(Zaposlenik provjeraKorisnika)
         {
             using (var db = new ProgramskoInzenjerstvoDBEntities())

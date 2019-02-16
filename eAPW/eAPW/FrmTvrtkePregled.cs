@@ -10,16 +10,29 @@ using System.Windows.Forms;
 
 namespace eAPW
 {
+    /// <summary>
+    /// Forma za pregled tvrtki
+    /// </summary>
     public partial class FrmTvrtkePregled : Form
     {
+        /// <summary>
+        /// Prenesena tvrtka
+        /// </summary>
         private Trgovina trgovina;
 
+        /// <summary>
+        /// Konstruktor forme za unos nove tvrtke
+        /// </summary>
         public FrmTvrtkePregled()
         {
             InitializeComponent();
             btnSpremi.Enabled = false;
         }
 
+        /// <summary>
+        /// Konstruktor forme za ažuriranje podataka o tvrtki
+        /// </summary>
+        /// <param name="prenesenaTrgovina"></param>
         public FrmTvrtkePregled(Trgovina prenesenaTrgovina)
         {
             InitializeComponent();
@@ -32,11 +45,22 @@ namespace eAPW
             btnDodaj.Enabled = false;
         }
 
+        /// <summary>
+        /// Izlaz iz forme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIzlaz_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+
+        /// <summary>
+        /// Dodavanje nove tvrtke
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             using (var db = new ProgramskoInzenjerstvoDBEntities())
@@ -63,6 +87,11 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Ažuriranje tvrtke
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSpremi_Click(object sender, EventArgs e)
         {
             if (trgovina != null)
@@ -89,6 +118,11 @@ namespace eAPW
             }
         }
 
+        /// <summary>
+        /// Pozivanje help dokumenta pritiskom na F1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="hlpevent"></param>
         private void FrmTvrtkePregled_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             Help.ShowHelp(this, "Help.chm", HelpNavigator.Topic, "Prodaja.htm");
