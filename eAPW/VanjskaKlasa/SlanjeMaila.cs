@@ -7,9 +7,17 @@ using System.Threading.Tasks;
 
 namespace VanjskaKlasa
 {
+    /// <summary>
+    /// kalasa za slanje emaila
+    /// </summary>
     public class SlanjeMaila
     {
-
+        /// <summary>
+        /// Funkcija za slanje emaila
+        /// </summary>
+        /// <param name="primateljEmail"></param>
+        /// <param name="mailBody"></param>
+        /// <returns></returns>
         public bool posaljiMail(string primateljEmail, string mailBody)
         {
             MailMessage mail = new MailMessage("akapitan@foi.hr", primateljEmail);
