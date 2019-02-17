@@ -59,6 +59,7 @@ namespace eAPW
                 dgvPopisStavki.Columns["Narudzba_has_Djelovi"].Visible = false;
                 dgvPopisStavki.Columns["Racun_Has_Djelovi"].Visible = false;
                 dgvPopisStavki.Columns["Rezervacija_has_Djelovi"].Visible = false;
+                dgvPopisStavki.Columns["Lokacija_has_djelovi"].Visible = false;
             }
 
         }
@@ -81,25 +82,15 @@ namespace eAPW
         {
             using (var db = new ProgramskoInzenjerstvoDBEntities())
             {
-                List<Djelovi> djeloviPretraga = new List<Djelovi>();
-
-                //foreach (Djelovi z in db.Djelovis)
-                //{
-
-                //    if (z.naziv.ToLower().Contains(textPretraga) && z != null)
-                //    {
-                //        //z.kate = z.Kategorija1.naziv;
-                //        listDjelovi.Add(z);
-                //    }
-
-                //}
-                foreach(Djelovi d in listDjelovi.Where(x => x.naziv.Contains(textPretraga)))
-                {
-                    djeloviPretraga.Add(d);
-                }
+                int trenutnaLokacijaID = int.Parse(ConfigurationManager.AppSettings["LokacijaID"].ToString());
+                List<Djelovi> listDjelovi = new List<Djelovi>();
+                listDjelovi = (from x in db.Djelovis
+                               join y in db.Lokacija_has_djelovi on x.id equals y.id_djelovi
+                               where y.id_lokacija == trenutnaLokacijaID && x.naziv.Contains(textPretraga)
+                               select x).ToList();
 
                 dgvPopisStavki.DataSource = null;
-                dgvPopisStavki.DataSource = new BindingSource(djeloviPretraga, null);
+                dgvPopisStavki.DataSource = new BindingSource(listDjelovi, null);
 
                 dgvPopisStavki.Columns["Kategorija1"].Visible = false;
                 dgvPopisStavki.Columns["Model_vozila"].Visible = false;
@@ -107,6 +98,7 @@ namespace eAPW
                 dgvPopisStavki.Columns["Narudzba_has_Djelovi"].Visible = false;
                 dgvPopisStavki.Columns["Racun_Has_Djelovi"].Visible = false;
                 dgvPopisStavki.Columns["Rezervacija_has_Djelovi"].Visible = false;
+                dgvPopisStavki.Columns["Lokacija_has_djelovi"].Visible = false;
             }
         }
 

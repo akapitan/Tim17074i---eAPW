@@ -54,6 +54,8 @@ namespace eAPW
                 dgvPopisStavki.Columns["Narudzba_has_Djelovi"].Visible = false;
                 dgvPopisStavki.Columns["Racun_Has_Djelovi"].Visible = false;
                 dgvPopisStavki.Columns["Rezervacija_has_Djelovi"].Visible = false;
+                dgvPopisStavki.Columns["Lokacija_has_djelovi"].Visible = false;
+                
             }
 
         }
@@ -66,18 +68,11 @@ namespace eAPW
         {
             using (var db = new ProgramskoInzenjerstvoDBEntities())
             {
+                int trenutnaLokacijaID = int.Parse(ConfigurationManager.AppSettings["LokacijaID"].ToString());
                 List<Djelovi> listDjelovi = new List<Djelovi>();
-
-                foreach (Djelovi z in db.Djelovis)
-                {
-
-                    if (z.naziv.ToLower().Contains(textPretraga) && z != null)
-                    {
-                        
-                        listDjelovi.Add(z);
-                    }
-
-                }
+                listDjelovi = (from x in db.Djelovis join y in db.Lokacija_has_djelovi on x.id equals y.id_djelovi
+                               where y.id_lokacija == trenutnaLokacijaID && x.naziv.Contains(textPretraga) select x).ToList();
+               
                 dgvPopisStavki.DataSource = null;
                 dgvPopisStavki.DataSource = new BindingSource(listDjelovi, null);
 
@@ -87,6 +82,7 @@ namespace eAPW
                 dgvPopisStavki.Columns["Narudzba_has_Djelovi"].Visible = false;
                 dgvPopisStavki.Columns["Racun_Has_Djelovi"].Visible = false;
                 dgvPopisStavki.Columns["Rezervacija_has_Djelovi"].Visible = false;
+                dgvPopisStavki.Columns["Lokacija_has_djelovi"].Visible = false;
             }
         }
 
